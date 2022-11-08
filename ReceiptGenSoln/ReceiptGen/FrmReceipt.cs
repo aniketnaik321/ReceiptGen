@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace ReceiptGen
 {
-    public partial class FrmMain : Form
+    public partial class FrmReceipt : Form
     {
-        public FrmMain()
+        public FrmReceipt()
         {
             InitializeComponent();
-        }
-
-        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
         }
     }
 }
