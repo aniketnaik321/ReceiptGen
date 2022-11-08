@@ -28,3 +28,4 @@ D:\Projects\ReceiptGen\ReceiptGenSoln\ReceiptGen\obj\Debug\ReceiptGen.pdb
 D:\Projects\ReceiptGen\ReceiptGenSoln\ReceiptGen\bin\Debug\CrystalDecisions.Windows.Forms.dll
 D:\Projects\ReceiptGen\ReceiptGenSoln\ReceiptGen\obj\Debug\ReceiptGen.FrmMain.resources
 D:\Projects\ReceiptGen\ReceiptGenSoln\ReceiptGen\obj\Debug\ReceiptGen.FrmReportViewer.resources
+D:\Projects\ReceiptGen\ReceiptGenSoln\ReceiptGen\obj\Debug\ReceiptGen.FrmAllReceipts.resources

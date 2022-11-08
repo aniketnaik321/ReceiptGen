@@ -58,6 +58,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmAllReceipts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAllReceipts.Designer.cs">
+      <DependentUpon>FrmAllReceipts.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmReceipt.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,6 +82,12 @@
     <Compile Include="FrmReportViewer.Designer.cs">
       <DependentUpon>FrmReportViewer.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSettings.Designer.cs">
+      <DependentUpon>FrmSettings.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Reports\RptReceipt.cs">
@@ -86,6 +98,9 @@
     </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAllReceipts.resx">
+      <DependentUpon>FrmAllReceipts.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmReportViewer.resx">
       <DependentUpon>FrmReportViewer.cs</DependentUpon>
@@ -98,6 +113,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Reports\RptReceipt.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -120,8 +136,18 @@
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="DataAccess\" />
     <Folder Include="Model\" />
     <Folder Include="Service\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1363609703_print.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1363609579_doc_lines_stright.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1363609542_on-off.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

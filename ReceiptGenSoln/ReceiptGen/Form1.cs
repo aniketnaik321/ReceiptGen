@@ -21,5 +21,29 @@ namespace ReceiptGen
         {
             Application.Exit();
         }
+
+        private void toolStripButton3_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void FrmMain_Load(object sender, EventArgs e)
+        {
+            Controls.OfType<MdiClient>().FirstOrDefault().BackColor = Color.WhiteSmoke;
+        }
+
+        private void receiptToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmReceipt frmReceipt = new FrmReceipt();
+            frmReceipt.MdiParent = this;
+            frmReceipt.StartPosition = FormStartPosition.CenterParent;
+            frmReceipt.WindowState= FormWindowState.Maximized;
+            frmReceipt.Show();
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            receiptToolStripMenuItem_Click(sender, e);
+        }
     }
 }
