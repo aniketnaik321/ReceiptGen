@@ -70,6 +70,8 @@
     <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.3\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -86,6 +88,12 @@
     <Compile Include="DataAccess\SQLiteColumnList.cs" />
     <Compile Include="DataAccess\SQLiteHelper.cs" />
     <Compile Include="DataAccess\SQLiteTable.cs" />
+    <Compile Include="DataModel\ResumeBuilder.cs" />
+    <Compile Include="DataModel\ResumeBuilder.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResumeBuilder.edmx</DependentUpon>
+    </Compile>
     <Compile Include="FrmDataEntry.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -116,6 +124,13 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EntityDeploy Include="DataModel\ResumeBuilder.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ResumeBuilder.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="DataModel\ResumeBuilder.edmx.diagram">
+      <DependentUpon>ResumeBuilder.edmx</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -160,6 +175,7 @@
   <ItemGroup>
     <None Include="Resources\add-item5.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
