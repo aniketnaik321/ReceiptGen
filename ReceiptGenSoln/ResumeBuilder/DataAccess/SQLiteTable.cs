@@ -8,7 +8,7 @@ namespace System.Data.SQLite
     {
         public string TableName = "";
         public SQLiteColumnList Columns = new SQLiteColumnList();
-
+        
         public SQLiteTable()
         { }
 

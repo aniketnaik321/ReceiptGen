@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ResumeBuilder.DTO;
+using ResumeBuilder.Service;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,7 +21,12 @@ namespace ResumeBuilder
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+
+            if (MessageBox.Show("Confirm sign out, all unsaved changes will be lost?", "Easy Resume Builder", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+
+                Application.Exit();
+            }
         }
 
         private void toolStripButton3_Click(object sender, EventArgs e)
@@ -34,7 +41,10 @@ namespace ResumeBuilder
 
         private void receiptToolStripMenuItem_Click(object sender, EventArgs e)
         {
+
+            
             FrmDataEntry _frmDataEntry = new FrmDataEntry();
+            if (!refreshChildForms(_frmDataEntry.Name)) { _frmDataEntry = null; return; }
             _frmDataEntry.MdiParent = this;
             _frmDataEntry.StartPosition = FormStartPosition.CenterScreen;
             _frmDataEntry.WindowState = FormWindowState.Maximized;
@@ -44,6 +54,33 @@ namespace ResumeBuilder
         private void toolStripButton2_Click(object sender, EventArgs e)
         {
             receiptToolStripMenuItem_Click(sender, e);
+        }
+
+
+        //Also makes sure that there is only one instance of that form.
+        private bool refreshChildForms(string existingFormName)
+        {
+            bool result = true;
+            foreach (Form frm in this.MdiChildren)
+            {
+                if (frm.Name.Equals(existingFormName)) 
+                    { result = false; continue; }
+                Console.WriteLine(frm.Name);
+                frm.Close();
+            }
+            return result;
+        }
+
+        private void toolStripButton4_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("This is for test" + EtyService.GetTableName<DtoResumeData>());
+
+
+           
+                MessageBox.Show("This is for test-" + string.Join(" | ",EtyService.GetColumnNames<DtoResumeData>()));
+           
+
+            
         }
     }
 }

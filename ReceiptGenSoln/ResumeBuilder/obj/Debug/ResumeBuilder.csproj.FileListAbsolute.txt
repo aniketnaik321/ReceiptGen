@@ -29,3 +29,6 @@ D:\Projects\ReceiptGen\ReceiptGenSoln\ResumeBuilder\bin\Debug\System.Buffers.xml
 D:\Projects\ReceiptGen\ReceiptGenSoln\ResumeBuilder\bin\Debug\System.Memory.xml
 D:\Projects\ReceiptGen\ReceiptGenSoln\ResumeBuilder\bin\Debug\System.Numerics.Vectors.xml
 D:\Projects\ReceiptGen\ReceiptGenSoln\ResumeBuilder\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\Projects\ReceiptGen\ReceiptGenSoln\ResumeBuilder\bin\Debug\ResumeBuilderDB.db
+D:\Projects\ReceiptGen\ReceiptGenSoln\ResumeBuilder\bin\Debug\Dapper.dll
+D:\Projects\ReceiptGen\ReceiptGenSoln\ResumeBuilder\bin\Debug\Dapper.xml
