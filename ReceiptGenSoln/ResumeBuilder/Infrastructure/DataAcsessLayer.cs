@@ -284,8 +284,6 @@ namespace Infrastructure
             {
                 if (DbConn.State == 0)
                 {
-
-
                     createConn();
                 }
                 else

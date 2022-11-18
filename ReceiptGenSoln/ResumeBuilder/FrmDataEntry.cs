@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ResumeBuilder.DTO;
+using ResumeBuilder.Service;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,10 +17,13 @@ namespace ResumeBuilder
     public partial class FrmDataEntry : Form
     {
 
-         
+        private ResumeDataService _resumeDataService;
+        private DtoResumeData _resumeData;
+
         public FrmDataEntry()
         {
-            InitializeComponent();           
+            InitializeComponent();     
+            _resumeDataService = new ResumeDataService();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -83,6 +88,11 @@ namespace ResumeBuilder
                     if (dgvExperienceDetails.Rows.Count == 0)
                         btnAddExperienceDetails_Click(sender, e);                    
                     break;
+
+                case 3:
+                    if (dgvSkillData.Rows.Count == 0)
+                        btnAddSkill_Click(sender, e);
+                    break;                   
             }
         }
 
@@ -146,7 +156,6 @@ namespace ResumeBuilder
             if (e.ColumnIndex == 5)
                 if (MessageBox.Show("Confirm removing row?", "Easy Resume Builder", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-
                     dgvExperienceDetails.Controls.RemoveByKey("dtp" + dgvExperienceDetails.Rows[e.RowIndex].Tag + "-1");
                     dgvExperienceDetails.Controls.RemoveByKey("dtp" + dgvExperienceDetails.Rows[e.RowIndex].Tag + "-2");
                     dgvExperienceDetails.Rows.RemoveAt(e.RowIndex);
@@ -168,6 +177,49 @@ namespace ResumeBuilder
                         }
                     }
                 }
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            _resumeData = new DtoResumeData();
+            _resumeData.ContactNo = txtContactNo.Text;
+            _resumeData.EmailID = txtEmail.Text;
+            _resumeData.Address = txtAddress.Text;
+            _resumeData.CandidateName = txtName.Text;
+            _resumeData.Hobbies = txtHobbies.Text;
+            _resumeData.DeclarationText = txtDeclarationText.Text;
+            _resumeData.Portfolio = txtPortfolio.Text;
+
+           MessageBox.Show(_resumeDataService.UpdateResumeData(_resumeData).ToString());
+        }
+
+        private void btnAddSkill_Click(object sender, EventArgs e)
+        {
+            if (dgvSkillData.Rows.Count > 6)
+            {
+                MessageBox.Show("Skill details is restricted to 7 entries only", "Easy Resume Builder",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            DataGridViewRow _rw = new DataGridViewRow();
+            _rw.Tag = Guid.NewGuid().ToString();
+            dgvSkillData.Rows.Add(_rw);
+        }
+
+        private void dgvSkillData_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 3)
+                if (MessageBox.Show("Confirm removing row?", "Easy Resume Builder", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    dgvSkillData.Rows.RemoveAt(e.RowIndex);
+                }
+        }
+
+        private void btnProjectDetails_Click(object sender, EventArgs e)
+        {
+            FrmProjectDetails _frm = new FrmProjectDetails();
+            _frm.ShowDialog();
         }
     }
 }

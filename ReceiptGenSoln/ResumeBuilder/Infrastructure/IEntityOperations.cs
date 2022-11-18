@@ -6,14 +6,13 @@ using System.Threading.Tasks;
 
 namespace ResumeBuilder.Infrastructure
 {
-    public interface IEntityOperations<TDto,TEty>
+    public interface IEntityOperations<TEty>
     {
-        List<TDto> GetList();
-        bool Save(TDto inp);
-        TDto FindById(object id);
-        bool Update(TDto inp, object id);
+        List<TEty> GetList();
+        int Save(TEty inp);
+        TEty FindById(object id);
+        bool Update(TEty inp, object id);
         bool UpdateEntity(TEty inp, object id);
-        bool Delete(object id);
-        IQueryable<TEty> GetAll();
+        bool Delete(object id);        
     }
 }

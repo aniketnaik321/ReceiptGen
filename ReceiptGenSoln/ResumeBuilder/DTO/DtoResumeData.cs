@@ -19,20 +19,29 @@ namespace ResumeBuilder.DTO
 
         [Column(name: "EmailID")]
         public string EmailID { get; set; }
+
+        [Column(name: "Hobbies")]
+        public string Hobbies { get; set; }
+
+        [Column(name: "Portfolio")]
+        public string Portfolio { get; set; }
+
+        [Column(name: "DeclarationText")]
+        public string DeclarationText { get; set; }
     }
 
 
     [Table("EducationData")]
     public class EducationData {
         [Column(name: "University")]
-        public string Institute { get; set; }
+        public string University { get; set; }
         [Column(name: "FromDate")]
         public string FromDate { get; set; }
         [Column(name: "ToDate")]
         public string ToDate { get; set; }
 
         [Column(name: "PercentData")]
-        public string PercentGrade { get; set; }
+        public string PercentData { get; set; }
 
         [Column(name: "CandidateID")]
         public int CandidateID { get; set; }

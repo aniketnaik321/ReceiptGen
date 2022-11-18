@@ -106,6 +106,12 @@
     <Compile Include="FrmMain.Designer.cs">
       <DependentUpon>FrmMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmProjectDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmProjectDetails.Designer.cs">
+      <DependentUpon>FrmProjectDetails.cs</DependentUpon>
+    </Compile>
     <Compile Include="Infrastructure\DataAcsessLayer.cs" />
     <Compile Include="Infrastructure\EntityOperations.cs" />
     <Compile Include="Infrastructure\IEntityOperations.cs" />
@@ -119,6 +125,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmProjectDetails.resx">
+      <DependentUpon>FrmProjectDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

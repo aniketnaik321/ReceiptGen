@@ -32,3 +32,4 @@ D:\Projects\ReceiptGen\ReceiptGenSoln\ResumeBuilder\bin\Debug\System.Runtime.Com
 D:\Projects\ReceiptGen\ReceiptGenSoln\ResumeBuilder\bin\Debug\ResumeBuilderDB.db
 D:\Projects\ReceiptGen\ReceiptGenSoln\ResumeBuilder\bin\Debug\Dapper.dll
 D:\Projects\ReceiptGen\ReceiptGenSoln\ResumeBuilder\bin\Debug\Dapper.xml
+D:\Projects\ReceiptGen\ReceiptGenSoln\ResumeBuilder\obj\Debug\ResumeBuilder.FrmProjectDetails.resources

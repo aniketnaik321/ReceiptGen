@@ -12,11 +12,11 @@ using ResumeBuilder.Service;
 
 namespace ResumeBuilder.Infrastructure
 {
-    public class EntityOperations<TDto, TEty> : IEntityOperations<TDto, TEty>, IDisposable where TEty:class where TDto:class
+    public class EntityOperations<TEty> : IEntityOperations<TEty>, IDisposable where TEty:class
     {
         public string DbFile
         {
-            get { return Environment.SystemDirectory + "\\ResumeBuilderDB.db"; }
+            get { return Environment.CurrentDirectory + "\\ResumeBuilderDB.db"; }
         }
 
         public SQLiteConnection SimpleDbConnection()
@@ -35,7 +35,7 @@ namespace ResumeBuilder.Infrastructure
                 conn.Open();
                 try
                 {
-                    conn.Execute("delete from " + EtyService.GetTableName<TDto>() + " where id=" + Convert.ToString(id));
+                    conn.Execute("delete from " + EtyService.GetTableName<TEty>() + " where id=" + Convert.ToString(id));
                 }
                 catch (Exception) { 
                 result = false;
@@ -55,15 +55,15 @@ namespace ResumeBuilder.Infrastructure
             } catch (Exception) { }            
         }
 
-        public TDto FindById(object id)
+        public TEty FindById(object id)
         {
-            TDto result;
+            TEty result;
             using (var cnn = SimpleDbConnection())
             {
                 cnn.Open();
 
-                result= cnn.Query<TDto>(
-                    @"SELECT * from "+ EtyService.GetTableName<TDto>()+" where id=@id" , new { id }).FirstOrDefault();
+                result= cnn.Query<TEty>(
+                    @"SELECT * from "+ EtyService.GetTableName<TEty>()+" where id=@id" , new { id }).FirstOrDefault();
                 return result;
             }
         }
@@ -73,31 +73,40 @@ namespace ResumeBuilder.Infrastructure
             return null;
         }
 
-        public List<TDto> GetList()
+        public List<TEty> GetList()
         {
-            List<TDto> result;
+            List<TEty> result;
             using (var cnn = SimpleDbConnection())
             {
                 cnn.Open();
-               result = cnn.Query<TDto>(
-                    @"SELECT * from " + EtyService.GetTableName<TDto>()).ToList();
+               result = cnn.Query<TEty>(
+                    @"SELECT * from " + EtyService.GetTableName<TEty>()).ToList();
             }
             return result;
         }
 
-        public bool Save(TDto inp)
+        public int Save(TEty inp)
         {
-            bool _result=false;
-            using (var cnn = SimpleDbConnection())
+            int _result=0;
+            using (var conn = SimpleDbConnection())
             {
-                cnn.Open();
-                 cnn.Query<TDto>(
-                     @"SELECT * from " + EtyService.GetTableName<TDto>()).ToList();
+                conn.Open();
+                try {
+                  _result=  conn.ExecuteScalar<int>(
+                         @"INSERT INTO " + EtyService.GetTableName<TEty>() + "(" +
+                         string.Join(",", EtyService.GetColumnNames<TEty>())
+                         + ") values(@" + string.Join(",@", EtyService.GetColumnNames<TEty>()) + " );SELECT last_insert_rowid();", inp);
+                } catch (Exception ex) {
+                    throw ex;
+                } finally {
+                    conn.Close();
+                }
+                 
             }
             return _result;           
         }
 
-        public bool Update(TDto inp, object id)
+        public bool Update(TEty inp, object id)
         {
             bool result = true;            
             TEty entityInput = null;

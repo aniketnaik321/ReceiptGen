@@ -24,7 +24,6 @@ namespace ResumeBuilder
 
             if (MessageBox.Show("Confirm sign out, all unsaved changes will be lost?", "Easy Resume Builder", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-
                 Application.Exit();
             }
         }
@@ -40,9 +39,7 @@ namespace ResumeBuilder
         }
 
         private void receiptToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-            
+        {   
             FrmDataEntry _frmDataEntry = new FrmDataEntry();
             if (!refreshChildForms(_frmDataEntry.Name)) { _frmDataEntry = null; return; }
             _frmDataEntry.MdiParent = this;
@@ -73,14 +70,8 @@ namespace ResumeBuilder
 
         private void toolStripButton4_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("This is for test" + EtyService.GetTableName<DtoResumeData>());
-
-
-           
-                MessageBox.Show("This is for test-" + string.Join(" | ",EtyService.GetColumnNames<DtoResumeData>()));
-           
-
-            
+            MessageBox.Show("@" + string.Join(",@", EtyService.GetColumnNames<DtoResumeData>()));           
+           // MessageBox.Show("This is for test-" + string.Join(" | ",EtyService.GetColumnNames<DtoResumeData>()));            
         }
     }
 }
