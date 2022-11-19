@@ -33,3 +33,15 @@ D:\Projects\ReceiptGen\ReceiptGenSoln\ResumeBuilder\bin\Debug\ResumeBuilderDB.db
 D:\Projects\ReceiptGen\ReceiptGenSoln\ResumeBuilder\bin\Debug\Dapper.dll
 D:\Projects\ReceiptGen\ReceiptGenSoln\ResumeBuilder\bin\Debug\Dapper.xml
 D:\Projects\ReceiptGen\ReceiptGenSoln\ResumeBuilder\obj\Debug\ResumeBuilder.FrmProjectDetails.resources
+D:\Projects\ReceiptGen\ReceiptGenSoln\ResumeBuilder\bin\Debug\Spire.Pdf.dll
+D:\Projects\ReceiptGen\ReceiptGenSoln\ResumeBuilder\bin\Debug\Spire.PdfViewer.Asp.dll
+D:\Projects\ReceiptGen\ReceiptGenSoln\ResumeBuilder\bin\Debug\Spire.PdfViewer.Forms.dll
+D:\Projects\ReceiptGen\ReceiptGenSoln\ResumeBuilder\bin\Debug\Xceed.Document.NET.dll
+D:\Projects\ReceiptGen\ReceiptGenSoln\ResumeBuilder\bin\Debug\Xceed.Words.NET.dll
+D:\Projects\ReceiptGen\ReceiptGenSoln\ResumeBuilder\bin\Debug\Microsoft.mshtml.dll
+D:\Projects\ReceiptGen\ReceiptGenSoln\ResumeBuilder\bin\Debug\Spire.Pdf.xml
+D:\Projects\ReceiptGen\ReceiptGenSoln\ResumeBuilder\bin\Debug\Spire.PdfViewer.Asp.xml
+D:\Projects\ReceiptGen\ReceiptGenSoln\ResumeBuilder\bin\Debug\Spire.PdfViewer.Forms.xml
+D:\Projects\ReceiptGen\ReceiptGenSoln\ResumeBuilder\obj\Debug\ResumeBuilder.FrmResumePreview.resources
+D:\Projects\ReceiptGen\ReceiptGenSoln\ResumeBuilder\obj\Debug\ResumeBuilder.FrmResumeTemplates.resources
+D:\Projects\ReceiptGen\ReceiptGenSoln\ResumeBuilder\obj\Debug\ResumeBuilder.CtrlPreviewBox.resources

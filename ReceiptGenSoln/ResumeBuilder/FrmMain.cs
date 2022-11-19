@@ -70,8 +70,31 @@ namespace ResumeBuilder
 
         private void toolStripButton4_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("@" + string.Join(",@", EtyService.GetColumnNames<DtoResumeData>()));           
+
+            FrmResumePreview _frm= new FrmResumePreview();
+            if (!refreshChildForms(_frm.Name)) { _frm = null; return; }
+            _frm.MdiParent = this;
+            _frm.StartPosition = FormStartPosition.CenterScreen;
+            _frm.WindowState = FormWindowState.Maximized;
+            _frm.Show();
+
+          //  MessageBox.Show("@" + string.Join(",@", EtyService.GetColumnNames<DtoResumeData>()));           
            // MessageBox.Show("This is for test-" + string.Join(" | ",EtyService.GetColumnNames<DtoResumeData>()));            
+        }
+
+        private void templatesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmResumeTemplates _frm = new FrmResumeTemplates();
+            if (!refreshChildForms(_frm.Name)) { _frm = null; return; }
+            _frm.MdiParent = this;
+            _frm.StartPosition = FormStartPosition.CenterScreen;
+            _frm.WindowState = FormWindowState.Maximized;
+            _frm.Show();
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            templatesToolStripMenuItem_Click(sender, e);
         }
     }
 }
