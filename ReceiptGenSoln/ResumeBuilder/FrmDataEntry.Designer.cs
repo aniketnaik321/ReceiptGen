@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -49,12 +49,6 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.btnAddEducation = new System.Windows.Forms.Button();
             this.dgvEducationalData = new System.Windows.Forms.DataGridView();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.dgvExperienceDetails = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -80,18 +74,24 @@
             this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage8 = new System.Windows.Forms.TabPage();
+            this.txtResumeTitle = new System.Windows.Forms.TextBox();
+            this.txtHobbies = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txtPortfolio = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.txtDeclarationText = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
-            this.txtPortfolio = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.txtHobbies = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.txtResumeTitle = new System.Windows.Forms.TextBox();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -173,7 +173,7 @@
             this.txtEmail.Location = new System.Drawing.Point(707, 29);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(466, 34);
-            this.txtEmail.TabIndex = 3;
+            this.txtEmail.TabIndex = 1;
             // 
             // label4
             // 
@@ -189,7 +189,7 @@
             this.txtContactNo.Location = new System.Drawing.Point(147, 78);
             this.txtContactNo.Name = "txtContactNo";
             this.txtContactNo.Size = new System.Drawing.Size(466, 34);
-            this.txtContactNo.TabIndex = 3;
+            this.txtContactNo.TabIndex = 2;
             // 
             // label5
             // 
@@ -205,7 +205,7 @@
             this.txtName.Location = new System.Drawing.Point(147, 27);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(466, 34);
-            this.txtName.TabIndex = 3;
+            this.txtName.TabIndex = 0;
             // 
             // label2
             // 
@@ -273,55 +273,6 @@
             this.dgvEducationalData.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEducationalData_CellContentClick);
             this.dgvEducationalData.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dgvEducationalData_RowsAdded);
             // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Specification";
-            this.Column6.MinimumWidth = 6;
-            this.Column6.Name = "Column6";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "College/University";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(1);
-            this.Column3.DefaultCellStyle = dataGridViewCellStyle1;
-            this.Column3.HeaderText = "Start Date";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(1);
-            this.Column4.DefaultCellStyle = dataGridViewCellStyle2;
-            this.Column4.HeaderText = "End Date";
-            this.Column4.MinimumWidth = 6;
-            this.Column4.Name = "Column4";
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Percentage";
-            this.Column5.MinimumWidth = 6;
-            this.Column5.Name = "Column5";
-            // 
-            // Column1
-            // 
-            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.Column1.DefaultCellStyle = dataGridViewCellStyle3;
-            this.Column1.HeaderText = "";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.Text = "X";
-            this.Column1.UseColumnTextForButtonValue = true;
-            this.Column1.Width = 50;
-            // 
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.dgvExperienceDetails);
@@ -375,8 +326,8 @@
             // 
             // dataGridViewTextBoxColumn3
             // 
-            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(1);
-            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.Padding = new System.Windows.Forms.Padding(1);
+            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridViewTextBoxColumn3.HeaderText = "End Date";
             this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
@@ -398,11 +349,11 @@
             // dataGridViewButtonColumn1
             // 
             this.dataGridViewButtonColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.dataGridViewButtonColumn1.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.dataGridViewButtonColumn1.DefaultCellStyle = dataGridViewCellStyle9;
             this.dataGridViewButtonColumn1.HeaderText = "";
             this.dataGridViewButtonColumn1.MinimumWidth = 6;
             this.dataGridViewButtonColumn1.Name = "dataGridViewButtonColumn1";
@@ -486,8 +437,8 @@
             // 
             // dataGridViewTextBoxColumn7
             // 
-            dataGridViewCellStyle6.Padding = new System.Windows.Forms.Padding(1);
-            this.dataGridViewTextBoxColumn7.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle10.Padding = new System.Windows.Forms.Padding(1);
+            this.dataGridViewTextBoxColumn7.DefaultCellStyle = dataGridViewCellStyle10;
             this.dataGridViewTextBoxColumn7.HeaderText = "Skill Experience";
             this.dataGridViewTextBoxColumn7.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
@@ -495,11 +446,11 @@
             // dataGridViewButtonColumn2
             // 
             this.dataGridViewButtonColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.dataGridViewButtonColumn2.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.dataGridViewButtonColumn2.DefaultCellStyle = dataGridViewCellStyle11;
             this.dataGridViewButtonColumn2.HeaderText = "";
             this.dataGridViewButtonColumn2.MinimumWidth = 6;
             this.dataGridViewButtonColumn2.Name = "dataGridViewButtonColumn2";
@@ -622,6 +573,56 @@
             this.tabPage8.Text = "Other Details";
             this.tabPage8.UseVisualStyleBackColor = true;
             // 
+            // txtResumeTitle
+            // 
+            this.txtResumeTitle.Location = new System.Drawing.Point(247, 30);
+            this.txtResumeTitle.Name = "txtResumeTitle";
+            this.txtResumeTitle.Size = new System.Drawing.Size(466, 34);
+            this.txtResumeTitle.TabIndex = 13;
+            // 
+            // txtHobbies
+            // 
+            this.txtHobbies.Location = new System.Drawing.Point(247, 96);
+            this.txtHobbies.Multiline = true;
+            this.txtHobbies.Name = "txtHobbies";
+            this.txtHobbies.Size = new System.Drawing.Size(466, 88);
+            this.txtHobbies.TabIndex = 13;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(36, 30);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(121, 28);
+            this.label11.TabIndex = 12;
+            this.label11.Text = "Resume Title";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(36, 96);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(201, 28);
+            this.label10.TabIndex = 12;
+            this.label10.Text = "Hobbies and Interests";
+            // 
+            // txtPortfolio
+            // 
+            this.txtPortfolio.Location = new System.Drawing.Point(247, 203);
+            this.txtPortfolio.Multiline = true;
+            this.txtPortfolio.Name = "txtPortfolio";
+            this.txtPortfolio.Size = new System.Drawing.Size(466, 88);
+            this.txtPortfolio.TabIndex = 11;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(36, 203);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(140, 28);
+            this.label8.TabIndex = 10;
+            this.label8.Text = "Portfolio Links:";
+            // 
             // txtDeclarationText
             // 
             this.txtDeclarationText.Location = new System.Drawing.Point(247, 306);
@@ -694,55 +695,57 @@
             this.label9.Text = "RESUME DETAILS";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // txtPortfolio
+            // Column6
             // 
-            this.txtPortfolio.Location = new System.Drawing.Point(247, 203);
-            this.txtPortfolio.Multiline = true;
-            this.txtPortfolio.Name = "txtPortfolio";
-            this.txtPortfolio.Size = new System.Drawing.Size(466, 88);
-            this.txtPortfolio.TabIndex = 11;
+            this.Column6.HeaderText = "Specification";
+            this.Column6.MinimumWidth = 6;
+            this.Column6.Name = "Column6";
             // 
-            // label8
+            // Column2
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(36, 203);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(140, 28);
-            this.label8.TabIndex = 10;
-            this.label8.Text = "Portfolio Links:";
+            this.Column2.HeaderText = "College/University";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
             // 
-            // txtHobbies
+            // Column3
             // 
-            this.txtHobbies.Location = new System.Drawing.Point(247, 96);
-            this.txtHobbies.Multiline = true;
-            this.txtHobbies.Name = "txtHobbies";
-            this.txtHobbies.Size = new System.Drawing.Size(466, 88);
-            this.txtHobbies.TabIndex = 13;
+            dataGridViewCellStyle12.Padding = new System.Windows.Forms.Padding(1);
+            this.Column3.DefaultCellStyle = dataGridViewCellStyle12;
+            this.Column3.HeaderText = "Start Date";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
             // 
-            // label10
+            // Column4
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(36, 96);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(201, 28);
-            this.label10.TabIndex = 12;
-            this.label10.Text = "Hobbies and Interests";
+            dataGridViewCellStyle13.Padding = new System.Windows.Forms.Padding(1);
+            this.Column4.DefaultCellStyle = dataGridViewCellStyle13;
+            this.Column4.HeaderText = "End Date";
+            this.Column4.MinimumWidth = 6;
+            this.Column4.Name = "Column4";
             // 
-            // label11
+            // Column5
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(36, 30);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(121, 28);
-            this.label11.TabIndex = 12;
-            this.label11.Text = "Resume Title";
+            this.Column5.HeaderText = "Percentage";
+            this.Column5.MinimumWidth = 6;
+            this.Column5.Name = "Column5";
             // 
-            // txtResumeTitle
+            // Column1
             // 
-            this.txtResumeTitle.Location = new System.Drawing.Point(247, 30);
-            this.txtResumeTitle.Name = "txtResumeTitle";
-            this.txtResumeTitle.Size = new System.Drawing.Size(466, 34);
-            this.txtResumeTitle.TabIndex = 13;
+            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.Silver;
+            this.Column1.DefaultCellStyle = dataGridViewCellStyle14;
+            this.Column1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Column1.HeaderText = "";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.Text = "X";
+            this.Column1.UseColumnTextForButtonValue = true;
+            this.Column1.Width = 50;
             // 
             // FrmDataEntry
             // 
@@ -808,12 +811,6 @@
         private System.Windows.Forms.Button btnAddSkill;
         private System.Windows.Forms.Button btnProjectDetails;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewButtonColumn Column1;
         private System.Windows.Forms.DataGridView dgvExperienceDetails;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
@@ -834,5 +831,11 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txtPortfolio;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewButtonColumn Column1;
     }
 }

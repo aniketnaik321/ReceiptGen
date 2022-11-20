@@ -75,7 +75,7 @@ namespace ResumeBuilder.Infrastructure
 
         public List<TEty> GetList()
         {
-            List<TEty> result;
+            List<TEty> result =new List<TEty>();
             using (var cnn = SimpleDbConnection())
             {
                 cnn.Open();

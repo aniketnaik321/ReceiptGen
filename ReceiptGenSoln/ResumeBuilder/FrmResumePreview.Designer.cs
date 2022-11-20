@@ -50,14 +50,11 @@
             this.btnAddEducation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddEducation.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddEducation.ForeColor = System.Drawing.Color.White;
-            this.btnAddEducation.Image = global::ResumeBuilder.Properties.Resources.download;
-            this.btnAddEducation.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAddEducation.Location = new System.Drawing.Point(12, 3);
             this.btnAddEducation.Name = "btnAddEducation";
             this.btnAddEducation.Size = new System.Drawing.Size(150, 34);
             this.btnAddEducation.TabIndex = 2;
             this.btnAddEducation.Text = "&Export PDF";
-            this.btnAddEducation.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAddEducation.UseVisualStyleBackColor = false;
             // 
             // button1
@@ -66,14 +63,11 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Image = global::ResumeBuilder.Properties.Resources.download;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button1.Location = new System.Drawing.Point(168, 3);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(150, 34);
             this.button1.TabIndex = 2;
             this.button1.Text = "E&xport DOCX";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button1.UseVisualStyleBackColor = false;
             // 
             // FrmResumePreview

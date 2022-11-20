@@ -113,6 +113,7 @@
     <Compile Include="DataAccess\SQLiteColumnList.cs" />
     <Compile Include="DataAccess\SQLiteHelper.cs" />
     <Compile Include="DataAccess\SQLiteTable.cs" />
+    <Compile Include="DTO\DtoTemplate.cs" />
     <Compile Include="DTO\DtoResumeData.cs" />
     <Compile Include="Entities\EtyResumeData.cs" />
     <Compile Include="FrmDataEntry.cs">
@@ -153,6 +154,7 @@
     <Compile Include="Repository\IEntityOperation.cs" />
     <Compile Include="Service\EtyService.cs" />
     <Compile Include="Service\ResumeDataService.cs" />
+    <Compile Include="Service\ResumeTemplateService.cs" />
     <EmbeddedResource Include="CtrlPreviewBox.resx">
       <DependentUpon>CtrlPreviewBox.cs</DependentUpon>
     </EmbeddedResource>
