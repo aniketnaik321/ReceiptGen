@@ -19,11 +19,17 @@ namespace ResumeBuilder
 
         private ResumeDataService _resumeDataService;
         private DtoResumeData _resumeData;
+        private ResumeDataWrapper _wrapper;
 
         public FrmDataEntry()
         {
             InitializeComponent();     
             _resumeDataService = new ResumeDataService();
+        }
+
+        private void FrmDataEntry_Load(object sender, EventArgs e)
+        {
+            LoadCandidateData();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -33,7 +39,6 @@ namespace ResumeBuilder
 
         private void btnAddEducation_Click(object sender, EventArgs e)
         {
-
             if (dgvEducationalData.Rows.Count > 6) {
                 MessageBox.Show("Education details is restricted to 7 entries only","Resume Builder",
                     MessageBoxButtons.OK,MessageBoxIcon.Information);
@@ -66,10 +71,7 @@ namespace ResumeBuilder
             }
         }
 
-        private void FrmDataEntry_Load(object sender, EventArgs e)
-        {
-          
-        }
+      
 
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -189,6 +191,11 @@ namespace ResumeBuilder
             _resumeData.Hobbies = txtHobbies.Text;
             _resumeData.DeclarationText = txtDeclarationText.Text;
             _resumeData.Portfolio = txtPortfolio.Text;
+            _resumeData.ResumeTitle = txtResumeTitle.Text;
+
+            if (_wrapper.resumeData != null) {
+                _resumeData.Id = _wrapper.resumeData.Id;
+            }
 
            MessageBox.Show(_resumeDataService.UpdateResumeData(_resumeData).ToString());
         }
@@ -198,7 +205,7 @@ namespace ResumeBuilder
             if (dgvSkillData.Rows.Count > 6)
             {
                 MessageBox.Show("Skill details is restricted to 7 entries only", "Easy Resume Builder",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
 
@@ -220,6 +227,21 @@ namespace ResumeBuilder
         {
             FrmProjectDetails _frm = new FrmProjectDetails();
             _frm.ShowDialog();
+        }
+
+        private void LoadCandidateData() {
+            _wrapper= _resumeDataService.LoadResumeData();
+            
+            if (_wrapper != null && _wrapper.resumeData!=null) {
+                txtName.Text = _wrapper.resumeData.CandidateName??String.Empty;
+                txtAddress.Text = _wrapper.resumeData.Address ?? String.Empty;
+                txtContactNo.Text = _wrapper.resumeData.ContactNo ?? String.Empty;
+                txtDeclarationText.Text = _wrapper.resumeData.DeclarationText ?? String.Empty;
+                txtHobbies.Text = _wrapper.resumeData.Hobbies ?? String.Empty;
+                txtPortfolio.Text = _wrapper.resumeData.Portfolio ?? String.Empty;
+                txtEmail.Text= _wrapper.resumeData.EmailID ?? String.Empty;
+                txtResumeTitle.Text = _wrapper.resumeData.ResumeTitle?? String.Empty;
+            }
         }
     }
 }

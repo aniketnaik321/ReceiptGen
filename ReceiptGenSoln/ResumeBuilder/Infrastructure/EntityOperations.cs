@@ -57,13 +57,17 @@ namespace ResumeBuilder.Infrastructure
 
         public TEty FindById(object id)
         {
-            TEty result;
-            using (var cnn = SimpleDbConnection())
+            TEty result=null;
+            using (var conn = SimpleDbConnection())
             {
-                cnn.Open();
-
-                result= cnn.Query<TEty>(
-                    @"SELECT * from "+ EtyService.GetTableName<TEty>()+" where id=@id" , new { id }).FirstOrDefault();
+                conn.Open();
+                try {
+                    result = conn.Query<TEty>(
+                       @"SELECT * from " + EtyService.GetTableName<TEty>() + " where id=@id", new { id }).FirstOrDefault();
+                }
+                catch (Exception) { } finally {
+                    conn.Close();
+                }               
                 return result;
             }
         }
@@ -106,11 +110,40 @@ namespace ResumeBuilder.Infrastructure
             return _result;           
         }
 
-        public bool Update(TEty inp, object id)
+        public int Update(TEty inp, object id)
         {
-            bool result = true;            
-            TEty entityInput = null;
-            return result;
+            int _result = 0;
+            StringBuilder sqlQuery = new StringBuilder();
+            sqlQuery.Append("UPDATE " + EtyService.GetTableName<TEty>() + " SET ");
+            using (var conn = SimpleDbConnection())
+            {
+                conn.Open();
+                try
+                {
+
+                    foreach (var col in EtyService.GetColumnNames<TEty>()) {
+
+
+                        sqlQuery.Append(col + "=@" + col + ",");
+
+                    }
+                    sqlQuery.Remove(sqlQuery.Length - 1, 1);
+                    sqlQuery.Append(" WHERE id=" + id.ToString());
+                    Console.WriteLine(sqlQuery.ToString());
+                    _result = conn.ExecuteScalar<int>(sqlQuery.ToString(), inp);
+
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+                finally
+                {
+                    conn.Close();
+                }
+
+            }
+            return _result;
         }
 
         public bool UpdateEntity(TEty inp, object id)

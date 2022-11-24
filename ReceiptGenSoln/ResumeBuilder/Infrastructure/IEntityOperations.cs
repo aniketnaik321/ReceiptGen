@@ -11,7 +11,7 @@ namespace ResumeBuilder.Infrastructure
         List<TEty> GetList();
         int Save(TEty inp);
         TEty FindById(object id);
-        bool Update(TEty inp, object id);
+        int Update(TEty inp, object id);
         bool UpdateEntity(TEty inp, object id);
         bool Delete(object id);        
     }

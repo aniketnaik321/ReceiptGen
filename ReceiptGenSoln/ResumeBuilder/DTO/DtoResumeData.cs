@@ -10,6 +10,9 @@ namespace ResumeBuilder.DTO
     [Table("ResumeData")]
     public class DtoResumeData
     {
+
+        public int Id { get; set; }
+
         [Column(name:"CandidateName")]
         public string CandidateName {get;set;}
         [Column(name: "ContactNo")]
@@ -28,6 +31,9 @@ namespace ResumeBuilder.DTO
 
         [Column(name: "DeclarationText")]
         public string DeclarationText { get; set; }
+
+        [Column(name: "ResumeTitle")]
+        public string ResumeTitle { get; set; }
     }
 
 
@@ -76,6 +82,14 @@ namespace ResumeBuilder.DTO
         public float SkillRating { get; set; }
         [Column(name: "CandidateID")]
         public int CandidateID { get; set; }
+    }
+
+    public class ResumeDataWrapper {
+        public DtoResumeData resumeData {get;set;}
+        public SkillDetails skillDetails { get; set; }
+        public CompanyExperiennce CompanyExperiennce { get; set; }
+
+        public EducationData EducationData { get; set; }
     }
 
 

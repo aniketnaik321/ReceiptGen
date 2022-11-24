@@ -45,6 +45,6 @@ namespace ResumeBuilder.Service
             if (customAttributes == null || customAttributes.Count() == 0) return null;
             T attribute = customAttributes.Where(a => a is T).First() as T;
             return attribute;
-        }
+        } 
     }
 }

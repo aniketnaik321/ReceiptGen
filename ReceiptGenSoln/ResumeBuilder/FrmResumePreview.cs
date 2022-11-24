@@ -27,6 +27,7 @@ namespace ResumeBuilder
             _viewer.BringToFront();
             this.PreviewPanel.Controls.Add(_viewer);
             _viewer.LoadFromFile(@"C:\Resume.pdf");
+            
         }
     }
 }
