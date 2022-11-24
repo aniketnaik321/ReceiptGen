@@ -192,6 +192,7 @@ namespace ResumeBuilder
             _resumeData.DeclarationText = txtDeclarationText.Text;
             _resumeData.Portfolio = txtPortfolio.Text;
             _resumeData.ResumeTitle = txtResumeTitle.Text;
+            _resumeData.ResumeSummary = txtResumeSummary.Text;
 
             if (_wrapper.resumeData != null) {
                 _resumeData.Id = _wrapper.resumeData.Id;
@@ -241,6 +242,7 @@ namespace ResumeBuilder
                 txtPortfolio.Text = _wrapper.resumeData.Portfolio ?? String.Empty;
                 txtEmail.Text= _wrapper.resumeData.EmailID ?? String.Empty;
                 txtResumeTitle.Text = _wrapper.resumeData.ResumeTitle?? String.Empty;
+                txtResumeSummary.Text = _wrapper.resumeData.ResumeSummary ?? String.Empty;
             }
         }
     }

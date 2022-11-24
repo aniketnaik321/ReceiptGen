@@ -34,6 +34,9 @@ namespace ResumeBuilder.DTO
 
         [Column(name: "ResumeTitle")]
         public string ResumeTitle { get; set; }
+
+        [Column(name: "ResumeSummary")]
+        public string ResumeSummary { get; set; }
     }
 
 

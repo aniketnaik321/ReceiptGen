@@ -45,3 +45,7 @@ D:\Projects\ReceiptGen\ReceiptGenSoln\ResumeBuilder\bin\Debug\Spire.PdfViewer.Fo
 D:\Projects\ReceiptGen\ReceiptGenSoln\ResumeBuilder\obj\Debug\ResumeBuilder.FrmResumePreview.resources
 D:\Projects\ReceiptGen\ReceiptGenSoln\ResumeBuilder\obj\Debug\ResumeBuilder.FrmResumeTemplates.resources
 D:\Projects\ReceiptGen\ReceiptGenSoln\ResumeBuilder\obj\Debug\ResumeBuilder.CtrlPreviewBox.resources
+D:\Projects\ReceiptGen\ReceiptGenSoln\ResumeBuilder\bin\Debug\Aspose.Words.dll
+D:\Projects\ReceiptGen\ReceiptGenSoln\ResumeBuilder\bin\Debug\Aspose.Words.Pdf2Word.dll
+D:\Projects\ReceiptGen\ReceiptGenSoln\ResumeBuilder\bin\Debug\Aspose.Words.xml
+D:\Projects\ReceiptGen\ReceiptGenSoln\ResumeBuilder\bin\Debug\ResumeTemplates\template_1.docx

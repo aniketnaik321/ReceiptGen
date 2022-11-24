@@ -15,6 +15,7 @@ namespace ResumeBuilder.Service
         IEntityOperations<SkillDetails> _skillDetailsRepo;
         IEntityOperations<CompanyExperiennce> _companyExperienceRepo;
         IEntityOperations<EducationData> _educationData;
+
         public ResumeDataService() {         
             _entityOperation=new EntityOperations<DtoResumeData>();
             _skillDetailsRepo=new EntityOperations<SkillDetails>();
