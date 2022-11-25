@@ -49,3 +49,5 @@ D:\Projects\ReceiptGen\ReceiptGenSoln\ResumeBuilder\bin\Debug\Aspose.Words.dll
 D:\Projects\ReceiptGen\ReceiptGenSoln\ResumeBuilder\bin\Debug\Aspose.Words.Pdf2Word.dll
 D:\Projects\ReceiptGen\ReceiptGenSoln\ResumeBuilder\bin\Debug\Aspose.Words.xml
 D:\Projects\ReceiptGen\ReceiptGenSoln\ResumeBuilder\bin\Debug\ResumeTemplates\template_1.docx
+D:\Projects\ReceiptGen\ReceiptGenSoln\ResumeBuilder\bin\Debug\ResumeTemplates\template_2.docx
+D:\Projects\ReceiptGen\ReceiptGenSoln\ResumeBuilder\bin\Debug\ResumeTemplates\template_standard.docx

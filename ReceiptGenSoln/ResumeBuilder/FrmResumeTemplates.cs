@@ -50,9 +50,9 @@ namespace ResumeBuilder
 
         private void PictureBox_ButtonClick(object sender, EventArgs e)
         {
-            //  MessageBox.Show(((DtoResumeTemplates)sender).TemplateName);
+             MessageBox.Show(((DtoResumeTemplates)sender).TemplateName);
 
-            FrmResumePreview _frm = new FrmResumePreview();           
+            FrmResumePreview _frm = new FrmResumePreview(((DtoResumeTemplates)sender).FileName);           
             _frm.MdiParent = this.ParentForm;
             _frm.StartPosition = FormStartPosition.CenterScreen;
             _frm.WindowState = FormWindowState.Maximized;

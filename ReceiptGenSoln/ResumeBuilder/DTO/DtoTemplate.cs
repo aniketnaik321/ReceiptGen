@@ -18,8 +18,11 @@ namespace ResumeBuilder.DTO
         [Column(name: "ThumbnailImage")]
         public string ThumbnailImage { get; set; }
 
+        [Column(name: "FileName")]
+        public string FileName { get; set; }
+
         [Column(name: "Id")]
-        public string Id { get; set; }
+        public int Id { get; set; }
     }
 
 }
