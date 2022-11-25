@@ -114,6 +114,7 @@
             this.toolStripButton4.Name = "toolStripButton4";
             this.toolStripButton4.Size = new System.Drawing.Size(103, 24);
             this.toolStripButton4.Text = "Test";
+            this.toolStripButton4.Visible = false;
             this.toolStripButton4.Click += new System.EventHandler(this.toolStripButton4_Click);
             // 
             // menuStrip1
@@ -139,7 +140,7 @@
             this.exitToolStripMenuItem,
             this.toolStripMenuItem3});
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(47, 26);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(47, 24);
             this.toolStripMenuItem1.Text = "&File";
             // 
             // receiptToolStripMenuItem
@@ -171,7 +172,7 @@
             // templatesToolStripMenuItem
             // 
             this.templatesToolStripMenuItem.Name = "templatesToolStripMenuItem";
-            this.templatesToolStripMenuItem.Size = new System.Drawing.Size(91, 26);
+            this.templatesToolStripMenuItem.Size = new System.Drawing.Size(91, 24);
             this.templatesToolStripMenuItem.Text = "&Templates";
             this.templatesToolStripMenuItem.Click += new System.EventHandler(this.templatesToolStripMenuItem_Click);
             // 
@@ -181,7 +182,7 @@
             this.userGuideToolStripMenuItem,
             this.aboutToolStripMenuItem});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(55, 26);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(55, 24);
             this.helpToolStripMenuItem.Text = "&Help";
             // 
             // userGuideToolStripMenuItem
