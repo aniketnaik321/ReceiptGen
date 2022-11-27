@@ -142,12 +142,29 @@
     <Compile Include="DTO\DtoPlaceholder.cs" />
     <Compile Include="DTO\DtoTemplate.cs" />
     <Compile Include="DTO\DtoResumeData.cs" />
-    <Compile Include="Entities\EtyResumeData.cs" />
+    <Compile Include="FrmAbout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAbout.Designer.cs">
+      <DependentUpon>FrmAbout.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmDataEntry.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmDataEntry.Designer.cs">
       <DependentUpon>FrmDataEntry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmEducationDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmEducationDetails.Designer.cs">
+      <DependentUpon>FrmEducationDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmExperienceDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmExperienceDetails.Designer.cs">
+      <DependentUpon>FrmExperienceDetails.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmMain.cs">
       <SubType>Form</SubType>
@@ -173,6 +190,12 @@
     <Compile Include="FrmResumeTemplates.Designer.cs">
       <DependentUpon>FrmResumeTemplates.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmSkillDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSkillDetails.Designer.cs">
+      <DependentUpon>FrmSkillDetails.cs</DependentUpon>
+    </Compile>
     <Compile Include="Infrastructure\DataAcsessLayer.cs" />
     <Compile Include="Infrastructure\EntityOperations.cs" />
     <Compile Include="Infrastructure\IEntityOperations.cs" />
@@ -186,8 +209,17 @@
     <EmbeddedResource Include="CtrlPreviewBox.resx">
       <DependentUpon>CtrlPreviewBox.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmAbout.resx">
+      <DependentUpon>FrmAbout.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmDataEntry.resx">
       <DependentUpon>FrmDataEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmEducationDetails.resx">
+      <DependentUpon>FrmEducationDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmExperienceDetails.resx">
+      <DependentUpon>FrmExperienceDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>
@@ -200,6 +232,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmResumeTemplates.resx">
       <DependentUpon>FrmResumeTemplates.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSkillDetails.resx">
+      <DependentUpon>FrmSkillDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

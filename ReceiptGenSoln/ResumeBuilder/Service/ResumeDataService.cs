@@ -13,13 +13,13 @@ namespace ResumeBuilder.Service
     {
         IEntityOperations<DtoResumeData> _entityOperation;
         IEntityOperations<SkillDetails> _skillDetailsRepo;
-        IEntityOperations<CompanyExperiennce> _companyExperienceRepo;
+        IEntityOperations<CompanyExperience> _companyExperienceRepo;
         IEntityOperations<EducationData> _educationData;
 
         public ResumeDataService() {         
             _entityOperation=new EntityOperations<DtoResumeData>();
             _skillDetailsRepo=new EntityOperations<SkillDetails>();
-            _companyExperienceRepo= new EntityOperations<CompanyExperiennce>();
+            _companyExperienceRepo= new EntityOperations<CompanyExperience>();
             _educationData = new EntityOperations<EducationData>();
         }
 
@@ -37,11 +37,12 @@ namespace ResumeBuilder.Service
 
             if (resumeData != null) {
                 SkillDetails skillDetails = _skillDetailsRepo.FindById(resumeData.Id);
-                CompanyExperiennce companyExperiennce = _companyExperienceRepo.FindById(resumeData.Id);
+                CompanyExperience companyExperiennce = _companyExperienceRepo.FindById(resumeData.Id);
                 EducationData educationData = _educationData.FindById(resumeData.Id);
-                _wrapper.EducationData = educationData;
+                if(educationData!=null)
+                _wrapper.EducationData.Add( educationData);
                 _wrapper.resumeData = resumeData;
-                _wrapper.skillDetails=skillDetails;
+                
             }
             return _wrapper;
         }

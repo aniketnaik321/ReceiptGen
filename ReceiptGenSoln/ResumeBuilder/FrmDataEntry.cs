@@ -18,18 +18,23 @@ namespace ResumeBuilder
     {
 
         private ResumeDataService _resumeDataService;
-        private DtoResumeData _resumeData;
-        private ResumeDataWrapper _wrapper;
+        public DtoResumeData ResumeData;
+        public ResumeDataWrapper ResumeDataWrapper { get; set; }
 
         public FrmDataEntry()
         {
             InitializeComponent();     
             _resumeDataService = new ResumeDataService();
+            ResumeDataWrapper = new ResumeDataWrapper();
+            ResumeDataWrapper.CompanyExperience = new List<CompanyExperience>();
+            ResumeDataWrapper.EducationData = new List<EducationData>();
+            ResumeDataWrapper.skillDetails = new List<SkillDetails>();
+            ResumeDataWrapper.ProjectDetails = new List<ProjectDetails>();
         }
 
         private void FrmDataEntry_Load(object sender, EventArgs e)
         {
-            LoadCandidateData();
+          ///  LoadCandidateData();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -41,16 +46,22 @@ namespace ResumeBuilder
         {
             if (dgvEducationalData.Rows.Count > 6) {
                 MessageBox.Show("Education details is restricted to 7 entries only","Resume Builder",
-                    MessageBoxButtons.OK,MessageBoxIcon.Information);
+                MessageBoxButtons.OK,MessageBoxIcon.Information);
                 return;
             }
 
+
+            FrmEducationDetails frm = new FrmEducationDetails();
+            frm.StartPosition = FormStartPosition.CenterScreen;
+            frm.DataEntryForm = this;
+            frm.ShowDialog();
+
             DataGridViewRow _rw = new DataGridViewRow();
-            _rw.Tag=Guid.NewGuid().ToString();
-          var  index = dgvEducationalData.Rows.Add(_rw);
+            //_rw.Tag=Guid.NewGuid().ToString();
+            //var  index = dgvEducationalData.Rows.Add(_rw);
         }        
 
-        private void dgvEducationalData_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+     /*   private void dgvEducationalData_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
         {
             DataGridViewRow row = dgvEducationalData.Rows[e.RowIndex];
             Console.WriteLine("Rows added");
@@ -69,7 +80,7 @@ namespace ResumeBuilder
                         dateTimePicker.Location = new Point(oRectangle.X, oRectangle.Y);
                     }
             }
-        }
+        }*/
 
       
 
@@ -79,21 +90,21 @@ namespace ResumeBuilder
                 case 0:
                     break;
                 case 1:
-                    if (dgvEducationalData.Rows.Count == 0)
-                    {
-                        DataGridViewRow _rw = new DataGridViewRow();
-                        _rw.Tag = Guid.NewGuid().ToString();
-                        dgvEducationalData.Rows.Add(_rw);
-                    }
+                    //if (dgvEducationalData.Rows.Count == 0)
+                    //{
+                    //    DataGridViewRow _rw = new DataGridViewRow();
+                    //    _rw.Tag = Guid.NewGuid().ToString();
+                    //    dgvEducationalData.Rows.Add(_rw);
+                    //}
                     break;
                 case 2:
-                    if (dgvExperienceDetails.Rows.Count == 0)
-                        btnAddExperienceDetails_Click(sender, e);                    
+                    //if (dgvExperienceDetails.Rows.Count == 0)
+                      //  btnAddExperienceDetails_Click(sender, e);                    
                     break;
 
                 case 3:
-                    if (dgvSkillData.Rows.Count == 0)
-                        btnAddSkill_Click(sender, e);
+                   // if (dgvSkillData.Rows.Count == 0)
+                       // btnAddSkill_Click(sender, e);
                     break;                   
             }
         }
@@ -103,54 +114,64 @@ namespace ResumeBuilder
             if(e.ColumnIndex==5)
             if (MessageBox.Show("Confirm removing row?", "Easy Resume Builder", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes) {
 
-                    dgvEducationalData.Controls.RemoveByKey("dtp" + dgvEducationalData.Rows[e.RowIndex].Tag + "-2");
-                    dgvEducationalData.Controls.RemoveByKey("dtp" + dgvEducationalData.Rows[e.RowIndex].Tag + "-3");
+                    //dgvEducationalData.Controls.RemoveByKey("dtp" + dgvEducationalData.Rows[e.RowIndex].Tag + "-2");
+                    //dgvEducationalData.Controls.RemoveByKey("dtp" + dgvEducationalData.Rows[e.RowIndex].Tag + "-3");
+                    //dgvEducationalData.Rows.RemoveAt(e.RowIndex);
+
+                    //foreach (DataGridViewRow row in dgvEducationalData.Rows)
+                    //{
+                    //   // if (row.Index == e.RowIndex) continue;
+                    //    int balancer = (row.Index >= e.RowIndex)?1:0;
+                    //    foreach (DataGridViewCell cell in row.Cells)
+                    //    {
+                    //        if (new int[] { 2, 3 }.Any(T => T == cell.ColumnIndex))
+                    //        {
+                    //            Rectangle oRectangle = dgvEducationalData.GetCellDisplayRectangle(cell.ColumnIndex, row.Index, true);
+                    //            DateTimePicker _control = (DateTimePicker)dgvEducationalData.Controls.Find("dtp" + row.Tag + "-" + cell.ColumnIndex.ToString(), false).First();
+                    //            if (_control == null) continue;
+                    //            _control.Size = new Size(oRectangle.Width - 2, oRectangle.Height - 10);
+                    //            _control.Location = new Point(oRectangle.X, oRectangle.Y);
+                    //        }
+                    //    }
+                    //}
+
+                    ResumeDataWrapper.EducationData.RemoveAt(e.RowIndex);
                     dgvEducationalData.Rows.RemoveAt(e.RowIndex);
 
-                    foreach (DataGridViewRow row in dgvEducationalData.Rows)
-                    {
-                       // if (row.Index == e.RowIndex) continue;
-                        int balancer = (row.Index >= e.RowIndex)?1:0;
-                        foreach (DataGridViewCell cell in row.Cells)
-                        {
-                            if (new int[] { 2, 3 }.Any(T => T == cell.ColumnIndex))
-                            {
-                                Rectangle oRectangle = dgvEducationalData.GetCellDisplayRectangle(cell.ColumnIndex, row.Index, true);
-                                DateTimePicker _control = (DateTimePicker)dgvEducationalData.Controls.Find("dtp" + row.Tag + "-" + cell.ColumnIndex.ToString(), false).First();
-                                if (_control == null) continue;
-                                _control.Size = new Size(oRectangle.Width - 2, oRectangle.Height - 10);
-                                _control.Location = new Point(oRectangle.X, oRectangle.Y);
-                            }
-                        }
-                    }
                 }
         }
 
         private void btnAddExperienceDetails_Click(object sender, EventArgs e)
         {
-            DataGridViewRow _rw = new DataGridViewRow();
-            _rw.Tag = Guid.NewGuid().ToString();
-            dgvExperienceDetails.Rows.Add(_rw);
+            //DataGridViewRow _rw = new DataGridViewRow();
+            //_rw.Tag = Guid.NewGuid().ToString();
+            //dgvExperienceDetails.Rows.Add(_rw);
+
+            FrmExperienceDetails frm = new FrmExperienceDetails();
+            frm.StartPosition = FormStartPosition.CenterScreen;
+            frm.DataEntryForm = this;
+            frm.ShowDialog();
+
         }
 
         private void dgvExperienceDetails_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
         {
-            DataGridViewRow row = dgvExperienceDetails.Rows[e.RowIndex];            
-            if (e.RowIndex != -1)
-            {
-                foreach (DataGridViewCell cell in row.Cells)
-                    if (cell.ColumnIndex == 1|| cell.ColumnIndex == 2)
-                    {
-                        var dateTimePicker = new DateTimePicker();
-                        dateTimePicker.Font = new Font("Segoe UI", 9);
-                        dateTimePicker.Name = "dtp" + row.Tag + "-" + cell.ColumnIndex.ToString();
-                        dgvExperienceDetails.Controls.Add(dateTimePicker);
-                        dateTimePicker.Format = DateTimePickerFormat.Short;
-                        Rectangle oRectangle = dgvExperienceDetails.GetCellDisplayRectangle(cell.ColumnIndex, e.RowIndex, true);
-                        dateTimePicker.Size = new Size(oRectangle.Width - 2, oRectangle.Height - 10);
-                        dateTimePicker.Location = new Point(oRectangle.X, oRectangle.Y);
-                    }
-            }
+            //DataGridViewRow row = dgvExperienceDetails.Rows[e.RowIndex];            
+            //if (e.RowIndex != -1)
+            //{
+            //    foreach (DataGridViewCell cell in row.Cells)
+            //        if (cell.ColumnIndex == 1|| cell.ColumnIndex == 2)
+            //        {
+            //            var dateTimePicker = new DateTimePicker();
+            //            dateTimePicker.Font = new Font("Segoe UI", 9);
+            //            dateTimePicker.Name = "dtp" + row.Tag + "-" + cell.ColumnIndex.ToString();
+            //            dgvExperienceDetails.Controls.Add(dateTimePicker);
+            //            dateTimePicker.Format = DateTimePickerFormat.Short;
+            //            Rectangle oRectangle = dgvExperienceDetails.GetCellDisplayRectangle(cell.ColumnIndex, e.RowIndex, true);
+            //            dateTimePicker.Size = new Size(oRectangle.Width - 2, oRectangle.Height - 10);
+            //            dateTimePicker.Location = new Point(oRectangle.X, oRectangle.Y);
+            //        }
+            //}
         }
 
         private void dgvExperienceDetails_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -183,22 +204,22 @@ namespace ResumeBuilder
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            _resumeData = new DtoResumeData();
-            _resumeData.ContactNo = txtContactNo.Text;
-            _resumeData.EmailID = txtEmail.Text;
-            _resumeData.Address = txtAddress.Text;
-            _resumeData.CandidateName = txtName.Text;
-            _resumeData.Hobbies = txtHobbies.Text;
-            _resumeData.DeclarationText = txtDeclarationText.Text;
-            _resumeData.Portfolio = txtPortfolio.Text;
-            _resumeData.ResumeTitle = txtResumeTitle.Text;
-            _resumeData.ResumeSummary = txtResumeSummary.Text;
+            ResumeData = new DtoResumeData();
+            ResumeData.ContactNo = txtContactNo.Text;
+            ResumeData.EmailID = txtEmail.Text;
+            ResumeData.Address = txtAddress.Text;
+            ResumeData.CandidateName = txtName.Text;
+            ResumeData.Hobbies = txtHobbies.Text;
+            ResumeData.DeclarationText = txtDeclarationText.Text;
+            ResumeData.Portfolio = txtPortfolio.Text;
+            ResumeData.ResumeTitle = txtResumeTitle.Text;
+            ResumeData.ResumeSummary = txtResumeSummary.Text;
 
-            if (_wrapper.resumeData != null) {
-                _resumeData.Id = _wrapper.resumeData.Id;
+            if (ResumeDataWrapper.resumeData != null) {
+                ResumeData.Id = ResumeDataWrapper.resumeData.Id;
             }
 
-           MessageBox.Show(_resumeDataService.UpdateResumeData(_resumeData).ToString());
+           MessageBox.Show(_resumeDataService.UpdateResumeData(ResumeData).ToString());
         }
 
         private void btnAddSkill_Click(object sender, EventArgs e)
@@ -210,9 +231,15 @@ namespace ResumeBuilder
                 return;
             }
 
-            DataGridViewRow _rw = new DataGridViewRow();
-            _rw.Tag = Guid.NewGuid().ToString();
-            dgvSkillData.Rows.Add(_rw);
+            FrmSkillDetails frm = new FrmSkillDetails();
+           
+            frm.StartPosition = FormStartPosition.CenterScreen;
+            frm.DataEntryForm = this;
+            frm.ShowDialog();
+
+            //DataGridViewRow _rw = new DataGridViewRow();
+            //_rw.Tag = Guid.NewGuid().ToString();
+            //dgvSkillData.Rows.Add(_rw);
         }
 
         private void dgvSkillData_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -226,24 +253,106 @@ namespace ResumeBuilder
 
         private void btnProjectDetails_Click(object sender, EventArgs e)
         {
-            FrmProjectDetails _frm = new FrmProjectDetails();
-            _frm.ShowDialog();
+            FrmProjectDetails frm = new FrmProjectDetails();
+            frm.StartPosition = FormStartPosition.CenterScreen;
+            frm.DataEntryForm = this;
+            frm.ShowDialog();
         }
 
         private void LoadCandidateData() {
-            _wrapper= _resumeDataService.LoadResumeData();
+            ResumeDataWrapper= _resumeDataService.LoadResumeData();
             
-            if (_wrapper != null && _wrapper.resumeData!=null) {
-                txtName.Text = _wrapper.resumeData.CandidateName??String.Empty;
-                txtAddress.Text = _wrapper.resumeData.Address ?? String.Empty;
-                txtContactNo.Text = _wrapper.resumeData.ContactNo ?? String.Empty;
-                txtDeclarationText.Text = _wrapper.resumeData.DeclarationText ?? String.Empty;
-                txtHobbies.Text = _wrapper.resumeData.Hobbies ?? String.Empty;
-                txtPortfolio.Text = _wrapper.resumeData.Portfolio ?? String.Empty;
-                txtEmail.Text= _wrapper.resumeData.EmailID ?? String.Empty;
-                txtResumeTitle.Text = _wrapper.resumeData.ResumeTitle?? String.Empty;
-                txtResumeSummary.Text = _wrapper.resumeData.ResumeSummary ?? String.Empty;
+            if (ResumeDataWrapper != null && ResumeDataWrapper.resumeData!=null) {
+                txtName.Text = ResumeDataWrapper.resumeData.CandidateName??String.Empty;
+                txtAddress.Text = ResumeDataWrapper.resumeData.Address ?? String.Empty;
+                txtContactNo.Text = ResumeDataWrapper.resumeData.ContactNo ?? String.Empty;
+                txtDeclarationText.Text = ResumeDataWrapper.resumeData.DeclarationText ?? String.Empty;
+                txtHobbies.Text = ResumeDataWrapper.resumeData.Hobbies ?? String.Empty;
+                txtPortfolio.Text = ResumeDataWrapper.resumeData.Portfolio ?? String.Empty;
+                txtEmail.Text= ResumeDataWrapper.resumeData.EmailID ?? String.Empty;
+                txtResumeTitle.Text = ResumeDataWrapper.resumeData.ResumeTitle?? String.Empty;
+                txtResumeSummary.Text = ResumeDataWrapper.resumeData.ResumeSummary ?? String.Empty;
             }
         }
+
+
+        public void RefreshEducationDataGrid() {
+            this.dgvEducationalData.Rows.Clear();
+
+
+            foreach (var tempEdudata in this.ResumeDataWrapper.EducationData) {
+                this.dgvEducationalData.Rows.Add(tempEdudata.GetType()
+                        .GetProperties()
+                        .Select(p =>
+                        {
+                            object value = p.GetValue(tempEdudata, null);
+                            return value == null ? string.Empty : value.ToString();
+                        })
+                        .ToArray());
+            
+            }
+          //  this.dgvEducationalData.DataSource=this.ResumeDataWrapper.EducationData;
+        }
+
+
+        public void RefreshCompanyExperienceDataGrid()
+        {
+            this.dgvExperienceDetails.Rows.Clear();
+
+            foreach (var tempEdudata in this.ResumeDataWrapper.CompanyExperience)
+            {
+                this.dgvExperienceDetails.Rows.Add(tempEdudata.GetType()
+                        .GetProperties()
+                        .Select(p =>
+                        {
+                            object value = p.GetValue(tempEdudata, null);
+                            return value == null ? string.Empty : value.ToString();
+                        })
+                        .ToArray());
+
+            }
+            //  this.dgvEducationalData.DataSource=this.ResumeDataWrapper.EducationData;
+        }
+
+
+        public void RefreshSkillDetailsDataGrid()
+        {
+            this.dgvSkillData.Rows.Clear();
+
+            foreach (var tempEdudata in this.ResumeDataWrapper.skillDetails)
+            {
+                this.dgvSkillData.Rows.Add(tempEdudata.GetType()
+                        .GetProperties()
+                        .Select(p =>
+                        {
+                            object value = p.GetValue(tempEdudata, null);
+                            return value == null ? string.Empty : value.ToString();
+                        })
+                        .ToArray());
+
+            }
+            //  this.dgvEducationalData.DataSource=this.ResumeDataWrapper.EducationData;
+        }
+
+
+        public void RefreshProjectDetailsDataGrid()
+        {
+            this.dgvProjectDetails.Rows.Clear();
+
+            foreach (var tempEdudata in this.ResumeDataWrapper.ProjectDetails)
+            {
+                this.dgvProjectDetails.Rows.Add(tempEdudata.GetType()
+                        .GetProperties()
+                        .Select(p =>
+                        {
+                            object value = p.GetValue(tempEdudata, null);
+                            return value == null ? string.Empty : value.ToString();
+                        })
+                        .ToArray());
+
+            }
+            //  this.dgvEducationalData.DataSource=this.ResumeDataWrapper.EducationData;
+        }
+
     }
 }

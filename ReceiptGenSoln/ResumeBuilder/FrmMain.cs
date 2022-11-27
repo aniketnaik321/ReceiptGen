@@ -96,5 +96,11 @@ namespace ResumeBuilder
         {
             templatesToolStripMenuItem_Click(sender, e);
         }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmAbout frmAbout = new FrmAbout();
+            frmAbout.ShowDialog();
+        }
     }
 }

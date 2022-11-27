@@ -42,8 +42,12 @@ namespace ResumeBuilder.DTO
 
     [Table("EducationData")]
     public class EducationData {
+
+        [Column(name: "Specification")]
+        public string Specification { get; set; }
         [Column(name: "University")]
         public string University { get; set; }
+
         [Column(name: "FromDate")]
         public string FromDate { get; set; }
         [Column(name: "ToDate")]
@@ -57,7 +61,7 @@ namespace ResumeBuilder.DTO
     }
 
     [Table("CompanyData")]
-    public class CompanyExperiennce
+    public class CompanyExperience
     {
         [Column(name: "CompanyName")]
         public string CompanyName { get; set; }
@@ -65,6 +69,13 @@ namespace ResumeBuilder.DTO
         public DateTime FromDate { get; set; }
         [Column(name: "ToDate")]
         public DateTime ToDate { get; set; }
+
+
+        [Column(name: "Designation")]
+        public string Designation { get; set; }
+
+        [Column(name: "CurrentlyWorking")]
+        public bool CurrentlyWorking { get; set; }
 
         [Column(name: "Experience")]
         public string Experience { get; set; }
@@ -83,17 +94,45 @@ namespace ResumeBuilder.DTO
 
         [Column(name:"SkillRating")]
         public float SkillRating { get; set; }
+
+
+        [Column(name: "SkillExperience")]
+        public string SkillExperience { get; set; }
+
         [Column(name: "CandidateID")]
         public int CandidateID { get; set; }
     }
 
+    [Table("ProjectData")]
+    public class ProjectDetails
+    {
+        [Column(name: "ProjectName")]
+        public string ProjectName { get; set; }
+
+        [Column(name: "ClientName")]
+        public string ClientName { get; set; }
+
+        [Column(name: "RoleInProject")]
+        public string RoleInProject { get; set; }
+
+        [Column(name: "FromDate")]
+        public string FromDate { get; set; }
+
+        [Column(name: "ToDate")]
+        public string ToDate { get; set; }
+
+        [Column(name: "CandidateID")]
+        public int CandidateID { get; set; }
+    }
+
+
     public class ResumeDataWrapper {
         public DtoResumeData resumeData {get;set;}
-        public SkillDetails skillDetails { get; set; }
-        public CompanyExperiennce CompanyExperiennce { get; set; }
-
-        public EducationData EducationData { get; set; }
-    }
+        public List<SkillDetails> skillDetails { get; set; }
+        public List<CompanyExperience> CompanyExperience { get; set; }
+        public List<EducationData> EducationData { get; set; }
+        public List<ProjectDetails> ProjectDetails { get; set; }
+    }   
 
 
 }
