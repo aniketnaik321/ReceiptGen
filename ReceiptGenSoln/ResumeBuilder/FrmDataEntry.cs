@@ -34,7 +34,7 @@ namespace ResumeBuilder
 
         private void FrmDataEntry_Load(object sender, EventArgs e)
         {
-          ///  LoadCandidateData();
+            LoadCandidateData();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -204,6 +204,7 @@ namespace ResumeBuilder
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+
             ResumeData = new DtoResumeData();
             ResumeData.ContactNo = txtContactNo.Text;
             ResumeData.EmailID = txtEmail.Text;
@@ -214,12 +215,15 @@ namespace ResumeBuilder
             ResumeData.Portfolio = txtPortfolio.Text;
             ResumeData.ResumeTitle = txtResumeTitle.Text;
             ResumeData.ResumeSummary = txtResumeSummary.Text;
-
-            if (ResumeDataWrapper.resumeData != null) {
+            if (ResumeDataWrapper.resumeData != null)
+            {
                 ResumeData.Id = ResumeDataWrapper.resumeData.Id;
             }
 
-           MessageBox.Show(_resumeDataService.UpdateResumeData(ResumeData).ToString());
+            ResumeDataWrapper.resumeData=ResumeData;
+            
+
+           MessageBox.Show(_resumeDataService.UpdateResumeData(ResumeDataWrapper).ToString());
         }
 
         private void btnAddSkill_Click(object sender, EventArgs e)
@@ -260,8 +264,7 @@ namespace ResumeBuilder
         }
 
         private void LoadCandidateData() {
-            ResumeDataWrapper= _resumeDataService.LoadResumeData();
-            
+            ResumeDataWrapper= _resumeDataService.LoadResumeData();            
             if (ResumeDataWrapper != null && ResumeDataWrapper.resumeData!=null) {
                 txtName.Text = ResumeDataWrapper.resumeData.CandidateName??String.Empty;
                 txtAddress.Text = ResumeDataWrapper.resumeData.Address ?? String.Empty;
@@ -273,13 +276,15 @@ namespace ResumeBuilder
                 txtResumeTitle.Text = ResumeDataWrapper.resumeData.ResumeTitle?? String.Empty;
                 txtResumeSummary.Text = ResumeDataWrapper.resumeData.ResumeSummary ?? String.Empty;
             }
-        }
 
+            RefreshEducationDataGrid();
+            RefreshCompanyExperienceDataGrid();
+            RefreshSkillDetailsDataGrid();
+            RefreshProjectDetailsDataGrid();
+        }
 
         public void RefreshEducationDataGrid() {
             this.dgvEducationalData.Rows.Clear();
-
-
             foreach (var tempEdudata in this.ResumeDataWrapper.EducationData) {
                 this.dgvEducationalData.Rows.Add(tempEdudata.GetType()
                         .GetProperties()

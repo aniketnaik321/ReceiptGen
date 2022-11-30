@@ -13,6 +13,7 @@ namespace ResumeBuilder.Infrastructure
         TEty FindById(object id);
         int Update(TEty inp, object id);
         bool UpdateEntity(TEty inp, object id);
-        bool Delete(object id);        
+        bool Delete(object id);
+        bool CustomQuery(string sql);
     }
 }

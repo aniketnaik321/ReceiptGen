@@ -55,3 +55,6 @@ D:\Projects\ReceiptGen\ReceiptGenSoln\ResumeBuilder\obj\Debug\ResumeBuilder.FrmE
 D:\Projects\ReceiptGen\ReceiptGenSoln\ResumeBuilder\obj\Debug\ResumeBuilder.FrmAbout.resources
 D:\Projects\ReceiptGen\ReceiptGenSoln\ResumeBuilder\obj\Debug\ResumeBuilder.FrmExperienceDetails.resources
 D:\Projects\ReceiptGen\ReceiptGenSoln\ResumeBuilder\obj\Debug\ResumeBuilder.FrmSkillDetails.resources
+D:\Projects\ReceiptGen\ReceiptGenSoln\ResumeBuilder\bin\Debug\DocumentFormat.OpenXml.dll
+D:\Projects\ReceiptGen\ReceiptGenSoln\ResumeBuilder\bin\Debug\DocumentFormat.OpenXml.xml
+D:\Projects\ReceiptGen\ReceiptGenSoln\ResumeBuilder\bin\Debug\ResumeTemplates\template_03.docx

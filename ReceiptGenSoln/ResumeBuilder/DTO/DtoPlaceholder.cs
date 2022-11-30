@@ -14,5 +14,8 @@ namespace ResumeBuilder.DTO
         public string Placeholder { get; set; }
         [Column(name: "Field")]
         public string Field { get; set; }
+
+        [Column(name: "Type")]
+        public string Type { get; set; }
     }
 }

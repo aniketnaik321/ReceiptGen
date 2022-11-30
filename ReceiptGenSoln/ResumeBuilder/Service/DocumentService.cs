@@ -1,4 +1,5 @@
 ﻿using Aspose.Words.Saving;
+//using DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing;
 using ResumeBuilder.DTO;
 using ResumeBuilder.Infrastructure;
 using System;
@@ -9,7 +10,9 @@ using System.Linq;
 using System.Runtime.InteropServices.ComTypes;
 using System.Text;
 using System.Threading.Tasks;
+using Xceed.Document.NET;
 using Xceed.Words.NET;
+using Series = Xceed.Document.NET.Series;
 
 namespace ResumeBuilder.Service
 {
@@ -21,7 +24,9 @@ namespace ResumeBuilder.Service
         _placeHolders=new EntityOperations<DtoPlaceholder>();
         }
 
-        public MemoryStream FillupTemplate(string templatePath, 
+        [Obsolete]
+        public MemoryStream FillupTemplate(
+            string templatePath, 
             int templateId,
             ResumeDataWrapper data,
             out MemoryStream doc) {
@@ -36,13 +41,55 @@ namespace ResumeBuilder.Service
             
                 foreach (var substituted in _placeHolders.GetList())
                 {
-                    document.ReplaceText(substituted.Placeholder, EtyService.GetPropValue(data.resumeData, substituted.Field));
-                }
-                // Save this document to disk.
-                //document.SaveAs(Environment.CurrentDirectory + "//ResumeTemplates//template_1_updated.docx");
-                // Aspose.Words.Document document1 = new Aspose.Words.Document(Environment.CurrentDirectory + "//ResumeTemplates//template_1_updated.docx");
+                switch (substituted.Type) {
 
-                using (MemoryStream ms = new MemoryStream()) { 
+                    case "List":
+                        var bulletedList = document.AddList("First list item", 0, ListItemType.Bulleted);
+                        document.AddListItem(bulletedList, "Second list item");
+                        List<Paragraph> actualListData = bulletedList.Items;
+
+                        foreach (var paragraph in document.Paragraphs)
+                            if (paragraph.Text.Contains(substituted.Placeholder))
+                            {
+                                foreach (var listParagraph in actualListData)
+                                    paragraph.InsertListBeforeSelf(bulletedList);
+                                document.ReplaceText(substituted.Placeholder,string.Empty);
+                            }
+
+                        break;
+
+                    case "Chart":
+
+                       
+                        //c.AddLegend(ChartLegendPosition.Left, false);
+                        // Create the data.
+                       
+                        break;
+                    case "Default":
+                        document.ReplaceText(substituted.Placeholder,
+                        EtyService.GetPropValue(data.resumeData, substituted.Field));
+                        break;
+                }
+                      
+                }
+            var c = new BarChart();
+            var canada = new List<ChartData>()
+                            {
+                              new ChartData() { Category = "Food", Expenses = 100 },
+                              new ChartData() { Category = "Housing", Expenses = 120 },
+                              new ChartData() { Category = "Transportation", Expenses = 140 },
+                              new ChartData() { Category = "Health Care", Expenses = 150 }
+                            };
+
+            // Insert chart into document
+            document.InsertParagraph("Expenses(M$) for selected categories per country").FontSize(15).SpacingAfter(10d);
+            document.InsertChart(c);
+
+            // Save this document to disk.
+            //document.SaveAs(Environment.CurrentDirectory + "//ResumeTemplates//template_1_updated.docx");
+            // Aspose.Words.Document document1 = new Aspose.Words.Document(Environment.CurrentDirectory + "//ResumeTemplates//template_1_updated.docx");
+
+            using (MemoryStream ms = new MemoryStream()) { 
                     document.SaveAs(ms);
                     document.SaveAs(doc);
                     document1=new Aspose.Words.Document(ms);

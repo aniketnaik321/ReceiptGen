@@ -47,6 +47,29 @@ namespace ResumeBuilder.Infrastructure
             return result;
         }
 
+
+        public bool CustomQuery(string sql)
+        {
+            bool result = true;
+            using (var conn = SimpleDbConnection())
+            {
+                conn.Open();
+                try
+                {
+                    conn.Execute(sql);
+                }
+                catch (Exception)
+                {
+                    result = false;
+                }
+                finally
+                {
+                    conn.Close();
+                }
+            }
+            return result;
+        }
+
         public void Dispose()
         {
             try {
@@ -122,10 +145,7 @@ namespace ResumeBuilder.Infrastructure
                 {
 
                     foreach (var col in EtyService.GetColumnNames<TEty>()) {
-
-
                         sqlQuery.Append(col + "=@" + col + ",");
-
                     }
                     sqlQuery.Remove(sqlQuery.Length - 1, 1);
                     sqlQuery.Append(" WHERE id=" + id.ToString());
