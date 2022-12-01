@@ -24,7 +24,7 @@ namespace ResumeBuilder.Service
         _placeHolders=new EntityOperations<DtoPlaceholder>();
         }
 
-        [Obsolete]
+        
         public MemoryStream FillupTemplate(
             string templatePath, 
             int templateId,
@@ -32,9 +32,7 @@ namespace ResumeBuilder.Service
             out MemoryStream doc) {
 
             string pdfPath=string.Empty;
-            Aspose.Words.Document document1;
-            PdfSaveOptions pso = new PdfSaveOptions();
-            pso.Compliance = PdfCompliance.Pdf17;
+            Spire.Doc.Document document1;
             MemoryStream resultStream=new MemoryStream ();
             doc = new MemoryStream ();
             var document = DocX.Load(templatePath);
@@ -72,18 +70,42 @@ namespace ResumeBuilder.Service
                 }
                       
                 }
-            var c = new BarChart();
-            var canada = new List<ChartData>()
-                            {
-                              new ChartData() { Category = "Food", Expenses = 100 },
-                              new ChartData() { Category = "Housing", Expenses = 120 },
-                              new ChartData() { Category = "Transportation", Expenses = 140 },
-                              new ChartData() { Category = "Health Care", Expenses = 150 }
-                            };
+           
+                foreach (var p in document.Paragraphs)
+                {
+                    // Gets the paragraph's charts.
+                  //  var charts = p.Charts;
+                    //if (charts.Count > 0)
+                    //{
+                    //    // Gets the first chart's first serie's values (in Y).
+                    //    var numbers = charts[0].Series[0].Values;
+                    //    // Modify the third value from 2 to 6.
+                    //    numbers[2] = "6";
+                    //    // Add a new value.
+                    //    numbers.Add("3");
+                    //    // Update the first chart's first serie's values with the new one.
+                    //    charts[0].Series[0].Values = numbers;
+                    //    // Gets the first chart's first serie's categories (in X).
+                    //    var categories = charts[0].Series[0].Categories;
+                    //    // Modify the second category from Canada to Russia.
+                    //    categories[1] = "Russia";
+                    //    // Add a new category.
+                    //    categories.Add("Italia");
+                    //    // Update the first chart's first serie's categories with the new one.
+                    //    charts[0].Series[0].Categories = categories;
+                    //    // Modify first chart's first serie's color from Blue to Gold.
+                    //    charts[0].Series[0].Color = Color.Gold;
+                    //    // Remove the legend.
+                    //    charts[0].RemoveLegend();
 
-            // Insert chart into document
-            document.InsertParagraph("Expenses(M$) for selected categories per country").FontSize(15).SpacingAfter(10d);
-            document.InsertChart(c);
+                    //    // Save the changes in the first chart.
+                    //    charts[0].Save();
+                    //}
+                }
+
+                // Insert chart into document
+                document.InsertParagraph("Expenses(M$) for selected categories per country").FontSize(15).SpacingAfter(10d);
+            //document.InsertChart(c);
 
             // Save this document to disk.
             //document.SaveAs(Environment.CurrentDirectory + "//ResumeTemplates//template_1_updated.docx");
@@ -92,12 +114,10 @@ namespace ResumeBuilder.Service
             using (MemoryStream ms = new MemoryStream()) { 
                     document.SaveAs(ms);
                     document.SaveAs(doc);
-                    document1=new Aspose.Words.Document(ms);
-                    document1.Save(resultStream,pso);
-                }
+                    document1= new Spire.Doc.Document(ms);
+                    document1.SaveToStream(resultStream,Spire.Doc.FileFormat.PDF);                }
               
-                // Provide PDFSaveOption compliance to PDF17
-                // or just convert without SaveOptions
+                
                
                 //document1.Save(Environment.CurrentDirectory + "//ResumeTemplates//template_1_updated.pdf", pso);
                 return resultStream;
