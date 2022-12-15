@@ -10,15 +10,15 @@ namespace ResumeBuilder.Service
 {
     public class ResumeTemplateService
     {
-        IEntityOperations<DtoResumeTemplates> _entityOperation;
+        IEntityOperations<DtoResumeTemplate> _entityOperation;
 
         public ResumeTemplateService()
         {
-            _entityOperation = new EntityOperations<DtoResumeTemplates>();
+            _entityOperation = new EntityOperations<DtoResumeTemplate>();
         }
 
 
-        public List<DtoResumeTemplates> GetTemplateList() {
+        public List<DtoResumeTemplate> GetTemplateList() {
             return _entityOperation.GetList();
         
         }

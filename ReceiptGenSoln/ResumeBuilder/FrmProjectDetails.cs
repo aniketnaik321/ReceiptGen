@@ -15,11 +15,30 @@ namespace ResumeBuilder
     {
 
         public FrmDataEntry DataEntryForm { get; set; }
-        private ProjectDetails _projectDetails;
+        public ProjectDetails projectDetails { get; set; }
+        public int EditIndex{ get; set; }=-1;        
         public FrmProjectDetails()
         {
             InitializeComponent();
-            _projectDetails = new ProjectDetails();  
+            projectDetails = new ProjectDetails();
+            
+         }
+
+        public void SetupEditData() {
+            if (EditIndex >= 0)
+            {
+                txtProjectTitle.Text = projectDetails.ProjectName;
+                txtClient.Text = projectDetails.ClientName;
+                txtDescription.Text = projectDetails.RoleInProject;
+                DateTime temp;
+                if (DateTime.TryParse(projectDetails.FromDate, out temp)) { 
+                dtpStartDate.Value = temp;
+                }
+                if (DateTime.TryParse(projectDetails.ToDate, out temp))
+                {
+                    dtpEndDate.Value = temp;
+                }
+            }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -30,12 +49,19 @@ namespace ResumeBuilder
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            _projectDetails.ProjectName = txtProjectTitle.Text;
-            _projectDetails.ClientName = txtClient.Text;
-            _projectDetails.FromDate = dtpStartDate.Value.ToString("dd/MM/yyyy");
-            _projectDetails.ToDate = dtpEndDate.Value.ToString("dd/MM/yyyy");
-            _projectDetails.RoleInProject = txtDescription.Text;
-            this.DataEntryForm.ResumeDataWrapper.ProjectDetails.Add(_projectDetails);
+            projectDetails.ProjectName = txtProjectTitle.Text;
+            projectDetails.ClientName = txtClient.Text;
+            projectDetails.FromDate = dtpStartDate.Value.ToString("dd/MM/yyyy");
+            projectDetails.ToDate = dtpEndDate.Value.ToString("dd/MM/yyyy");
+            projectDetails.RoleInProject = txtDescription.Text;
+
+            if (EditIndex >= 0)
+            {
+                this.DataEntryForm.ResumeDataWrapper.ProjectDetails[EditIndex]= projectDetails;
+            }
+            else {               
+                this.DataEntryForm.ResumeDataWrapper.ProjectDetails.Add(projectDetails);
+            }            
             this.DataEntryForm.RefreshProjectDetailsDataGrid();
             this.Close();
            // this.Dispose();

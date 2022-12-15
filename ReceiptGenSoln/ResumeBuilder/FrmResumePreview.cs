@@ -18,25 +18,22 @@ using Xceed.Words.NET;
 namespace ResumeBuilder
 {
     public partial class FrmResumePreview : Form
-    {
-        // PdfDocumentViewer _viewer;
-        PdfiumViewer.PdfViewer _viewer;
-       // PdfRenderer _viewer;
+    {       
+        PdfiumViewer.PdfViewer _viewer;       
         DocumentService _documentService;
         ResumeDataService _resumeDataService;
         ResumeDataWrapper _resumeDataWrapper;
-        private string TemplateFileName;
-        DocX document;
+        private DtoResumeTemplate TemplateFile;
+        private DocX document;
       
-        public FrmResumePreview(string templateFileName)
+        public FrmResumePreview(DtoResumeTemplate template)
         {
             InitializeComponent();
             _viewer = new PdfViewer();
-            _viewer.ShowToolbar = false;
-            
+            _viewer.ShowToolbar = false;            
             _documentService = new DocumentService();
             _resumeDataService = new ResumeDataService();
-            TemplateFileName = templateFileName;
+            TemplateFile = template;
         }
 
         private void FrmResumePreview_Load(object sender, EventArgs e)
@@ -48,8 +45,8 @@ namespace ResumeBuilder
             _resumeDataWrapper = _resumeDataService.LoadResumeData();
             MemoryStream tempDoc;
             MemoryStream ms = _documentService.FillupTemplate(
-                Environment.CurrentDirectory + "//ResumeTemplates//" + TemplateFileName, 
-                1, 
+                Environment.CurrentDirectory + "//ResumeTemplates//" + TemplateFile.FileName, 
+                TemplateFile, 
                 _resumeDataWrapper,
                 out tempDoc);
                 _viewer.Document?.Dispose();

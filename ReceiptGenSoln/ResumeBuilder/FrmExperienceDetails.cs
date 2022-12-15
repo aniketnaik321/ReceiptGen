@@ -13,14 +13,25 @@ namespace ResumeBuilder
 {
     public partial class FrmExperienceDetails : Form
     {
-
         public FrmDataEntry DataEntryForm { get; set; }
-        private CompanyExperience experienceData;
+        public CompanyExperience experienceData { get; set; }
+        public int EditIndex { get; set; } = -1;
         public FrmExperienceDetails()
         {
             InitializeComponent();
             experienceData = new CompanyExperience();   
         }
+
+        public void SetupEditData()
+        {
+            if (EditIndex >= 0)
+            {
+              txtCompanyName.Text = experienceData.CompanyName;
+                txtDesignation.Text = experienceData.Designation;                
+                dtpStartDate.Value = experienceData.FromDate;
+                dtpEndDate.Value = experienceData.ToDate;
+                }
+            }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
@@ -35,6 +46,15 @@ namespace ResumeBuilder
             experienceData.CurrentlyWorking = chkCurrentlyWorking.Checked;
             experienceData.Designation = txtDesignation.Text;
             DataEntryForm.ResumeDataWrapper.CompanyExperience.Add(experienceData);
+            if (EditIndex >= 0)
+            {
+                this.DataEntryForm.ResumeDataWrapper.CompanyExperience[EditIndex] = experienceData;
+            }
+            else
+            {
+                DataEntryForm.ResumeDataWrapper.CompanyExperience.Add(experienceData);
+            }
+
             DataEntryForm.RefreshCompanyExperienceDataGrid();
             this.Close();
             this.Dispose();

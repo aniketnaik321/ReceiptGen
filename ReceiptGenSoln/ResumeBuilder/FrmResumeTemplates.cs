@@ -25,7 +25,7 @@ namespace ResumeBuilder
 
         private void FrmResumeTemplates_Load(object sender, EventArgs e)
         {
-            foreach (DtoResumeTemplates temp in _resumeTemplateService.GetTemplateList()) {
+            foreach (DtoResumeTemplate temp in _resumeTemplateService.GetTemplateList()) {
                 CtrlPreviewBox pictureBox = new CtrlPreviewBox();
                 pictureBox.Height = 450;
                 pictureBox.Width = 400;
@@ -50,9 +50,9 @@ namespace ResumeBuilder
 
         private void PictureBox_ButtonClick(object sender, EventArgs e)
         {
-             MessageBox.Show(((DtoResumeTemplates)sender).TemplateName);
+             MessageBox.Show(((DtoResumeTemplate)sender).TemplateName);
 
-            FrmResumePreview _frm = new FrmResumePreview(((DtoResumeTemplates)sender).FileName);           
+            FrmResumePreview _frm = new FrmResumePreview(((DtoResumeTemplate)sender));           
             _frm.MdiParent = this.ParentForm;
             _frm.StartPosition = FormStartPosition.CenterScreen;
             _frm.WindowState = FormWindowState.Maximized;

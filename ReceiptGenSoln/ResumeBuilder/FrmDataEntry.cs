@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.Entity.Core.Common.CommandTrees.ExpressionBuilder;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text;
@@ -19,6 +20,7 @@ namespace ResumeBuilder
 
         private ResumeDataService _resumeDataService;
         public DtoResumeData ResumeData;
+        private string CandidatePhoto;
         public ResumeDataWrapper ResumeDataWrapper { get; set; }
 
         public FrmDataEntry()
@@ -204,7 +206,6 @@ namespace ResumeBuilder
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-
             ResumeData = new DtoResumeData();
             ResumeData.ContactNo = txtContactNo.Text;
             ResumeData.EmailID = txtEmail.Text;
@@ -215,6 +216,7 @@ namespace ResumeBuilder
             ResumeData.Portfolio = txtPortfolio.Text;
             ResumeData.ResumeTitle = txtResumeTitle.Text;
             ResumeData.ResumeSummary = txtResumeSummary.Text;
+            ResumeData.CandidatePhoto = CandidatePhoto;
             if (ResumeDataWrapper.resumeData != null)
             {
                 ResumeData.Id = ResumeDataWrapper.resumeData.Id;
@@ -275,6 +277,17 @@ namespace ResumeBuilder
                 txtEmail.Text= ResumeDataWrapper.resumeData.EmailID ?? String.Empty;
                 txtResumeTitle.Text = ResumeDataWrapper.resumeData.ResumeTitle?? String.Empty;
                 txtResumeSummary.Text = ResumeDataWrapper.resumeData.ResumeSummary ?? String.Empty;
+
+                if (!string.IsNullOrWhiteSpace(ResumeDataWrapper.resumeData.CandidatePhoto))
+                {
+                    byte[] imageBytes = Convert.FromBase64String(ResumeDataWrapper.resumeData.CandidatePhoto);
+                    // Convert byte[] to Image
+                    using (var ms = new MemoryStream(imageBytes, 0, imageBytes.Length))
+                    {
+                        picCandidatePhoto.BackgroundImage = Image.FromStream(ms, true);
+                    }
+                }
+
             }
 
             RefreshEducationDataGrid();
@@ -359,5 +372,26 @@ namespace ResumeBuilder
             //  this.dgvEducationalData.DataSource=this.ResumeDataWrapper.EducationData;
         }
 
+        private void btnChoose_Click(object sender, EventArgs e)
+        {
+            openFileDialogPicture.Multiselect = false;
+            if (openFileDialogPicture.ShowDialog() == DialogResult.OK) {
+
+                byte[] imageArray = System.IO.File.ReadAllBytes(openFileDialogPicture.FileName);
+                CandidatePhoto = Convert.ToBase64String(imageArray);
+                picCandidatePhoto.BackgroundImage = Image.FromFile(openFileDialogPicture.FileName);
+            }
+        }
+
+        private void dgvProjectDetails_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            FrmProjectDetails frm = new FrmProjectDetails();
+            frm.StartPosition = FormStartPosition.CenterScreen;
+            frm.DataEntryForm = this;
+            frm.EditIndex = e.RowIndex;
+            frm.projectDetails = this.ResumeDataWrapper.ProjectDetails[e.RowIndex];
+            frm.SetupEditData();
+            frm.ShowDialog();
+        }
     }
 }

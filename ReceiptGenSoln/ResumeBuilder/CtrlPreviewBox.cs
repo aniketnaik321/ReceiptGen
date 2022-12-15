@@ -13,7 +13,7 @@ namespace ResumeBuilder
 {
     public partial class CtrlPreviewBox : UserControl
     {
-        public DtoResumeTemplates _resumeTemplate { get; set; }
+        public DtoResumeTemplate _resumeTemplate { get; set; }
 
         [Browsable(true)]
         [Category("Action")]
