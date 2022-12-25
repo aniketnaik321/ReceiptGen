@@ -66,5 +66,19 @@ namespace ResumeBuilder
             if (saveFileDialog.ShowDialog() == DialogResult.OK)                
                 document.SaveAs(saveFileDialog.FileName);
         }
+
+        private void FrmResumePreview_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            FrmResumeTemplates _frm = new FrmResumeTemplates();
+           // if (!refreshChildForms(_frmDataEntry.Name)) { _frmDataEntry = null; return; }
+           _frm.MdiParent = this.MdiParent;
+           _frm.StartPosition = FormStartPosition.CenterScreen;
+           _frm.WindowState = FormWindowState.Maximized;
+            _frm.Show();
+            //  this.Close();
+            try
+            { this.Dispose(); } catch (Exception) { }
+
+         }
     }
 }

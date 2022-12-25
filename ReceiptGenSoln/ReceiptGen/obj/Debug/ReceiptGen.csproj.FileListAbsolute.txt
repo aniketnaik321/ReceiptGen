@@ -29,3 +29,5 @@ D:\Projects\ReceiptGen\ReceiptGenSoln\ReceiptGen\bin\Debug\CrystalDecisions.Wind
 D:\Projects\ReceiptGen\ReceiptGenSoln\ReceiptGen\obj\Debug\ReceiptGen.FrmMain.resources
 D:\Projects\ReceiptGen\ReceiptGenSoln\ReceiptGen\obj\Debug\ReceiptGen.FrmReportViewer.resources
 D:\Projects\ReceiptGen\ReceiptGenSoln\ReceiptGen\obj\Debug\ReceiptGen.FrmAllReceipts.resources
+D:\Projects\ReceiptGen\ReceiptGenSoln\ReceiptGen\bin\Debug\Dapper.dll
+D:\Projects\ReceiptGen\ReceiptGenSoln\ReceiptGen\bin\Debug\Dapper.xml

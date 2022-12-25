@@ -91,7 +91,7 @@
             this.dtpStartDate.Location = new System.Drawing.Point(165, 100);
             this.dtpStartDate.Name = "dtpStartDate";
             this.dtpStartDate.Size = new System.Drawing.Size(160, 22);
-            this.dtpStartDate.TabIndex = 3;
+            this.dtpStartDate.TabIndex = 2;
             // 
             // label5
             // 
@@ -143,7 +143,7 @@
             this.txtDesignation.Location = new System.Drawing.Point(165, 64);
             this.txtDesignation.Name = "txtDesignation";
             this.txtDesignation.Size = new System.Drawing.Size(261, 22);
-            this.txtDesignation.TabIndex = 0;
+            this.txtDesignation.TabIndex = 1;
             // 
             // txtCompanyName
             // 

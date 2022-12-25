@@ -203,6 +203,7 @@
     <Compile Include="FrmSkillDetails.Designer.cs">
       <DependentUpon>FrmSkillDetails.cs</DependentUpon>
     </Compile>
+    <Compile Include="Infrastructure\DapperRepo.cs" />
     <Compile Include="Infrastructure\DataAcsessLayer.cs" />
     <Compile Include="Infrastructure\EntityOperations.cs" />
     <Compile Include="Infrastructure\IEntityOperations.cs" />

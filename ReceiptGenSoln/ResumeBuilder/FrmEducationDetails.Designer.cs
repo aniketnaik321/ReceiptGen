@@ -36,12 +36,12 @@
             this.txtCollege = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtPercent = new System.Windows.Forms.TextBox();
             this.dtpEndDate = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.dtpStartDate = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txtPercent = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -67,7 +67,7 @@
             this.btnCancel.Location = new System.Drawing.Point(455, 6);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(117, 39);
-            this.btnCancel.TabIndex = 1;
+            this.btnCancel.TabIndex = 10;
             this.btnCancel.Text = "&CANCEL";
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -82,7 +82,7 @@
             this.btnUpdate.Location = new System.Drawing.Point(578, 6);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(117, 39);
-            this.btnUpdate.TabIndex = 2;
+            this.btnUpdate.TabIndex = 5;
             this.btnUpdate.Text = "&SAVE";
             this.btnUpdate.UseVisualStyleBackColor = false;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
@@ -92,7 +92,7 @@
             this.txtSpec.Location = new System.Drawing.Point(170, 15);
             this.txtSpec.Name = "txtSpec";
             this.txtSpec.Size = new System.Drawing.Size(280, 22);
-            this.txtSpec.TabIndex = 1;
+            this.txtSpec.TabIndex = 0;
             // 
             // label1
             // 
@@ -137,6 +137,22 @@
             this.panel2.Size = new System.Drawing.Size(707, 230);
             this.panel2.TabIndex = 3;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(23, 184);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(94, 16);
+            this.label5.TabIndex = 7;
+            this.label5.Text = "Percent Grade";
+            // 
+            // txtPercent
+            // 
+            this.txtPercent.Location = new System.Drawing.Point(170, 181);
+            this.txtPercent.Name = "txtPercent";
+            this.txtPercent.Size = new System.Drawing.Size(153, 22);
+            this.txtPercent.TabIndex = 4;
+            // 
             // dtpEndDate
             // 
             this.dtpEndDate.CustomFormat = "dd/MM/yyyy";
@@ -144,7 +160,7 @@
             this.dtpEndDate.Location = new System.Drawing.Point(170, 144);
             this.dtpEndDate.Name = "dtpEndDate";
             this.dtpEndDate.Size = new System.Drawing.Size(153, 22);
-            this.dtpEndDate.TabIndex = 5;
+            this.dtpEndDate.TabIndex = 3;
             // 
             // label3
             // 
@@ -162,7 +178,7 @@
             this.dtpStartDate.Location = new System.Drawing.Point(170, 103);
             this.dtpStartDate.Name = "dtpStartDate";
             this.dtpStartDate.Size = new System.Drawing.Size(153, 22);
-            this.dtpStartDate.TabIndex = 5;
+            this.dtpStartDate.TabIndex = 2;
             // 
             // label4
             // 
@@ -172,22 +188,6 @@
             this.label4.Size = new System.Drawing.Size(69, 16);
             this.label4.TabIndex = 4;
             this.label4.Text = "Start Date:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(23, 184);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(94, 16);
-            this.label5.TabIndex = 7;
-            this.label5.Text = "Percent Grade";
-            // 
-            // txtPercent
-            // 
-            this.txtPercent.Location = new System.Drawing.Point(170, 181);
-            this.txtPercent.Name = "txtPercent";
-            this.txtPercent.Size = new System.Drawing.Size(153, 22);
-            this.txtPercent.TabIndex = 6;
             // 
             // FrmEducationDetails
             // 

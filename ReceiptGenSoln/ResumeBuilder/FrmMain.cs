@@ -31,6 +31,7 @@ namespace ResumeBuilder
         private void toolStripButton3_Click(object sender, EventArgs e)
         {
             exitToolStripMenuItem_Click(sender, e);
+            HighLightButton(sender as ToolStripButton);
         }
 
         private void FrmMain_Load(object sender, EventArgs e)
@@ -51,6 +52,7 @@ namespace ResumeBuilder
         private void toolStripButton2_Click(object sender, EventArgs e)
         {
             receiptToolStripMenuItem_Click(sender, e);
+            HighLightButton(sender as ToolStripButton);
         }
 
 
@@ -95,6 +97,7 @@ namespace ResumeBuilder
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
             templatesToolStripMenuItem_Click(sender, e);
+            HighLightButton(sender as ToolStripButton);
         }
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
@@ -102,5 +105,19 @@ namespace ResumeBuilder
             FrmAbout frmAbout = new FrmAbout();
             frmAbout.ShowDialog();
         }
+
+
+        private void HighLightButton(ToolStripButton btn) {
+            foreach (ToolStripItem control in this.toolStrip1.Items) {
+                if (control is ToolStripButton) {
+                    control.BackColor = Color.MistyRose;
+                    control.ForeColor = Color.Black;
+                }            
+            }
+
+            btn.BackColor = Color.CornflowerBlue;
+            btn.ForeColor= Color.AntiqueWhite;
+        }
+
     }
 }

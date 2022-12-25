@@ -57,6 +57,9 @@ namespace ResumeBuilder
             _frm.StartPosition = FormStartPosition.CenterScreen;
             _frm.WindowState = FormWindowState.Maximized;
             _frm.Show();
+
+            this.Close();
+            this.Dispose();
         }
     }
 }

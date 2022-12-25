@@ -149,7 +149,7 @@
             this.btnUpdate.Location = new System.Drawing.Point(449, 6);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(117, 39);
-            this.btnUpdate.TabIndex = 2;
+            this.btnUpdate.TabIndex = 3;
             this.btnUpdate.Text = "&SAVE";
             this.btnUpdate.UseVisualStyleBackColor = false;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
