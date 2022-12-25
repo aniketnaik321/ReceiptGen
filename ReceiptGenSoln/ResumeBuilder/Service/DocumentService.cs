@@ -22,10 +22,8 @@ namespace ResumeBuilder.Service
 {
     public class DocumentService
     {
-
         IEntityOperations<DtoPlaceholder> _placeHolders;
         private Document document1;
-
         public DocumentService()
         {
             _placeHolders = new EntityOperations<DtoPlaceholder>();
@@ -92,8 +90,6 @@ namespace ResumeBuilder.Service
                             
                             Paragraph p = text.OwnerParagraph;                            
                             text.Text = string.Empty;
-                            
-                            
                           //  p.AppendRTF(File.ReadAllText("C:\\Users\\anike\\OneDrive\\Desktop\\Document.rtf"),false);
                            foreach (var tempEdu in data.EducationData) {                                
                                 p.AppendHTML("<p style='margin-top:10px;font-size:"+template.TextFontSize+"pt;color:black'>Completed <b>"+tempEdu.Specification+"</b> from <b>"+
@@ -243,5 +239,29 @@ namespace ResumeBuilder.Service
 
             return _result;
         }
+
+        public string GetTextBetweenTags(string xml, string tagName)
+        {
+            // Find the opening tag
+            int startIndex = xml.IndexOf("<" + tagName + ">");
+            if (startIndex < 0)
+            {
+                // The opening tag was not found
+                return null;
+            }
+
+            // Find the closing tag
+            int endIndex = xml.IndexOf("</" + tagName + ">", startIndex);
+            if (endIndex < 0)
+            {
+                // The closing tag was not found
+                return null;
+            }
+
+            // Get the text between the tags
+            return xml.Substring(startIndex + tagName.Length + 2, endIndex - startIndex - tagName.Length - 2);
+        }
+
+
     }
 }
