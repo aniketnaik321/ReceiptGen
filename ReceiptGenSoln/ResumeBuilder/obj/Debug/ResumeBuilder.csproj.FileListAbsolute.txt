@@ -38,9 +38,6 @@ D:\Projects\ReceiptGen\ReceiptGenSoln\ResumeBuilder\bin\Debug\Xceed.Words.NET.dl
 D:\Projects\ReceiptGen\ReceiptGenSoln\ResumeBuilder\obj\Debug\ResumeBuilder.FrmResumePreview.resources
 D:\Projects\ReceiptGen\ReceiptGenSoln\ResumeBuilder\obj\Debug\ResumeBuilder.FrmResumeTemplates.resources
 D:\Projects\ReceiptGen\ReceiptGenSoln\ResumeBuilder\obj\Debug\ResumeBuilder.CtrlPreviewBox.resources
-D:\Projects\ReceiptGen\ReceiptGenSoln\ResumeBuilder\bin\Debug\Aspose.Words.dll
-D:\Projects\ReceiptGen\ReceiptGenSoln\ResumeBuilder\bin\Debug\Aspose.Words.Pdf2Word.dll
-D:\Projects\ReceiptGen\ReceiptGenSoln\ResumeBuilder\bin\Debug\Aspose.Words.xml
 D:\Projects\ReceiptGen\ReceiptGenSoln\ResumeBuilder\bin\Debug\ResumeTemplates\template_1.docx
 D:\Projects\ReceiptGen\ReceiptGenSoln\ResumeBuilder\bin\Debug\ResumeTemplates\template_2.docx
 D:\Projects\ReceiptGen\ReceiptGenSoln\ResumeBuilder\bin\Debug\ResumeTemplates\template_standard.docx
@@ -63,3 +60,7 @@ D:\Projects\ReceiptGen\ReceiptGenSoln\ResumeBuilder\bin\Debug\x64\pdfium.dll
 D:\Projects\ReceiptGen\ReceiptGenSoln\ResumeBuilder\bin\Debug\Spire.Pdf.dll
 D:\Projects\ReceiptGen\ReceiptGenSoln\ResumeBuilder\bin\Debug\Microsoft.mshtml.dll
 D:\Projects\ReceiptGen\ReceiptGenSoln\ResumeBuilder\bin\Debug\Spire.Pdf.xml
+D:\Projects\ReceiptGen\ReceiptGenSoln\ResumeBuilder\bin\Debug\Newtonsoft.Json.dll
+D:\Projects\ReceiptGen\ReceiptGenSoln\ResumeBuilder\bin\Debug\Newtonsoft.Json.xml
+D:\Projects\ReceiptGen\ReceiptGenSoln\ResumeBuilder\bin\Debug\ResumeTemplates\template_purple.docx
+D:\Projects\ReceiptGen\ReceiptGenSoln\ResumeBuilder\obj\Debug\ResumeBuilder.FrmAllCandidates.resources

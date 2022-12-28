@@ -2,7 +2,7 @@
 using ResumeBuilder.DTO;
 using ResumeBuilder.Infrastructure;
 using ResumeBuilder.Service;
-
+using Spire.Pdf.Conversion;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

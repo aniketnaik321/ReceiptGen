@@ -124,6 +124,9 @@ namespace ResumeBuilder.DTO
         [Column(name: "ToDate")]
         public string ToDate { get; set; }
 
+        [Column(name: "Description")]
+        public string Description { get; set; }
+
         [Column(name: "CandidateID")]
         public int CandidateID { get; set; }
     }

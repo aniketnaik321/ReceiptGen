@@ -1,6 +1,6 @@
-﻿using Aspose.Words.Saving;
-using DocumentFormat.OpenXml.Bibliography;
+﻿using DocumentFormat.OpenXml.Bibliography;
 using DocumentFormat.OpenXml.Packaging;
+using Newtonsoft.Json;
 using ResumeBuilder.DTO;
 using ResumeBuilder.Infrastructure;
 using Spire.Doc;
@@ -17,6 +17,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TextBox = Spire.Doc.Fields.TextBox;
 
 namespace ResumeBuilder.Service
 {
@@ -68,7 +69,7 @@ namespace ResumeBuilder.Service
                             foreach (var tmpSkill in data.skillDetails) {                             
                                     text.Text+=tmpSkill.SkillName+ " (Experince:"+tmpSkill.SkillExperience + "   Level:"+GetSkillLevel(tmpSkill.SkillRating.ToString())+ ")\n";
                             }
-
+                            if (!string.IsNullOrEmpty(text.Text)) 
                             text.Text= text.Text.Remove(text.Text.Length - 1, 1);
                             p.ListFormat.ContinueListNumbering();
                         }
@@ -91,7 +92,7 @@ namespace ResumeBuilder.Service
                             Paragraph p = text.OwnerParagraph;                            
                             text.Text = string.Empty;
                           //  p.AppendRTF(File.ReadAllText("C:\\Users\\anike\\OneDrive\\Desktop\\Document.rtf"),false);
-                           foreach (var tempEdu in data.EducationData) {                                
+                           foreach (var tempEdu in data.EducationData) {
                                 p.AppendHTML("<p style='margin-top:10px;font-size:"+template.TextFontSize+"pt;color:black'>Completed <b>"+tempEdu.Specification+"</b> from <b>"+
                                     tempEdu.University+"</b> dated from "+tempEdu.FromDate+" to "+tempEdu.ToDate+" with <b>"+tempEdu.PercentData+" of marks.</b> </p>");
                                 p.AppendBreak(BreakType.LineBreak);
@@ -99,6 +100,79 @@ namespace ResumeBuilder.Service
                                 //text.Text+= tempEdu.Specification+"\t"+ tempEdu.University + "\r\n";
                             }
                             p.ListFormat.ContinueListNumbering();
+                        }
+                        break;
+
+                    case "EduPara":
+                    case "PrjPara":
+                        List<Paragraph> originalEduParagraph = new List<Paragraph>();                       
+                        int indexToInsert=0;
+                        dynamic dataToProcess;
+                        if (substituted.Type.Equals("PrjPara")) dataToProcess = data.ProjectDetails;
+                        else dataToProcess = data.EducationData;
+                        TextBox textBoxToInsert=null;
+                        TextSelection[] EduTexts = document.FindAllString(substituted.Placeholder, true, true);
+               
+
+                        foreach (var item in EduTexts)
+                        {
+                            TextRange text = item.GetAsOneRange();
+                            originalEduParagraph.Add(text.OwnerParagraph);
+                        }
+
+                        if (originalEduParagraph.Count > 0) {
+                            indexToInsert = document.Sections[0].Paragraphs.IndexOf(originalEduParagraph[0]);
+
+                            if (indexToInsert == -1) {
+                                for (int i = 0; i < document.TextBoxes.Count; i++)
+                                {
+                                    // Get the current textbox
+                                    TextBox textbox = document.TextBoxes[i];
+                                    foreach (Paragraph item in textbox.Body.Paragraphs) 
+                                    {
+                                        if (item.Text.Contains(substituted.Placeholder)) {
+                                            textBoxToInsert = textbox;
+                                            break;
+                                        }
+                                    }
+                                }
+                            }
+                        }                       
+
+                        foreach (var tempEdu in dataToProcess)
+                        {
+                            List<Paragraph> clonedEduParagraphs = new List<Paragraph>();
+                            foreach (Paragraph paragraph in originalEduParagraph)
+                            {
+                                clonedEduParagraphs.Add((Paragraph)paragraph.Clone());
+                            }
+                            clonedEduParagraphs.Reverse();
+                            foreach (Paragraph clonedParagraph in clonedEduParagraphs)
+                            {
+                                foreach (DTOPlaceHolderJSON tempPlaceholder in ParseJSON(substituted.Field)) {
+                                    clonedParagraph.Replace(tempPlaceholder.placeholder, EtyService.GetPropValue(tempEdu, tempPlaceholder.fieldName), false, false);
+                                }
+                               // clonedParagraph.Replace("#spec#", "Diploma in Graphics Engineering", false, false);
+                                clonedParagraph.Replace(substituted.Placeholder, string.Empty, false, false);
+                                // Add the cloned paragraph to the document
+                                if (indexToInsert != -1)
+                                {
+                                    document.Sections[0].Paragraphs.Insert(indexToInsert, clonedParagraph);
+                                }
+                                else {
+
+                                    textBoxToInsert.Body.Paragraphs.Insert(0,clonedParagraph);
+                                    foreach (var item in originalEduParagraph)
+                                    {
+                                        textBoxToInsert.Body.Paragraphs.Remove(item);
+                                    }
+
+                                }
+                            }
+                        }
+                        foreach (var item in originalEduParagraph)
+                        {
+                            document.Sections[0].Body.Paragraphs.Remove(item);
                         }
                         break;
 
@@ -263,5 +337,8 @@ namespace ResumeBuilder.Service
         }
 
 
+        public DTOPlaceHolderJSON[] ParseJSON(string jsonInput) {        
+            return JsonConvert.DeserializeObject<DTOPlaceHolderJSON[]>(jsonInput);
+        }
     }
 }

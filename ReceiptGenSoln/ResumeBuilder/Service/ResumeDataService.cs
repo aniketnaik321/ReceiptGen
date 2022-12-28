@@ -25,6 +25,11 @@ namespace ResumeBuilder.Service
             _projectDetails = new EntityOperations<ProjectDetails>();
         }
 
+
+        public List<DtoResumeData> GetCandidateList() {
+            return _entityOperation.GetList();
+        }
+
         public int UpdateResumeData(ResumeDataWrapper input) {
             int candidateID=0;
             if (input.resumeData.Id == 0)

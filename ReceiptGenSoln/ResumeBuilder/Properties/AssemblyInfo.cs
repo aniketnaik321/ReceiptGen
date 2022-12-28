@@ -6,9 +6,9 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("ResumeBuilder")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Utitlity Software to generate resume from the set of Resume Templates for multiple candidates.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("GFX Tech Studio")]
 [assembly: AssemblyProduct("ResumeBuilder")]
 [assembly: AssemblyCopyright("Copyright ©  2022")]
 [assembly: AssemblyTrademark("")]

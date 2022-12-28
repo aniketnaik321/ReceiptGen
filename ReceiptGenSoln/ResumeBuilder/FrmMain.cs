@@ -119,5 +119,15 @@ namespace ResumeBuilder
             btn.ForeColor= Color.AntiqueWhite;
         }
 
+        private void btnCandidates_Click(object sender, EventArgs e)
+        {
+            HighLightButton(sender as ToolStripButton);
+            FrmAllCandidates _frm = new FrmAllCandidates();
+            if (!refreshChildForms(_frm.Name)) { _frm = null; return; }
+            _frm.MdiParent = this;
+            _frm.StartPosition = FormStartPosition.CenterScreen;
+            _frm.WindowState = FormWindowState.Maximized;
+            _frm.Show();
+        }
     }
 }
