@@ -10,7 +10,6 @@ namespace ResumeBuilder.DTO
     [Table("ResumeData")]
     public class DtoResumeData
     {
-
         public int Id { get; set; }
 
         [Column(name:"CandidateName")]

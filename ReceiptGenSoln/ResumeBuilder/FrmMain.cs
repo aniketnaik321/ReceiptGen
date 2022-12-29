@@ -36,7 +36,7 @@ namespace ResumeBuilder
 
         private void FrmMain_Load(object sender, EventArgs e)
         {
-            Controls.OfType<MdiClient>().FirstOrDefault().BackColor = Color.WhiteSmoke;
+            Controls.OfType<MdiClient>().FirstOrDefault().BackColor = Color.FromArgb(51, 102, 153);
         }
 
         private void receiptToolStripMenuItem_Click(object sender, EventArgs e)
@@ -102,16 +102,15 @@ namespace ResumeBuilder
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmAbout frmAbout = new FrmAbout();
-            frmAbout.ShowDialog();
+          
         }
 
 
         private void HighLightButton(ToolStripButton btn) {
             foreach (ToolStripItem control in this.toolStrip1.Items) {
                 if (control is ToolStripButton) {
-                    control.BackColor = Color.MistyRose;
-                    control.ForeColor = Color.Black;
+                    control.BackColor = Color.FromArgb(15, 59, 95);
+                  //  control.ForeColor = Color.Black;
                 }            
             }
 
@@ -128,6 +127,12 @@ namespace ResumeBuilder
             _frm.StartPosition = FormStartPosition.CenterScreen;
             _frm.WindowState = FormWindowState.Maximized;
             _frm.Show();
+        }
+
+        private void toolStripButton5_Click(object sender, EventArgs e)
+        {
+            FrmAbout frmAbout = new FrmAbout();
+            frmAbout.ShowDialog();
         }
     }
 }

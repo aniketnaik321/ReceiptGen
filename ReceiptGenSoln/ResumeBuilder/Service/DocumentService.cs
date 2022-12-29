@@ -81,6 +81,19 @@ namespace ResumeBuilder.Service
 
                         break;
 
+                    case "Photo":
+                        TextSelection photoPlaceholder = document.FindString(substituted.Placeholder, true, true);
+                        if (photoPlaceholder != null)
+                        {
+                            TextRange text = photoPlaceholder.GetAsOneRange();
+                            Paragraph p = text.OwnerParagraph;
+                            text.Text = string.Empty;
+                           
+                         DocPicture pic=  p.AppendPicture(System.Convert.FromBase64String(data.resumeData.CandidatePhoto));
+                            pic.Height=100f;
+                            pic.Width = 75f;
+                        }
+                        break;                       
                     case "EducationList":
                         TextSelection eduSelection = document.FindString(substituted.Placeholder, true, true);
                         if (eduSelection != null)
@@ -114,6 +127,7 @@ namespace ResumeBuilder.Service
                         TextSelection[] EduTexts = document.FindAllString(substituted.Placeholder, true, true);
                
 
+                        if(EduTexts!=null)
                         foreach (var item in EduTexts)
                         {
                             TextRange text = item.GetAsOneRange();
@@ -173,38 +187,6 @@ namespace ResumeBuilder.Service
                         foreach (var item in originalEduParagraph)
                         {
                             document.Sections[0].Body.Paragraphs.Remove(item);
-                        }
-                        break;
-
-                    case "ProjectList":
-                        TextSelection projectSelection = document.FindString(substituted.Placeholder, true, true);
-
-                        if (projectSelection != null)
-                        {
-                            TextRange text = projectSelection.GetAsOneRange();
-                            Paragraph p = text.OwnerParagraph;
-                            text.Text = string.Empty;                            
-                            
-                            foreach (var subPrj in data.ProjectDetails) {
-                                
-                                p.AppendHTML("<p style='margin-top:10px;font-size:" + 
-                                    template.TextFontSize + "pt;color:gray'>" + 
-                                    subPrj.ProjectName + "</p>");
-                                p.AppendBreak(BreakType.LineBreak);
-                                p.AppendHTML("<p style='margin-top:10px;font-size:" + 
-                                    template.TextFontSize + "pt;color:black'>Description: &nbsp; &nbsp;&nbsp;&nbsp; Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the tested.</p>");
-
-                                p.AppendBreak(BreakType.LineBreak);
-                                p.AppendHTML("<p style='margin-top:10px;font-size:" + template.TextFontSize + "pt;color:black'>Duration:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;From-" + subPrj.FromDate+" To-"+subPrj.ToDate+"</p>");
-
-                                p.AppendBreak(BreakType.LineBreak);
-                                p.AppendHTML("<p style='margin-top:10px;font-size:" + template.TextFontSize + "pt;color:black'>Client:&nbsp;&nbsp;&nbsp;&nbsp;" + subPrj.ClientName + "</p>");
-                                p.AppendBreak(BreakType.LineBreak);
-                                p.AppendHTML("<p style='margin-top:10px;font-size:" + template.TextFontSize + "pt;color:black'>Role/Responsibilities:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + subPrj.RoleInProject+ "</p>");
-                                p.AppendBreak(BreakType.LineBreak);
-                                p.AppendBreak(BreakType.LineBreak);
-                            }                           
-                            p.ListFormat.ContinueListNumbering();
                         }
                         break;
 

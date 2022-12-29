@@ -40,10 +40,11 @@ namespace ResumeBuilder
 
                 pictureBox.ButtonClick += PictureBox_ButtonClick;
 
-               // pictureBox.PreviewThumbnail=Image.FromStream()
+                // pictureBox.PreviewThumbnail=Image.FromStream()
                 //  pictureBox.TemplateName=
                 //pictureBox.Dock=DockStyle.Fill;
-                pictureBox.BackColor = Color.Green;
+                //   pictureBox.BackColor = Color.FromArgb(15, 59, 95);
+                pictureBox.BackColor = Color.FromArgb(249,246,238);
                 templatePanel.Controls.Add(pictureBox);
             }
         }

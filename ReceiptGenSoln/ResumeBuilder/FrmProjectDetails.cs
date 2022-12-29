@@ -66,5 +66,10 @@ namespace ResumeBuilder
             this.Close();
            // this.Dispose();
         }
+
+        private void FrmProjectDetails_Paint(object sender, PaintEventArgs e)
+        {
+            txtClient.Focus();
+        }
     }
 }

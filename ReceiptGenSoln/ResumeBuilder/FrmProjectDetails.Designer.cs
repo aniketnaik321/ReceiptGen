@@ -67,7 +67,7 @@
             this.txtProjectTitle.Location = new System.Drawing.Point(140, 73);
             this.txtProjectTitle.Name = "txtProjectTitle";
             this.txtProjectTitle.Size = new System.Drawing.Size(261, 22);
-            this.txtProjectTitle.TabIndex = 0;
+            this.txtProjectTitle.TabIndex = 1;
             // 
             // label2
             // 
@@ -84,7 +84,7 @@
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.Size = new System.Drawing.Size(351, 53);
-            this.txtDescription.TabIndex = 0;
+            this.txtDescription.TabIndex = 2;
             // 
             // label3
             // 
@@ -129,7 +129,7 @@
             this.dtpEndDate.Location = new System.Drawing.Point(140, 236);
             this.dtpEndDate.Name = "dtpEndDate";
             this.dtpEndDate.Size = new System.Drawing.Size(141, 22);
-            this.dtpEndDate.TabIndex = 3;
+            this.dtpEndDate.TabIndex = 4;
             // 
             // panel1
             // 
@@ -170,7 +170,7 @@
             this.btnCancel.Location = new System.Drawing.Point(278, 6);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(117, 39);
-            this.btnCancel.TabIndex = 1;
+            this.btnCancel.TabIndex = 6;
             this.btnCancel.Text = "&CANCEL";
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -185,7 +185,7 @@
             this.btnUpdate.Location = new System.Drawing.Point(401, 6);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(117, 39);
-            this.btnUpdate.TabIndex = 2;
+            this.btnUpdate.TabIndex = 5;
             this.btnUpdate.Text = "&SAVE";
             this.btnUpdate.UseVisualStyleBackColor = false;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
@@ -204,6 +204,7 @@
             this.Name = "FrmProjectDetails";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Project Details";
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.FrmProjectDetails_Paint);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
