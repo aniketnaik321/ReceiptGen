@@ -73,6 +73,16 @@ namespace ResumeBuilder.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _1363609747_delete {
+            get {
+                object obj = ResourceManager.GetObject("1363609747_delete", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap add_item {
             get {
                 object obj = ResourceManager.GetObject("add-item", resourceCulture);
@@ -176,6 +186,16 @@ namespace ResumeBuilder.Properties {
         internal static System.Drawing.Bitmap file_plus {
             get {
                 object obj = ResourceManager.GetObject("file plus", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_cancel_30 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-cancel-30", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

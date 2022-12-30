@@ -393,5 +393,11 @@ namespace ResumeBuilder
             frm.SetupEditData();
             frm.ShowDialog();
         }
+
+        private void btnCloseForm_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            this.Dispose();
+        }
     }
 }

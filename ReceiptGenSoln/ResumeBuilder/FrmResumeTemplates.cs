@@ -55,10 +55,22 @@ namespace ResumeBuilder
 
             FrmResumePreview _frm = new FrmResumePreview(((DtoResumeTemplate)sender));           
             _frm.MdiParent = this.ParentForm;
-            _frm.StartPosition = FormStartPosition.CenterScreen;
-            _frm.WindowState = FormWindowState.Maximized;
+            _frm.StartPosition = FormStartPosition.Manual;
+         
+            //_frm.WindowState = FormWindowState.Maximized;
+            _frm.Icon = this.Icon;
+            _frm.Width = this.ParentForm.ClientSize.Width - 97;
+            _frm.Height = this.ParentForm.ClientSize.Height - 30;
+            _frm.Left = 0;
+            _frm.Top = 0;
             _frm.Show();
 
+            this.Close();
+            this.Dispose();
+        }
+
+        private void btnCloseForm_Click(object sender, EventArgs e)
+        {
             this.Close();
             this.Dispose();
         }

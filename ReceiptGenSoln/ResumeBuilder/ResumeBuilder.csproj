@@ -340,6 +340,12 @@
   <ItemGroup>
     <None Include="Resources\file_01 %2851%29.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1363609747_delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-cancel-30.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

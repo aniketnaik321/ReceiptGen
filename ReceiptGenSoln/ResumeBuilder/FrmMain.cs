@@ -44,8 +44,15 @@ namespace ResumeBuilder
             FrmDataEntry _frmDataEntry = new FrmDataEntry();
             if (!refreshChildForms(_frmDataEntry.Name)) { _frmDataEntry = null; return; }
             _frmDataEntry.MdiParent = this;
-            _frmDataEntry.StartPosition = FormStartPosition.CenterScreen;
-            _frmDataEntry.WindowState = FormWindowState.Maximized;
+            _frmDataEntry.Icon=this.Icon;
+            _frmDataEntry.Width = this.ClientSize.Width - 97;
+            _frmDataEntry.Height = this.ClientSize.Height - 30;
+            _frmDataEntry.Left = 0;
+            _frmDataEntry.Top = 0;
+            //_frmDataEntry.SetBounds(0, 0, this.ClientSize.Width-100, this.ClientSize.Height-60);
+            _frmDataEntry.StartPosition = FormStartPosition.Manual; 
+
+           // _frmDataEntry.WindowState = FormWindowState.Maximized;
             _frmDataEntry.Show();
         }
 
@@ -84,13 +91,17 @@ namespace ResumeBuilder
            // MessageBox.Show("This is for test-" + string.Join(" | ",EtyService.GetColumnNames<DtoResumeData>()));            
         }
 
-        private void templatesToolStripMenuItem_Click(object sender, EventArgs e)
+        public void templatesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FrmResumeTemplates _frm = new FrmResumeTemplates();
             if (!refreshChildForms(_frm.Name)) { _frm = null; return; }
             _frm.MdiParent = this;
-            _frm.StartPosition = FormStartPosition.CenterScreen;
-            _frm.WindowState = FormWindowState.Maximized;
+           _frm.Width = this.ClientSize.Width - 97;
+           _frm.Height = this.ClientSize.Height - 30;
+           _frm.Left = 0;
+            _frm.Top = 0;
+            //_frmDataEntry.SetBounds(0, 0, this.ClientSize.Width-100, this.ClientSize.Height-60);
+            _frm.StartPosition = FormStartPosition.Manual;
             _frm.Show();
         }
 
@@ -118,14 +129,19 @@ namespace ResumeBuilder
             btn.ForeColor= Color.AntiqueWhite;
         }
 
-        private void btnCandidates_Click(object sender, EventArgs e)
+        public void btnCandidates_Click(object sender, EventArgs e)
         {
             HighLightButton(sender as ToolStripButton);
             FrmAllCandidates _frm = new FrmAllCandidates();
             if (!refreshChildForms(_frm.Name)) { _frm = null; return; }
             _frm.MdiParent = this;
-            _frm.StartPosition = FormStartPosition.CenterScreen;
-            _frm.WindowState = FormWindowState.Maximized;
+            _frm.Icon= this.Icon;
+            _frm.Width = this.ClientSize.Width - 97;
+            _frm.Height = this.ClientSize.Height - 30;
+            _frm.Left = 0;
+            _frm.Top = 0;
+            //_frmDataEntry.SetBounds(0, 0, this.ClientSize.Width-100, this.ClientSize.Height-60);
+            _frm.StartPosition = FormStartPosition.Manual;
             _frm.Show();
         }
 

@@ -43,7 +43,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnChoose = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
-            this.picCandidatePhoto = new System.Windows.Forms.PictureBox();
             this.txtAddress = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
@@ -61,7 +60,6 @@
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.btnAddEducation = new System.Windows.Forms.Button();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.label13 = new System.Windows.Forms.Label();
             this.dgvExperienceDetails = new System.Windows.Forms.DataGridView();
@@ -71,7 +69,6 @@
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.dataGridViewButtonColumn1 = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.btnAddExperienceDetails = new System.Windows.Forms.Button();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.label14 = new System.Windows.Forms.Label();
             this.dgvSkillData = new System.Windows.Forms.DataGridView();
@@ -79,7 +76,6 @@
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewButtonColumn2 = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.btnAddSkill = new System.Windows.Forms.Button();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.label15 = new System.Windows.Forms.Label();
             this.dgvProjectDetails = new System.Windows.Forms.DataGridView();
@@ -89,7 +85,6 @@
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewButtonColumn3 = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.btnProjectDetails = new System.Windows.Forms.Button();
             this.tabPage8 = new System.Windows.Forms.TabPage();
             this.txtResumeTitle = new System.Windows.Forms.TextBox();
             this.txtResumeSummary = new System.Windows.Forms.TextBox();
@@ -106,10 +101,15 @@
             this.btnUpdate = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.openFileDialogPicture = new System.Windows.Forms.OpenFileDialog();
+            this.btnCloseForm = new System.Windows.Forms.Button();
+            this.picCandidatePhoto = new System.Windows.Forms.PictureBox();
+            this.btnAddEducation = new System.Windows.Forms.Button();
+            this.btnAddExperienceDetails = new System.Windows.Forms.Button();
+            this.btnAddSkill = new System.Windows.Forms.Button();
+            this.btnProjectDetails = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picCandidatePhoto)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEducationalData)).BeginInit();
             this.tabPage3.SuspendLayout();
@@ -120,6 +120,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvProjectDetails)).BeginInit();
             this.tabPage8.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picCandidatePhoto)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -187,15 +188,6 @@
             this.label7.Size = new System.Drawing.Size(65, 28);
             this.label7.TabIndex = 5;
             this.label7.Text = "Photo";
-            // 
-            // picCandidatePhoto
-            // 
-            this.picCandidatePhoto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picCandidatePhoto.Location = new System.Drawing.Point(939, 122);
-            this.picCandidatePhoto.Name = "picCandidatePhoto";
-            this.picCandidatePhoto.Size = new System.Drawing.Size(233, 230);
-            this.picCandidatePhoto.TabIndex = 4;
-            this.picCandidatePhoto.TabStop = false;
             // 
             // txtAddress
             // 
@@ -364,23 +356,6 @@
             this.Column1.UseColumnTextForButtonValue = true;
             this.Column1.Width = 50;
             // 
-            // btnAddEducation
-            // 
-            this.btnAddEducation.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAddEducation.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnAddEducation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddEducation.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddEducation.ForeColor = System.Drawing.Color.White;
-            this.btnAddEducation.Image = global::ResumeBuilder.Properties.Resources.add_item5;
-            this.btnAddEducation.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAddEducation.Location = new System.Drawing.Point(1190, 31);
-            this.btnAddEducation.Name = "btnAddEducation";
-            this.btnAddEducation.Size = new System.Drawing.Size(166, 33);
-            this.btnAddEducation.TabIndex = 1;
-            this.btnAddEducation.Text = "&ADD";
-            this.btnAddEducation.UseVisualStyleBackColor = false;
-            this.btnAddEducation.Click += new System.EventHandler(this.btnAddEducation_Click);
-            // 
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.label13);
@@ -481,23 +456,6 @@
             this.dataGridViewButtonColumn1.UseColumnTextForButtonValue = true;
             this.dataGridViewButtonColumn1.Width = 50;
             // 
-            // btnAddExperienceDetails
-            // 
-            this.btnAddExperienceDetails.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAddExperienceDetails.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnAddExperienceDetails.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddExperienceDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddExperienceDetails.ForeColor = System.Drawing.Color.White;
-            this.btnAddExperienceDetails.Image = global::ResumeBuilder.Properties.Resources.add_item5;
-            this.btnAddExperienceDetails.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAddExperienceDetails.Location = new System.Drawing.Point(1190, 21);
-            this.btnAddExperienceDetails.Name = "btnAddExperienceDetails";
-            this.btnAddExperienceDetails.Size = new System.Drawing.Size(166, 35);
-            this.btnAddExperienceDetails.TabIndex = 2;
-            this.btnAddExperienceDetails.Text = "&ADD";
-            this.btnAddExperienceDetails.UseVisualStyleBackColor = false;
-            this.btnAddExperienceDetails.Click += new System.EventHandler(this.btnAddExperienceDetails_Click);
-            // 
             // tabPage4
             // 
             this.tabPage4.Controls.Add(this.label14);
@@ -589,23 +547,6 @@
             this.dataGridViewButtonColumn2.Text = "X";
             this.dataGridViewButtonColumn2.UseColumnTextForButtonValue = true;
             this.dataGridViewButtonColumn2.Width = 50;
-            // 
-            // btnAddSkill
-            // 
-            this.btnAddSkill.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAddSkill.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnAddSkill.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddSkill.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddSkill.ForeColor = System.Drawing.Color.White;
-            this.btnAddSkill.Image = global::ResumeBuilder.Properties.Resources.add_item5;
-            this.btnAddSkill.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAddSkill.Location = new System.Drawing.Point(1189, 23);
-            this.btnAddSkill.Name = "btnAddSkill";
-            this.btnAddSkill.Size = new System.Drawing.Size(166, 35);
-            this.btnAddSkill.TabIndex = 2;
-            this.btnAddSkill.Text = "&ADD";
-            this.btnAddSkill.UseVisualStyleBackColor = false;
-            this.btnAddSkill.Click += new System.EventHandler(this.btnAddSkill_Click);
             // 
             // tabPage5
             // 
@@ -708,23 +649,6 @@
             this.dataGridViewButtonColumn3.Text = "X";
             this.dataGridViewButtonColumn3.UseColumnTextForButtonValue = true;
             this.dataGridViewButtonColumn3.Width = 50;
-            // 
-            // btnProjectDetails
-            // 
-            this.btnProjectDetails.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnProjectDetails.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnProjectDetails.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProjectDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProjectDetails.ForeColor = System.Drawing.Color.White;
-            this.btnProjectDetails.Image = global::ResumeBuilder.Properties.Resources.add_item5;
-            this.btnProjectDetails.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnProjectDetails.Location = new System.Drawing.Point(1190, 15);
-            this.btnProjectDetails.Name = "btnProjectDetails";
-            this.btnProjectDetails.Size = new System.Drawing.Size(166, 40);
-            this.btnProjectDetails.TabIndex = 3;
-            this.btnProjectDetails.Text = "&ADD";
-            this.btnProjectDetails.UseVisualStyleBackColor = false;
-            this.btnProjectDetails.Click += new System.EventHandler(this.btnProjectDetails_Click);
             // 
             // tabPage8
             // 
@@ -848,7 +772,7 @@
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.White;
-            this.btnCancel.Location = new System.Drawing.Point(922, 78);
+            this.btnCancel.Location = new System.Drawing.Point(944, 78);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(205, 44);
             this.btnCancel.TabIndex = 0;
@@ -863,7 +787,7 @@
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.ForeColor = System.Drawing.Color.White;
-            this.btnUpdate.Location = new System.Drawing.Point(1133, 78);
+            this.btnUpdate.Location = new System.Drawing.Point(1155, 78);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(205, 44);
             this.btnUpdate.TabIndex = 0;
@@ -889,24 +813,117 @@
             this.openFileDialogPicture.FileName = "openFileDialog1";
             this.openFileDialogPicture.Filter = "\"JPEG Files|*.jpg|PNG Files|*.png";
             // 
+            // btnCloseForm
+            // 
+            this.btnCloseForm.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCloseForm.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnCloseForm.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCloseForm.FlatAppearance.BorderSize = 0;
+            this.btnCloseForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCloseForm.Image = global::ResumeBuilder.Properties.Resources.icons8_cancel_30;
+            this.btnCloseForm.Location = new System.Drawing.Point(1320, 0);
+            this.btnCloseForm.Name = "btnCloseForm";
+            this.btnCloseForm.Size = new System.Drawing.Size(50, 35);
+            this.btnCloseForm.TabIndex = 70;
+            this.btnCloseForm.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCloseForm.UseVisualStyleBackColor = false;
+            this.btnCloseForm.Click += new System.EventHandler(this.btnCloseForm_Click);
+            // 
+            // picCandidatePhoto
+            // 
+            this.picCandidatePhoto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picCandidatePhoto.Location = new System.Drawing.Point(939, 122);
+            this.picCandidatePhoto.Name = "picCandidatePhoto";
+            this.picCandidatePhoto.Size = new System.Drawing.Size(233, 230);
+            this.picCandidatePhoto.TabIndex = 4;
+            this.picCandidatePhoto.TabStop = false;
+            // 
+            // btnAddEducation
+            // 
+            this.btnAddEducation.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAddEducation.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnAddEducation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddEducation.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddEducation.ForeColor = System.Drawing.Color.White;
+            this.btnAddEducation.Image = global::ResumeBuilder.Properties.Resources.add_item5;
+            this.btnAddEducation.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAddEducation.Location = new System.Drawing.Point(1190, 31);
+            this.btnAddEducation.Name = "btnAddEducation";
+            this.btnAddEducation.Size = new System.Drawing.Size(166, 33);
+            this.btnAddEducation.TabIndex = 1;
+            this.btnAddEducation.Text = "&ADD";
+            this.btnAddEducation.UseVisualStyleBackColor = false;
+            this.btnAddEducation.Click += new System.EventHandler(this.btnAddEducation_Click);
+            // 
+            // btnAddExperienceDetails
+            // 
+            this.btnAddExperienceDetails.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAddExperienceDetails.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnAddExperienceDetails.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddExperienceDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddExperienceDetails.ForeColor = System.Drawing.Color.White;
+            this.btnAddExperienceDetails.Image = global::ResumeBuilder.Properties.Resources.add_item5;
+            this.btnAddExperienceDetails.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAddExperienceDetails.Location = new System.Drawing.Point(1190, 21);
+            this.btnAddExperienceDetails.Name = "btnAddExperienceDetails";
+            this.btnAddExperienceDetails.Size = new System.Drawing.Size(166, 35);
+            this.btnAddExperienceDetails.TabIndex = 2;
+            this.btnAddExperienceDetails.Text = "&ADD";
+            this.btnAddExperienceDetails.UseVisualStyleBackColor = false;
+            this.btnAddExperienceDetails.Click += new System.EventHandler(this.btnAddExperienceDetails_Click);
+            // 
+            // btnAddSkill
+            // 
+            this.btnAddSkill.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAddSkill.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnAddSkill.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddSkill.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddSkill.ForeColor = System.Drawing.Color.White;
+            this.btnAddSkill.Image = global::ResumeBuilder.Properties.Resources.add_item5;
+            this.btnAddSkill.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAddSkill.Location = new System.Drawing.Point(1189, 23);
+            this.btnAddSkill.Name = "btnAddSkill";
+            this.btnAddSkill.Size = new System.Drawing.Size(166, 35);
+            this.btnAddSkill.TabIndex = 2;
+            this.btnAddSkill.Text = "&ADD";
+            this.btnAddSkill.UseVisualStyleBackColor = false;
+            this.btnAddSkill.Click += new System.EventHandler(this.btnAddSkill_Click);
+            // 
+            // btnProjectDetails
+            // 
+            this.btnProjectDetails.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnProjectDetails.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnProjectDetails.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProjectDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProjectDetails.ForeColor = System.Drawing.Color.White;
+            this.btnProjectDetails.Image = global::ResumeBuilder.Properties.Resources.add_item5;
+            this.btnProjectDetails.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnProjectDetails.Location = new System.Drawing.Point(1190, 15);
+            this.btnProjectDetails.Name = "btnProjectDetails";
+            this.btnProjectDetails.Size = new System.Drawing.Size(166, 40);
+            this.btnProjectDetails.TabIndex = 3;
+            this.btnProjectDetails.Text = "&ADD";
+            this.btnProjectDetails.UseVisualStyleBackColor = false;
+            this.btnProjectDetails.Click += new System.EventHandler(this.btnProjectDetails_Click);
+            // 
             // FrmDataEntry
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1372, 962);
+            this.Controls.Add(this.btnCloseForm);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.label9);
             this.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmDataEntry";
             this.Text = "Details for Resume";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmDataEntry_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picCandidatePhoto)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEducationalData)).EndInit();
@@ -922,6 +939,7 @@
             this.tabPage8.ResumeLayout(false);
             this.tabPage8.PerformLayout();
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picCandidatePhoto)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -996,5 +1014,6 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Button btnCloseForm;
     }
 }

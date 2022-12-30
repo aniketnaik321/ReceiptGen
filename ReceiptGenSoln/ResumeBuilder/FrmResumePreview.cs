@@ -69,16 +69,32 @@ namespace ResumeBuilder
 
         private void FrmResumePreview_FormClosed(object sender, FormClosedEventArgs e)
         {
-            FrmResumeTemplates _frm = new FrmResumeTemplates();
-           // if (!refreshChildForms(_frmDataEntry.Name)) { _frmDataEntry = null; return; }
-           _frm.MdiParent = this.MdiParent;
-           _frm.StartPosition = FormStartPosition.CenterScreen;
-           _frm.WindowState = FormWindowState.Maximized;
-            _frm.Show();
-            //  this.Close();
-            try
-            { this.Dispose(); } catch (Exception) { }
+            
 
          }
+
+        private void btnCloseForm_Click(object sender, EventArgs e)
+        {
+            FrmResumeTemplates _frm = new FrmResumeTemplates();
+            // if (!refreshChildForms(_frmDataEntry.Name)) { _frmDataEntry = null; return; }
+            _frm.MdiParent = this.ParentForm;
+            _frm.Icon = this.Icon;
+            _frm.Width = this.ParentForm.ClientSize.Width - 97;
+            _frm.Height = this.ParentForm.ClientSize.Height - 30;
+            _frm.Left = 0;
+            _frm.Top = 0;
+            _frm.WindowState = FormWindowState.Normal;
+            //_frmDataEntry.SetBounds(0, 0, this.ClientSize.Width-100, this.ClientSize.Height-60);
+            _frm.StartPosition = FormStartPosition.Manual;
+            _frm.Show();
+
+
+            this.Close();
+            try
+            { this.Dispose(); }
+            catch (Exception) { }
+
+        
+        }
     }
 }
