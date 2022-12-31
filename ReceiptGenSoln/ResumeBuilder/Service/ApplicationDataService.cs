@@ -17,7 +17,7 @@ namespace ResumeBuilder.Service
             string fileName = "ResumeBuilderDB.db";
             string sourcePath = Path.Combine(sourceFolder, fileName);
             string appDataPath = Application.UserAppDataPath;
-            string destinationFolder = Path.Combine(appDataPath, "MySubfolder");
+            string destinationFolder = Path.Combine(appDataPath, "DBase");
             string destinationPath = Path.Combine(destinationFolder, fileName);
 
             if (!File.Exists(destinationPath))

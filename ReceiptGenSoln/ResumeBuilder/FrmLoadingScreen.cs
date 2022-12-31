@@ -48,10 +48,6 @@ namespace ResumeBuilder
             }
             this.BackgroundImage = bmp;
 
-
-           
-
-
         }
     }
 }

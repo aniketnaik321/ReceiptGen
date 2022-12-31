@@ -9,6 +9,7 @@ using System.Data.SqlClient;
 using System.Data.SQLite;
 using Dapper;
 using ResumeBuilder.Service;
+using System.Windows.Forms;
 
 namespace ResumeBuilder.Infrastructure
 {
@@ -16,7 +17,7 @@ namespace ResumeBuilder.Infrastructure
     {
         public string DbFile
         {
-            get { return Environment.CurrentDirectory + "\\ResumeBuilderDB.db"; }
+            get { return Application.UserAppDataPath + "\\DBase\\ResumeBuilderDB.db"; }
         }
 
         public SQLiteConnection SimpleDbConnection()
@@ -143,7 +144,6 @@ namespace ResumeBuilder.Infrastructure
                 conn.Open();
                 try
                 {
-
                     foreach (var col in EtyService.GetColumnNames<TEty>()) {
                         sqlQuery.Append(col + "=@" + col + ",");
                     }
@@ -151,7 +151,6 @@ namespace ResumeBuilder.Infrastructure
                     sqlQuery.Append(" WHERE id=" + id.ToString());
                     Console.WriteLine(sqlQuery.ToString());
                     _result = conn.ExecuteScalar<int>(sqlQuery.ToString(), inp);
-
                 }
                 catch (Exception ex)
                 {
@@ -168,8 +167,7 @@ namespace ResumeBuilder.Infrastructure
 
         public bool UpdateEntity(TEty inp, object id)
         {
-            bool result = true;
-          
+            bool result = true;          
             return result;
         }
     }

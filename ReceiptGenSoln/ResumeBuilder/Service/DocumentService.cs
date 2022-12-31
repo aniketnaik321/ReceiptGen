@@ -119,6 +119,7 @@ namespace ResumeBuilder.Service
 
                     case "EduPara":
                     case "PrjPara":
+                    case "ExpPara":
                         List<Paragraph> originalEduParagraph = new List<Paragraph>();                       
                         int indexToInsert=0;
                         dynamic dataToProcess=new List<string>();
@@ -205,27 +206,27 @@ namespace ResumeBuilder.Service
                         }
                         break;
 
-                    case "ExperienceList":
-                        TextSelection expTextSelection = document.FindString(substituted.Placeholder, true, true);
+                    //case "ExperienceList":
+                    //    TextSelection expTextSelection = document.FindString(substituted.Placeholder, true, true);
 
-                        if (expTextSelection != null)
-                        {
-                            TextRange text = expTextSelection.GetAsOneRange();
-                            Paragraph p = text.OwnerParagraph;
-                            text.Text = string.Empty;
+                    //    if (expTextSelection != null)
+                    //    {
+                    //        TextRange text = expTextSelection.GetAsOneRange();
+                    //        Paragraph p = text.OwnerParagraph;
+                    //        text.Text = string.Empty;
                            
-                            p.AppendHTML("<p style='margin-top:10px;font-size:" +
-                                   template.TextFontSize + "pt;color:gray'>Total of 7 years of work experience with details listed as below.</p>");
-                            p.AppendBreak(BreakType.LineBreak);
+                    //        p.AppendHTML("<p style='margin-top:10px;font-size:" +
+                    //               template.TextFontSize + "pt;color:gray'>Total of 7 years of work experience with details listed as below.</p>");
+                    //        p.AppendBreak(BreakType.LineBreak);
 
-                            foreach (var tmpExp in data.CompanyExperience)
-                            {
-                                text.Text += "Worked at "+tmpExp.CompanyName+" for "+tmpExp.Experience+" as "+tmpExp.Designation+" from "+tmpExp.FromDate+" to "+tmpExp.ToDate.ToString()+".\n";
+                    //        foreach (var tmpExp in data.CompanyExperience)
+                    //        {
+                    //            text.Text += "Worked at "+tmpExp.CompanyName+" for "+tmpExp.Experience+" as "+tmpExp.Designation+" from "+tmpExp.FromDate+" to "+tmpExp.ToDate.ToString()+".\n";
                                
-                            }
-                             p.ListFormat.ContinueListNumbering();
-                        }
-                        break;
+                    //        }
+                    //         p.ListFormat.ContinueListNumbering();
+                    //    }
+                    //    break;
 
                     case "Default":
                         document.ReplaceInLine(substituted.Placeholder,
