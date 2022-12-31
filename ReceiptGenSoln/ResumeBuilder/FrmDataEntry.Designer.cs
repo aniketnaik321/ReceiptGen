@@ -28,21 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnChoose = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
+            this.picCandidatePhoto = new System.Windows.Forms.PictureBox();
             this.txtAddress = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
@@ -60,6 +61,7 @@
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.btnAddEducation = new System.Windows.Forms.Button();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.label13 = new System.Windows.Forms.Label();
             this.dgvExperienceDetails = new System.Windows.Forms.DataGridView();
@@ -69,6 +71,7 @@
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.dataGridViewButtonColumn1 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.btnAddExperienceDetails = new System.Windows.Forms.Button();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.label14 = new System.Windows.Forms.Label();
             this.dgvSkillData = new System.Windows.Forms.DataGridView();
@@ -76,6 +79,7 @@
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewButtonColumn2 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.btnAddSkill = new System.Windows.Forms.Button();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.label15 = new System.Windows.Forms.Label();
             this.dgvProjectDetails = new System.Windows.Forms.DataGridView();
@@ -85,6 +89,7 @@
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewButtonColumn3 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.btnProjectDetails = new System.Windows.Forms.Button();
             this.tabPage8 = new System.Windows.Forms.TabPage();
             this.txtResumeTitle = new System.Windows.Forms.TextBox();
             this.txtResumeSummary = new System.Windows.Forms.TextBox();
@@ -102,14 +107,10 @@
             this.label9 = new System.Windows.Forms.Label();
             this.openFileDialogPicture = new System.Windows.Forms.OpenFileDialog();
             this.btnCloseForm = new System.Windows.Forms.Button();
-            this.picCandidatePhoto = new System.Windows.Forms.PictureBox();
-            this.btnAddEducation = new System.Windows.Forms.Button();
-            this.btnAddExperienceDetails = new System.Windows.Forms.Button();
-            this.btnAddSkill = new System.Windows.Forms.Button();
-            this.btnProjectDetails = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picCandidatePhoto)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEducationalData)).BeginInit();
             this.tabPage3.SuspendLayout();
@@ -120,7 +121,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvProjectDetails)).BeginInit();
             this.tabPage8.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picCandidatePhoto)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -188,6 +188,15 @@
             this.label7.Size = new System.Drawing.Size(65, 28);
             this.label7.TabIndex = 5;
             this.label7.Text = "Photo";
+            // 
+            // picCandidatePhoto
+            // 
+            this.picCandidatePhoto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picCandidatePhoto.Location = new System.Drawing.Point(939, 122);
+            this.picCandidatePhoto.Name = "picCandidatePhoto";
+            this.picCandidatePhoto.Size = new System.Drawing.Size(233, 230);
+            this.picCandidatePhoto.TabIndex = 4;
+            this.picCandidatePhoto.TabStop = false;
             // 
             // txtAddress
             // 
@@ -298,6 +307,7 @@
             this.dgvEducationalData.GridColor = System.Drawing.SystemColors.Highlight;
             this.dgvEducationalData.Location = new System.Drawing.Point(9, 70);
             this.dgvEducationalData.Name = "dgvEducationalData";
+            this.dgvEducationalData.ReadOnly = true;
             this.dgvEducationalData.RowHeadersWidth = 51;
             this.dgvEducationalData.RowTemplate.Height = 24;
             this.dgvEducationalData.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -309,52 +319,75 @@
             this.Column6.HeaderText = "Specification";
             this.Column6.MinimumWidth = 6;
             this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
             // 
             // Column2
             // 
             this.Column2.HeaderText = "College/University";
             this.Column2.MinimumWidth = 6;
             this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
             // 
             // Column3
             // 
-            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(1);
-            this.Column3.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle26.Padding = new System.Windows.Forms.Padding(1);
+            this.Column3.DefaultCellStyle = dataGridViewCellStyle26;
             this.Column3.HeaderText = "Start Date";
             this.Column3.MinimumWidth = 6;
             this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
             // 
             // Column4
             // 
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(1);
-            this.Column4.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle27.Padding = new System.Windows.Forms.Padding(1);
+            this.Column4.DefaultCellStyle = dataGridViewCellStyle27;
             this.Column4.HeaderText = "End Date";
             this.Column4.MinimumWidth = 6;
             this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
             // 
             // Column5
             // 
             this.Column5.HeaderText = "Percentage";
             this.Column5.MinimumWidth = 6;
             this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
             // 
             // Column1
             // 
             this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Red;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Silver;
-            this.Column1.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle28.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle28.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle28.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle28.SelectionBackColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle28.SelectionForeColor = System.Drawing.Color.Silver;
+            this.Column1.DefaultCellStyle = dataGridViewCellStyle28;
             this.Column1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Column1.HeaderText = "";
             this.Column1.MinimumWidth = 6;
             this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
             this.Column1.Text = "X";
             this.Column1.UseColumnTextForButtonValue = true;
             this.Column1.Width = 50;
+            // 
+            // btnAddEducation
+            // 
+            this.btnAddEducation.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAddEducation.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnAddEducation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddEducation.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddEducation.ForeColor = System.Drawing.Color.White;
+            this.btnAddEducation.Image = global::ResumeBuilder.Properties.Resources.add_item5;
+            this.btnAddEducation.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAddEducation.Location = new System.Drawing.Point(1190, 31);
+            this.btnAddEducation.Name = "btnAddEducation";
+            this.btnAddEducation.Size = new System.Drawing.Size(166, 33);
+            this.btnAddEducation.TabIndex = 1;
+            this.btnAddEducation.Text = "&ADD";
+            this.btnAddEducation.UseVisualStyleBackColor = false;
+            this.btnAddEducation.Click += new System.EventHandler(this.btnAddEducation_Click);
             // 
             // tabPage3
             // 
@@ -399,6 +432,7 @@
             this.dgvExperienceDetails.GridColor = System.Drawing.SystemColors.Highlight;
             this.dgvExperienceDetails.Location = new System.Drawing.Point(8, 62);
             this.dgvExperienceDetails.Name = "dgvExperienceDetails";
+            this.dgvExperienceDetails.ReadOnly = true;
             this.dgvExperienceDetails.RowHeadersWidth = 51;
             this.dgvExperienceDetails.RowTemplate.Height = 24;
             this.dgvExperienceDetails.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -421,11 +455,12 @@
             // 
             // dataGridViewTextBoxColumn3
             // 
-            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(1);
-            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle29.Padding = new System.Windows.Forms.Padding(1);
+            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle29;
             this.dataGridViewTextBoxColumn3.HeaderText = "End Date";
             this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn5
             // 
@@ -444,17 +479,35 @@
             // dataGridViewButtonColumn1
             // 
             this.dataGridViewButtonColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.dataGridViewButtonColumn1.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle30.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle30.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle30.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.dataGridViewButtonColumn1.DefaultCellStyle = dataGridViewCellStyle30;
             this.dataGridViewButtonColumn1.HeaderText = "";
             this.dataGridViewButtonColumn1.MinimumWidth = 6;
             this.dataGridViewButtonColumn1.Name = "dataGridViewButtonColumn1";
+            this.dataGridViewButtonColumn1.ReadOnly = true;
             this.dataGridViewButtonColumn1.Text = "X";
             this.dataGridViewButtonColumn1.UseColumnTextForButtonValue = true;
             this.dataGridViewButtonColumn1.Width = 50;
+            // 
+            // btnAddExperienceDetails
+            // 
+            this.btnAddExperienceDetails.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAddExperienceDetails.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnAddExperienceDetails.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddExperienceDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddExperienceDetails.ForeColor = System.Drawing.Color.White;
+            this.btnAddExperienceDetails.Image = global::ResumeBuilder.Properties.Resources.add_item5;
+            this.btnAddExperienceDetails.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAddExperienceDetails.Location = new System.Drawing.Point(1190, 21);
+            this.btnAddExperienceDetails.Name = "btnAddExperienceDetails";
+            this.btnAddExperienceDetails.Size = new System.Drawing.Size(166, 35);
+            this.btnAddExperienceDetails.TabIndex = 2;
+            this.btnAddExperienceDetails.Text = "&ADD";
+            this.btnAddExperienceDetails.UseVisualStyleBackColor = false;
+            this.btnAddExperienceDetails.Click += new System.EventHandler(this.btnAddExperienceDetails_Click);
             // 
             // tabPage4
             // 
@@ -497,6 +550,7 @@
             this.dgvSkillData.GridColor = System.Drawing.SystemColors.Highlight;
             this.dgvSkillData.Location = new System.Drawing.Point(8, 64);
             this.dgvSkillData.Name = "dgvSkillData";
+            this.dgvSkillData.ReadOnly = true;
             this.dgvSkillData.RowHeadersWidth = 51;
             this.dgvSkillData.RowTemplate.Height = 24;
             this.dgvSkillData.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -527,26 +581,45 @@
             // 
             // dataGridViewTextBoxColumn7
             // 
-            dataGridViewCellStyle6.Padding = new System.Windows.Forms.Padding(1);
-            this.dataGridViewTextBoxColumn7.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle21.Padding = new System.Windows.Forms.Padding(1);
+            this.dataGridViewTextBoxColumn7.DefaultCellStyle = dataGridViewCellStyle21;
             this.dataGridViewTextBoxColumn7.HeaderText = "Skill Experience";
             this.dataGridViewTextBoxColumn7.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
             // 
             // dataGridViewButtonColumn2
             // 
             this.dataGridViewButtonColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.dataGridViewButtonColumn2.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle22.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle22.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.dataGridViewButtonColumn2.DefaultCellStyle = dataGridViewCellStyle22;
             this.dataGridViewButtonColumn2.HeaderText = "";
             this.dataGridViewButtonColumn2.MinimumWidth = 6;
             this.dataGridViewButtonColumn2.Name = "dataGridViewButtonColumn2";
+            this.dataGridViewButtonColumn2.ReadOnly = true;
             this.dataGridViewButtonColumn2.Text = "X";
             this.dataGridViewButtonColumn2.UseColumnTextForButtonValue = true;
             this.dataGridViewButtonColumn2.Width = 50;
+            // 
+            // btnAddSkill
+            // 
+            this.btnAddSkill.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAddSkill.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnAddSkill.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddSkill.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddSkill.ForeColor = System.Drawing.Color.White;
+            this.btnAddSkill.Image = global::ResumeBuilder.Properties.Resources.add_item5;
+            this.btnAddSkill.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAddSkill.Location = new System.Drawing.Point(1189, 23);
+            this.btnAddSkill.Name = "btnAddSkill";
+            this.btnAddSkill.Size = new System.Drawing.Size(166, 35);
+            this.btnAddSkill.TabIndex = 2;
+            this.btnAddSkill.Text = "&ADD";
+            this.btnAddSkill.UseVisualStyleBackColor = false;
+            this.btnAddSkill.Click += new System.EventHandler(this.btnAddSkill_Click);
             // 
             // tabPage5
             // 
@@ -591,6 +664,7 @@
             this.dgvProjectDetails.GridColor = System.Drawing.SystemColors.Highlight;
             this.dgvProjectDetails.Location = new System.Drawing.Point(8, 58);
             this.dgvProjectDetails.Name = "dgvProjectDetails";
+            this.dgvProjectDetails.ReadOnly = true;
             this.dgvProjectDetails.RowHeadersWidth = 51;
             this.dgvProjectDetails.RowTemplate.Height = 24;
             this.dgvProjectDetails.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -618,37 +692,57 @@
             // 
             // dataGridViewTextBoxColumn10
             // 
-            dataGridViewCellStyle8.Padding = new System.Windows.Forms.Padding(1);
-            this.dataGridViewTextBoxColumn10.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle23.Padding = new System.Windows.Forms.Padding(1);
+            this.dataGridViewTextBoxColumn10.DefaultCellStyle = dataGridViewCellStyle23;
             this.dataGridViewTextBoxColumn10.HeaderText = "Start Date";
             this.dataGridViewTextBoxColumn10.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            this.dataGridViewTextBoxColumn10.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn11
             // 
-            dataGridViewCellStyle9.Padding = new System.Windows.Forms.Padding(1);
-            this.dataGridViewTextBoxColumn11.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle24.Padding = new System.Windows.Forms.Padding(1);
+            this.dataGridViewTextBoxColumn11.DefaultCellStyle = dataGridViewCellStyle24;
             this.dataGridViewTextBoxColumn11.HeaderText = "End Date";
             this.dataGridViewTextBoxColumn11.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            this.dataGridViewTextBoxColumn11.ReadOnly = true;
             // 
             // dataGridViewButtonColumn3
             // 
             this.dataGridViewButtonColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.Red;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.Silver;
-            this.dataGridViewButtonColumn3.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle25.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle25.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle25.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle25.SelectionBackColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle25.SelectionForeColor = System.Drawing.Color.Silver;
+            this.dataGridViewButtonColumn3.DefaultCellStyle = dataGridViewCellStyle25;
             this.dataGridViewButtonColumn3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.dataGridViewButtonColumn3.HeaderText = "";
             this.dataGridViewButtonColumn3.MinimumWidth = 6;
             this.dataGridViewButtonColumn3.Name = "dataGridViewButtonColumn3";
+            this.dataGridViewButtonColumn3.ReadOnly = true;
             this.dataGridViewButtonColumn3.Text = "X";
             this.dataGridViewButtonColumn3.UseColumnTextForButtonValue = true;
             this.dataGridViewButtonColumn3.Width = 50;
+            // 
+            // btnProjectDetails
+            // 
+            this.btnProjectDetails.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnProjectDetails.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnProjectDetails.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProjectDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProjectDetails.ForeColor = System.Drawing.Color.White;
+            this.btnProjectDetails.Image = global::ResumeBuilder.Properties.Resources.add_item5;
+            this.btnProjectDetails.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnProjectDetails.Location = new System.Drawing.Point(1190, 15);
+            this.btnProjectDetails.Name = "btnProjectDetails";
+            this.btnProjectDetails.Size = new System.Drawing.Size(166, 40);
+            this.btnProjectDetails.TabIndex = 3;
+            this.btnProjectDetails.Text = "&ADD";
+            this.btnProjectDetails.UseVisualStyleBackColor = false;
+            this.btnProjectDetails.Click += new System.EventHandler(this.btnProjectDetails_Click);
             // 
             // tabPage8
             // 
@@ -829,83 +923,6 @@
             this.btnCloseForm.UseVisualStyleBackColor = false;
             this.btnCloseForm.Click += new System.EventHandler(this.btnCloseForm_Click);
             // 
-            // picCandidatePhoto
-            // 
-            this.picCandidatePhoto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picCandidatePhoto.Location = new System.Drawing.Point(939, 122);
-            this.picCandidatePhoto.Name = "picCandidatePhoto";
-            this.picCandidatePhoto.Size = new System.Drawing.Size(233, 230);
-            this.picCandidatePhoto.TabIndex = 4;
-            this.picCandidatePhoto.TabStop = false;
-            // 
-            // btnAddEducation
-            // 
-            this.btnAddEducation.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAddEducation.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnAddEducation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddEducation.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddEducation.ForeColor = System.Drawing.Color.White;
-            this.btnAddEducation.Image = global::ResumeBuilder.Properties.Resources.add_item5;
-            this.btnAddEducation.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAddEducation.Location = new System.Drawing.Point(1190, 31);
-            this.btnAddEducation.Name = "btnAddEducation";
-            this.btnAddEducation.Size = new System.Drawing.Size(166, 33);
-            this.btnAddEducation.TabIndex = 1;
-            this.btnAddEducation.Text = "&ADD";
-            this.btnAddEducation.UseVisualStyleBackColor = false;
-            this.btnAddEducation.Click += new System.EventHandler(this.btnAddEducation_Click);
-            // 
-            // btnAddExperienceDetails
-            // 
-            this.btnAddExperienceDetails.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAddExperienceDetails.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnAddExperienceDetails.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddExperienceDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddExperienceDetails.ForeColor = System.Drawing.Color.White;
-            this.btnAddExperienceDetails.Image = global::ResumeBuilder.Properties.Resources.add_item5;
-            this.btnAddExperienceDetails.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAddExperienceDetails.Location = new System.Drawing.Point(1190, 21);
-            this.btnAddExperienceDetails.Name = "btnAddExperienceDetails";
-            this.btnAddExperienceDetails.Size = new System.Drawing.Size(166, 35);
-            this.btnAddExperienceDetails.TabIndex = 2;
-            this.btnAddExperienceDetails.Text = "&ADD";
-            this.btnAddExperienceDetails.UseVisualStyleBackColor = false;
-            this.btnAddExperienceDetails.Click += new System.EventHandler(this.btnAddExperienceDetails_Click);
-            // 
-            // btnAddSkill
-            // 
-            this.btnAddSkill.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAddSkill.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnAddSkill.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddSkill.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddSkill.ForeColor = System.Drawing.Color.White;
-            this.btnAddSkill.Image = global::ResumeBuilder.Properties.Resources.add_item5;
-            this.btnAddSkill.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAddSkill.Location = new System.Drawing.Point(1189, 23);
-            this.btnAddSkill.Name = "btnAddSkill";
-            this.btnAddSkill.Size = new System.Drawing.Size(166, 35);
-            this.btnAddSkill.TabIndex = 2;
-            this.btnAddSkill.Text = "&ADD";
-            this.btnAddSkill.UseVisualStyleBackColor = false;
-            this.btnAddSkill.Click += new System.EventHandler(this.btnAddSkill_Click);
-            // 
-            // btnProjectDetails
-            // 
-            this.btnProjectDetails.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnProjectDetails.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnProjectDetails.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProjectDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProjectDetails.ForeColor = System.Drawing.Color.White;
-            this.btnProjectDetails.Image = global::ResumeBuilder.Properties.Resources.add_item5;
-            this.btnProjectDetails.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnProjectDetails.Location = new System.Drawing.Point(1190, 15);
-            this.btnProjectDetails.Name = "btnProjectDetails";
-            this.btnProjectDetails.Size = new System.Drawing.Size(166, 40);
-            this.btnProjectDetails.TabIndex = 3;
-            this.btnProjectDetails.Text = "&ADD";
-            this.btnProjectDetails.UseVisualStyleBackColor = false;
-            this.btnProjectDetails.Click += new System.EventHandler(this.btnProjectDetails_Click);
-            // 
             // FrmDataEntry
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
@@ -924,6 +941,7 @@
             this.tabPage1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picCandidatePhoto)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEducationalData)).EndInit();
@@ -939,7 +957,6 @@
             this.tabPage8.ResumeLayout(false);
             this.tabPage8.PerformLayout();
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picCandidatePhoto)).EndInit();
             this.ResumeLayout(false);
 
         }

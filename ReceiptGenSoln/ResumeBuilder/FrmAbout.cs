@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Reflection;
 using System.Threading.Tasks;
@@ -101,5 +102,21 @@ namespace ResumeBuilder
             }
         }
         #endregion
+
+        private void FrmAbout_Load(object sender, EventArgs e)
+        {
+            LinearGradientBrush gradientBrush = new LinearGradientBrush(
+                 new Point(0, 0),
+                 new Point(0, this.Height), // Vertical gradient.
+                 Color.FromArgb(15, 59, 95),
+                 Color.FromArgb(0, 0, 128)); // Red to blue gradient.
+
+            Bitmap bmp = new Bitmap(this.Width, this.Height);
+            using (Graphics g = Graphics.FromImage(bmp))
+            {
+                g.FillRectangle(gradientBrush, this.ClientRectangle);
+            }
+            this.BackgroundImage = bmp;
+        }
     }
 }

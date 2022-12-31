@@ -42,6 +42,7 @@
             // 
             // tableLayoutPanel
             // 
+            this.tableLayoutPanel.BackColor = System.Drawing.Color.Transparent;
             this.tableLayoutPanel.ColumnCount = 2;
             this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33F));
             this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 67F));
@@ -131,6 +132,7 @@
             // textBoxDescription
             // 
             this.textBoxDescription.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBoxDescription.ForeColor = System.Drawing.Color.White;
             this.textBoxDescription.Location = new System.Drawing.Point(282, 120);
             this.textBoxDescription.Margin = new System.Windows.Forms.Padding(8, 4, 4, 4);
             this.textBoxDescription.Multiline = true;
@@ -146,6 +148,7 @@
             // 
             this.okButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.okButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.okButton.ForeColor = System.Drawing.Color.Black;
             this.okButton.Location = new System.Drawing.Point(664, 268);
             this.okButton.Margin = new System.Windows.Forms.Padding(4);
             this.okButton.Name = "okButton";
@@ -160,6 +163,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(857, 319);
             this.Controls.Add(this.tableLayoutPanel);
+            this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
@@ -169,7 +173,8 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "FrmAbout";
+            this.Text = "About";
+            this.Load += new System.EventHandler(this.FrmAbout_Load);
             this.tableLayoutPanel.ResumeLayout(false);
             this.tableLayoutPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).EndInit();

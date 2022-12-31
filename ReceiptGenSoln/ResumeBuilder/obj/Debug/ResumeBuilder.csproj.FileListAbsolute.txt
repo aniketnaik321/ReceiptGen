@@ -64,3 +64,4 @@ D:\Projects\ReceiptGen\ReceiptGenSoln\ResumeBuilder\bin\Debug\Newtonsoft.Json.dl
 D:\Projects\ReceiptGen\ReceiptGenSoln\ResumeBuilder\bin\Debug\Newtonsoft.Json.xml
 D:\Projects\ReceiptGen\ReceiptGenSoln\ResumeBuilder\bin\Debug\ResumeTemplates\template_purple.docx
 D:\Projects\ReceiptGen\ReceiptGenSoln\ResumeBuilder\obj\Debug\ResumeBuilder.FrmAllCandidates.resources
+D:\Projects\ReceiptGen\ReceiptGenSoln\ResumeBuilder\obj\Debug\ResumeBuilder.FrmLoadingScreen.resources

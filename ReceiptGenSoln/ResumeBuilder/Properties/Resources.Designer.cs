@@ -193,6 +193,26 @@ namespace ResumeBuilder.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap gfxTech_logo {
+            get {
+                object obj = ResourceManager.GetObject("gfxTech_logo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap globe {
+            get {
+                object obj = ResourceManager.GetObject("globe", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_cancel_30 {
             get {
                 object obj = ResourceManager.GetObject("icons8-cancel-30", resourceCulture);
@@ -203,9 +223,29 @@ namespace ResumeBuilder.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap leaves {
+            get {
+                object obj = ResourceManager.GetObject("leaves", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap male_user {
             get {
                 object obj = ResourceManager.GetObject("male-user", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap resume_builder_splash {
+            get {
+                object obj = ResourceManager.GetObject("resume_builder_splash", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -220,7 +220,7 @@
             // 
             this.toolStripButton5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.toolStripButton5.ForeColor = System.Drawing.Color.White;
-            this.toolStripButton5.Image = global::ResumeBuilder.Properties.Resources.male_user;
+            this.toolStripButton5.Image = global::ResumeBuilder.Properties.Resources.globe;
             this.toolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton5.Name = "toolStripButton5";
             this.toolStripButton5.Padding = new System.Windows.Forms.Padding(10);

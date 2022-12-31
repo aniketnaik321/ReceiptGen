@@ -87,9 +87,10 @@ namespace ResumeBuilder.Service
                         {
                             TextRange text = photoPlaceholder.GetAsOneRange();
                             Paragraph p = text.OwnerParagraph;
+                          p.Format.TextAlignment = TextAlignment.Center;
                             text.Text = string.Empty;
-                           
-                         DocPicture pic=  p.AppendPicture(System.Convert.FromBase64String(data.resumeData.CandidatePhoto));
+
+                            DocPicture pic=  p.AppendPicture(System.Convert.FromBase64String(data.resumeData.CandidatePhoto));
                             pic.Height=100f;
                             pic.Width = 75f;
                         }
@@ -120,9 +121,24 @@ namespace ResumeBuilder.Service
                     case "PrjPara":
                         List<Paragraph> originalEduParagraph = new List<Paragraph>();                       
                         int indexToInsert=0;
-                        dynamic dataToProcess;
-                        if (substituted.Type.Equals("PrjPara")) dataToProcess = data.ProjectDetails;
-                        else dataToProcess = data.EducationData;
+                        dynamic dataToProcess=new List<string>();
+
+                        switch (substituted.Type) {
+                            case "PrjPara":
+                                dataToProcess = data.ProjectDetails;
+                                break;
+                            case "EduPara":
+                                dataToProcess = data.EducationData;
+                                break;
+                            case "ExpPara":
+                                dataToProcess = data.CompanyExperience;
+                                break;
+                            case "CertPara":
+
+                                break;
+                               
+
+                        }
                         TextBox textBoxToInsert=null;
                         TextSelection[] EduTexts = document.FindAllString(substituted.Placeholder, true, true);
                
@@ -180,7 +196,6 @@ namespace ResumeBuilder.Service
                                     {
                                         textBoxToInsert.Body.Paragraphs.Remove(item);
                                     }
-
                                 }
                             }
                         }
