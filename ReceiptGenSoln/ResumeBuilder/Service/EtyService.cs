@@ -49,7 +49,14 @@ namespace ResumeBuilder.Service
 
         public static string GetPropValue(object src, string propName)
         {
-            return Convert.ToString(src.GetType().GetProperty(propName).GetValue(src, null));
+
+            if (src.GetType().GetProperty(propName).PropertyType.ToString() == "System.DateTime") {
+                return UtilityService.DataFormatInMonthAndYear(Convert.ToString(src.GetType().
+                    GetProperty(propName).GetValue(src, null)));
+            }
+            else {
+                return Convert.ToString(src.GetType().GetProperty(propName).GetValue(src, null));
+            }
         }
     }
 }

@@ -42,13 +42,15 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
+            this.txtRoleInProject = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtClient
             // 
-            this.txtClient.Location = new System.Drawing.Point(140, 28);
+            this.txtClient.Location = new System.Drawing.Point(148, 28);
             this.txtClient.Name = "txtClient";
             this.txtClient.Size = new System.Drawing.Size(261, 22);
             this.txtClient.TabIndex = 0;
@@ -64,7 +66,7 @@
             // 
             // txtProjectTitle
             // 
-            this.txtProjectTitle.Location = new System.Drawing.Point(140, 73);
+            this.txtProjectTitle.Location = new System.Drawing.Point(148, 69);
             this.txtProjectTitle.Name = "txtProjectTitle";
             this.txtProjectTitle.Size = new System.Drawing.Size(261, 22);
             this.txtProjectTitle.TabIndex = 1;
@@ -72,7 +74,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(42, 75);
+            this.label2.Location = new System.Drawing.Point(42, 71);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(78, 16);
             this.label2.TabIndex = 1;
@@ -80,7 +82,7 @@
             // 
             // txtDescription
             // 
-            this.txtDescription.Location = new System.Drawing.Point(140, 123);
+            this.txtDescription.Location = new System.Drawing.Point(148, 112);
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.Size = new System.Drawing.Size(351, 53);
@@ -89,16 +91,16 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(42, 124);
+            this.label3.Location = new System.Drawing.Point(42, 113);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(79, 32);
+            this.label3.Size = new System.Drawing.Size(75, 16);
             this.label3.TabIndex = 1;
-            this.label3.Text = "Description/\r\nRole";
+            this.label3.Text = "Description";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(42, 202);
+            this.label4.Location = new System.Drawing.Point(42, 223);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(69, 16);
             this.label4.TabIndex = 1;
@@ -107,7 +109,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(42, 240);
+            this.label5.Location = new System.Drawing.Point(42, 261);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(66, 16);
             this.label5.TabIndex = 1;
@@ -117,19 +119,19 @@
             // 
             this.dtpStartDate.CustomFormat = "dd/MM/yyyy";
             this.dtpStartDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpStartDate.Location = new System.Drawing.Point(140, 199);
+            this.dtpStartDate.Location = new System.Drawing.Point(148, 220);
             this.dtpStartDate.Name = "dtpStartDate";
             this.dtpStartDate.Size = new System.Drawing.Size(141, 22);
-            this.dtpStartDate.TabIndex = 3;
+            this.dtpStartDate.TabIndex = 4;
             // 
             // dtpEndDate
             // 
             this.dtpEndDate.CustomFormat = "dd/MM/yyyy";
             this.dtpEndDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpEndDate.Location = new System.Drawing.Point(140, 236);
+            this.dtpEndDate.Location = new System.Drawing.Point(148, 257);
             this.dtpEndDate.Name = "dtpEndDate";
             this.dtpEndDate.Size = new System.Drawing.Size(141, 22);
-            this.dtpEndDate.TabIndex = 4;
+            this.dtpEndDate.TabIndex = 5;
             // 
             // panel1
             // 
@@ -139,14 +141,16 @@
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.txtRoleInProject);
             this.panel1.Controls.Add(this.txtProjectTitle);
             this.panel1.Controls.Add(this.txtClient);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(530, 290);
+            this.panel1.Size = new System.Drawing.Size(645, 337);
             this.panel1.TabIndex = 4;
             // 
             // panel2
@@ -155,9 +159,9 @@
             this.panel2.Controls.Add(this.btnCancel);
             this.panel2.Controls.Add(this.btnUpdate);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 290);
+            this.panel2.Location = new System.Drawing.Point(0, 337);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(530, 57);
+            this.panel2.Size = new System.Drawing.Size(645, 57);
             this.panel2.TabIndex = 5;
             // 
             // btnCancel
@@ -167,7 +171,7 @@
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.White;
-            this.btnCancel.Location = new System.Drawing.Point(278, 6);
+            this.btnCancel.Location = new System.Drawing.Point(393, 6);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(117, 39);
             this.btnCancel.TabIndex = 6;
@@ -182,20 +186,36 @@
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.ForeColor = System.Drawing.Color.White;
-            this.btnUpdate.Location = new System.Drawing.Point(401, 6);
+            this.btnUpdate.Location = new System.Drawing.Point(516, 6);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(117, 39);
-            this.btnUpdate.TabIndex = 5;
+            this.btnUpdate.TabIndex = 6;
             this.btnUpdate.Text = "&SAVE";
             this.btnUpdate.UseVisualStyleBackColor = false;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            // 
+            // txtRoleInProject
+            // 
+            this.txtRoleInProject.Location = new System.Drawing.Point(148, 180);
+            this.txtRoleInProject.Name = "txtRoleInProject";
+            this.txtRoleInProject.Size = new System.Drawing.Size(261, 22);
+            this.txtRoleInProject.TabIndex = 3;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(42, 182);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(94, 16);
+            this.label6.TabIndex = 1;
+            this.label6.Text = "Role In Project";
             // 
             // FrmProjectDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(530, 347);
+            this.ClientSize = new System.Drawing.Size(645, 394);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
@@ -228,5 +248,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtRoleInProject;
     }
 }

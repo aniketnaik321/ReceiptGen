@@ -25,14 +25,16 @@ namespace ResumeBuilder
             } set {
                 this.pictureBox1.BackgroundImage = value;
 
-            } 
+            }
         }
-
         public CtrlPreviewBox()
         {
             InitializeComponent();           
         }
 
+        public void SetButtonText(string templateName) {
+            btnUpdate.Text = "[" + templateName+"]";
+        }
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             if (this.ButtonClick != null)

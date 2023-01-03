@@ -37,9 +37,8 @@ namespace ResumeBuilder
                 {
                     pictureBox.PreviewThumbnail = Image.FromStream(ms, true);
                 }
-
+                pictureBox.SetButtonText(temp.TemplateName);
                 pictureBox.ButtonClick += PictureBox_ButtonClick;
-
                 // pictureBox.PreviewThumbnail=Image.FromStream()
                 //  pictureBox.TemplateName=
                 //pictureBox.Dock=DockStyle.Fill;

@@ -51,9 +51,9 @@ namespace ResumeBuilder.DTO
         public string University { get; set; }
 
         [Column(name: "FromDate")]
-        public string FromDate { get; set; }
+        public DateTime FromDate { get; set; }
         [Column(name: "ToDate")]
-        public string ToDate { get; set; }
+        public DateTime ToDate { get; set; }
 
         [Column(name: "PercentData")]
         public string PercentData { get; set; }
@@ -114,17 +114,17 @@ namespace ResumeBuilder.DTO
         [Column(name: "ClientName")]
         public string ClientName { get; set; }
 
+        [Column(name: "Description")]
+        public string Description { get; set; }
+
         [Column(name: "RoleInProject")]
         public string RoleInProject { get; set; }
 
         [Column(name: "FromDate")]
-        public string FromDate { get; set; }
+        public DateTime FromDate { get; set; }
 
         [Column(name: "ToDate")]
-        public string ToDate { get; set; }
-
-        [Column(name: "Description")]
-        public string Description { get; set; }
+        public DateTime ToDate { get; set; }        
 
         [Column(name: "CandidateID")]
         public int CandidateID { get; set; }

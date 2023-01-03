@@ -20,8 +20,7 @@ namespace ResumeBuilder
         public FrmProjectDetails()
         {
             InitializeComponent();
-            projectDetails = new ProjectDetails();
-            
+            projectDetails = new ProjectDetails();            
          }
 
         public void SetupEditData() {
@@ -30,14 +29,8 @@ namespace ResumeBuilder
                 txtProjectTitle.Text = projectDetails.ProjectName;
                 txtClient.Text = projectDetails.ClientName;
                 txtDescription.Text = projectDetails.RoleInProject;
-                DateTime temp;
-                if (DateTime.TryParse(projectDetails.FromDate, out temp)) { 
-                dtpStartDate.Value = temp;
-                }
-                if (DateTime.TryParse(projectDetails.ToDate, out temp))
-                {
-                    dtpEndDate.Value = temp;
-                }
+                dtpEndDate.Value = projectDetails.ToDate;
+                dtpStartDate.Value = projectDetails.FromDate;
             }
         }
 
@@ -51,10 +44,10 @@ namespace ResumeBuilder
         {
             projectDetails.ProjectName = txtProjectTitle.Text;
             projectDetails.ClientName = txtClient.Text;
-            projectDetails.FromDate = dtpStartDate.Value.ToString("dd/MM/yyyy");
-            projectDetails.ToDate = dtpEndDate.Value.ToString("dd/MM/yyyy");
-            projectDetails.RoleInProject = txtDescription.Text;
-
+            projectDetails.FromDate = dtpStartDate.Value;
+            projectDetails.ToDate = dtpEndDate.Value;
+            projectDetails.Description = txtDescription.Text;
+            projectDetails.RoleInProject = txtRoleInProject.Text;
             if (EditIndex >= 0)
             {
                 this.DataEntryForm.ResumeDataWrapper.ProjectDetails[EditIndex]= projectDetails;

@@ -65,3 +65,6 @@ D:\Projects\ReceiptGen\ReceiptGenSoln\ResumeBuilder\bin\Debug\Newtonsoft.Json.xm
 D:\Projects\ReceiptGen\ReceiptGenSoln\ResumeBuilder\bin\Debug\ResumeTemplates\template_purple.docx
 D:\Projects\ReceiptGen\ReceiptGenSoln\ResumeBuilder\obj\Debug\ResumeBuilder.FrmAllCandidates.resources
 D:\Projects\ReceiptGen\ReceiptGenSoln\ResumeBuilder\obj\Debug\ResumeBuilder.FrmLoadingScreen.resources
+D:\Projects\ReceiptGen\ReceiptGenSoln\ResumeBuilder\bin\Debug\NodaTime.dll
+D:\Projects\ReceiptGen\ReceiptGenSoln\ResumeBuilder\bin\Debug\NodaTime.pdb
+D:\Projects\ReceiptGen\ReceiptGenSoln\ResumeBuilder\bin\Debug\NodaTime.xml

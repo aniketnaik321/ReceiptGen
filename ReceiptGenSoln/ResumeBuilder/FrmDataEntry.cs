@@ -17,7 +17,6 @@ namespace ResumeBuilder
 {
     public partial class FrmDataEntry : Form
     {
-
         private ResumeDataService _resumeDataService;
         public DtoResumeData ResumeData;
         private string CandidatePhoto;
@@ -51,8 +50,6 @@ namespace ResumeBuilder
                 MessageBoxButtons.OK,MessageBoxIcon.Information);
                 return;
             }
-
-
             FrmEducationDetails frm = new FrmEducationDetails();
             frm.StartPosition = FormStartPosition.CenterScreen;
             frm.DataEntryForm = this;
@@ -139,7 +136,6 @@ namespace ResumeBuilder
 
                     ResumeDataWrapper.EducationData.RemoveAt(e.RowIndex);
                     dgvEducationalData.Rows.RemoveAt(e.RowIndex);
-
                 }
         }
 
@@ -181,26 +177,8 @@ namespace ResumeBuilder
             if (e.ColumnIndex == 5)
                 if (MessageBox.Show("Confirm removing row?", "Easy Resume Builder", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    dgvExperienceDetails.Controls.RemoveByKey("dtp" + dgvExperienceDetails.Rows[e.RowIndex].Tag + "-1");
-                    dgvExperienceDetails.Controls.RemoveByKey("dtp" + dgvExperienceDetails.Rows[e.RowIndex].Tag + "-2");
+                    ResumeDataWrapper.CompanyExperience.RemoveAt(e.RowIndex);                    
                     dgvExperienceDetails.Rows.RemoveAt(e.RowIndex);
-
-                    foreach (DataGridViewRow row in dgvExperienceDetails.Rows)
-                    {
-                        // if (row.Index == e.RowIndex) continue;
-                        int balancer = (row.Index >= e.RowIndex) ? 1 : 0;
-                        foreach (DataGridViewCell cell in row.Cells)
-                        {
-                            if (new int[] { 1, 2 }.Any(T => T == cell.ColumnIndex))
-                            {
-                                Rectangle oRectangle = dgvExperienceDetails.GetCellDisplayRectangle(cell.ColumnIndex, row.Index, true);
-                                DateTimePicker _control = (DateTimePicker)dgvExperienceDetails.Controls.Find("dtp" + row.Tag + "-" + cell.ColumnIndex.ToString(), false).First();
-                                if (_control == null) continue;
-                                _control.Size = new Size(oRectangle.Width - 2, oRectangle.Height - 10);
-                                _control.Location = new Point(oRectangle.X, oRectangle.Y);
-                            }
-                        }
-                    }
                 }
         }
 
@@ -221,10 +199,7 @@ namespace ResumeBuilder
             {
                 ResumeData.Id = ResumeDataWrapper.resumeData.Id;
             }
-
             ResumeDataWrapper.resumeData=ResumeData;
-            
-
            MessageBox.Show(_resumeDataService.UpdateResumeData(ResumeDataWrapper).ToString());
         }
 
@@ -242,10 +217,6 @@ namespace ResumeBuilder
             frm.StartPosition = FormStartPosition.CenterScreen;
             frm.DataEntryForm = this;
             frm.ShowDialog();
-
-            //DataGridViewRow _rw = new DataGridViewRow();
-            //_rw.Tag = Guid.NewGuid().ToString();
-            //dgvSkillData.Rows.Add(_rw);
         }
 
         private void dgvSkillData_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -254,6 +225,7 @@ namespace ResumeBuilder
                 if (MessageBox.Show("Confirm removing row?", "Easy Resume Builder", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     dgvSkillData.Rows.RemoveAt(e.RowIndex);
+                    ResumeDataWrapper.skillDetails.RemoveAt(e.RowIndex);
                 }
         }
 
@@ -304,6 +276,10 @@ namespace ResumeBuilder
                         .Select(p =>
                         {
                             object value = p.GetValue(tempEdudata, null);
+                            if (p.PropertyType.ToString() == "System.DateTime")
+                            {
+                                return value == null ? string.Empty : UtilityService.DateFormatInDateMonthAndYear(value.ToString());
+                            }
                             return value == null ? string.Empty : value.ToString();
                         })
                         .ToArray());
@@ -324,6 +300,10 @@ namespace ResumeBuilder
                         .Select(p =>
                         {
                             object value = p.GetValue(tempEdudata, null);
+                            if (p.PropertyType.ToString() == "System.DateTime")
+                            {
+                                return value == null ? string.Empty : UtilityService.DateFormatInDateMonthAndYear(value.ToString());
+                            }
                             return value == null ? string.Empty : value.ToString();
                         })
                         .ToArray());
@@ -344,10 +324,13 @@ namespace ResumeBuilder
                         .Select(p =>
                         {
                             object value = p.GetValue(tempEdudata, null);
+                            if (p.GetType().Equals("System.DateTime")) {
+                                return value == null ? string.Empty : UtilityService.DateFormatInDateMonthAndYear(value.ToString());
+                            }
+                           
                             return value == null ? string.Empty : value.ToString();
                         })
                         .ToArray());
-
             }
             //  this.dgvEducationalData.DataSource=this.ResumeDataWrapper.EducationData;
         }
@@ -356,7 +339,6 @@ namespace ResumeBuilder
         public void RefreshProjectDetailsDataGrid()
         {
             this.dgvProjectDetails.Rows.Clear();
-
             foreach (var tempEdudata in this.ResumeDataWrapper.ProjectDetails)
             {
                 this.dgvProjectDetails.Rows.Add(tempEdudata.GetType()
@@ -364,6 +346,10 @@ namespace ResumeBuilder
                         .Select(p =>
                         {
                             object value = p.GetValue(tempEdudata, null);
+                            if (p.PropertyType.ToString() == "System.DateTime")
+                            {
+                                return value == null ? string.Empty : UtilityService.DateFormatInDateMonthAndYear(value.ToString());
+                            }
                             return value == null ? string.Empty : value.ToString();
                         })
                         .ToArray());
@@ -376,7 +362,6 @@ namespace ResumeBuilder
         {
             openFileDialogPicture.Multiselect = false;
             if (openFileDialogPicture.ShowDialog() == DialogResult.OK) {
-
                 byte[] imageArray = System.IO.File.ReadAllBytes(openFileDialogPicture.FileName);
                 CandidatePhoto = Convert.ToBase64String(imageArray);
                 picCandidatePhoto.BackgroundImage = Image.FromFile(openFileDialogPicture.FileName);
@@ -398,6 +383,24 @@ namespace ResumeBuilder
         {
             this.Close();
             this.Dispose();
+        }
+
+        private void dgvEducationalData_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 5 && MessageBox.Show("Confirm removing row?", "Easy Resume Builder", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    dgvEducationalData.Rows.RemoveAt(e.RowIndex);
+                    ResumeDataWrapper.EducationData.RemoveAt(e.RowIndex);
+                }
+        }
+
+        private void dgvProjectDetails_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 6 && MessageBox.Show("Confirm removing row?", "Easy Resume Builder", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                dgvProjectDetails.Rows.RemoveAt(e.RowIndex);
+                ResumeDataWrapper.ProjectDetails.RemoveAt(e.RowIndex);
+            }
         }
     }
 }

@@ -46,6 +46,13 @@ namespace ResumeBuilder.Service
         }
 
 
+        public static string DateFormatInDateMonthAndYear(string dateTime)
+        {
+            DateTime date = DateTime.Parse(dateTime);
+            return date.ToString("dd MMM yyyy");
+        }
+
+
         public static string DifferenceInTwoDates(LocalDateTime fromDate,LocalDateTime endDate) {           
             Period period = Period.Between(fromDate, endDate);
             return ($"{period.Years} years, {period.Months} months"); // Output: "7 years, 1 month"

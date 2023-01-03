@@ -164,5 +164,10 @@ namespace ResumeBuilder
             FrmAbout frmAbout = new FrmAbout();
             frmAbout.ShowDialog();
         }
+
+        private void FrmMain_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

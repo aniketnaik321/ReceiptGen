@@ -45,7 +45,7 @@ namespace ResumeBuilder
             experienceData.ToDate = dtpEndDate.Value;
             experienceData.CurrentlyWorking = chkCurrentlyWorking.Checked;
             experienceData.Designation = txtDesignation.Text;
-            DataEntryForm.ResumeDataWrapper.CompanyExperience.Add(experienceData);
+        //    DataEntryForm.ResumeDataWrapper.CompanyExperience.Add(experienceData);
             if (EditIndex >= 0)
             {
                 this.DataEntryForm.ResumeDataWrapper.CompanyExperience[EditIndex] = experienceData;

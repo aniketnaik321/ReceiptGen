@@ -83,16 +83,18 @@ namespace ResumeBuilder.Service
 
                     case "Photo":
                         TextSelection photoPlaceholder = document.FindString(substituted.Placeholder, true, true);
-                        if (photoPlaceholder != null)
+                        if (photoPlaceholder != null )
                         {
                             TextRange text = photoPlaceholder.GetAsOneRange();
                             Paragraph p = text.OwnerParagraph;
-                          p.Format.TextAlignment = TextAlignment.Center;
+                            p.Format.TextAlignment = TextAlignment.Center;
                             text.Text = string.Empty;
-
-                            DocPicture pic=  p.AppendPicture(System.Convert.FromBase64String(data.resumeData.CandidatePhoto));
-                            pic.Height=100f;
-                            pic.Width = 75f;
+                            if (data.resumeData.CandidatePhoto != null)
+                            {
+                                DocPicture pic = p.AppendPicture(System.Convert.FromBase64String(data.resumeData.CandidatePhoto));
+                                pic.Height = 100f;
+                                pic.Width = 75f;
+                            }
                         }
                         break;                       
                     case "EducationList":
@@ -135,7 +137,6 @@ namespace ResumeBuilder.Service
                                 dataToProcess = data.CompanyExperience;
                                 break;
                             case "CertPara":
-
                                 break;
                                
 
@@ -266,74 +267,6 @@ namespace ResumeBuilder.Service
             }
             return result;
         }
-
-        private DtoDateDifference DateDifference(DateTime fromDate,DateTime toDate) {
-            DtoDateDifference _result=new DtoDateDifference();
-            
-            // getting the difference
-            TimeSpan t = fromDate.Subtract(toDate);
-            _result.MonthDifference = t.Days;
-            //_result.YearDifference= t.;
-           // Console.WriteLine("Days (Difference) = {0} ", t.TotalDays);
-            //Console.WriteLine("Minutes (Difference) = {0}", t.TotalMinutes);
-
-
-            // compute & return the difference of two dates,
-            // returning years, months & days
-            // d1 should be the larger (newest) of the two dates
-            // we want d1 to be the larger (newest) date
-            // flip if we need to
-            //if (d1 < d2)
-            //{
-            //    DateTime d3 = d2;
-            //    d2 = d1;
-            //    d1 = d3;
-            //}
-
-            //// compute difference in total months
-            //months = 12 * (d1.Year - d2.Year) + (d1.Month - d2.Month);
-
-            //// based upon the 'days',
-            //// adjust months & compute actual days difference
-            //if (d1.Day < d2.Day)
-            //{
-            //    months--;
-            //    days = DateTime.DaysInMonth(d2.Year, d2.Month) - d2.Day + d1.Day;
-            //}
-            //else
-            //{
-            //    days = d1.Day - d2.Day;
-            //}
-            //// compute years & actual months
-            //years = months / 12;
-            //months -= years * 12;
-
-
-            return _result;
-        }
-
-        public string GetTextBetweenTags(string xml, string tagName)
-        {
-            // Find the opening tag
-            int startIndex = xml.IndexOf("<" + tagName + ">");
-            if (startIndex < 0)
-            {
-                // The opening tag was not found
-                return null;
-            }
-
-            // Find the closing tag
-            int endIndex = xml.IndexOf("</" + tagName + ">", startIndex);
-            if (endIndex < 0)
-            {
-                // The closing tag was not found
-                return null;
-            }
-
-            // Get the text between the tags
-            return xml.Substring(startIndex + tagName.Length + 2, endIndex - startIndex - tagName.Length - 2);
-        }
-
 
         public DTOPlaceHolderJSON[] ParseJSON(string jsonInput) {        
             return JsonConvert.DeserializeObject<DTOPlaceHolderJSON[]>(jsonInput);

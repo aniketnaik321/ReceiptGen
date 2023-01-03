@@ -30,17 +30,10 @@ namespace ResumeBuilder
             {
                 txtCollege.Text = educationData.University;
                 txtPercent.Text = educationData.PercentData;
-                txtSpec.Text = educationData.Specification;               
-                
-                DateTime temp;
-                if (DateTime.TryParse(educationData.FromDate, out temp))
-                {
-                    dtpStartDate.Value = temp;
-                }
-                if (DateTime.TryParse(educationData.ToDate, out temp))
-                {
-                    dtpEndDate.Value = temp;
-                }
+                txtSpec.Text = educationData.Specification;
+
+                dtpEndDate.Value = educationData.ToDate;
+                dtpStartDate.Value = educationData.FromDate;
             }
         }
 
@@ -62,9 +55,9 @@ namespace ResumeBuilder
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {            
-            educationData.University = txtCollege.Text;           
-            educationData.FromDate = dtpStartDate.Value.ToString("dd/MM/yyyy");
-            educationData.ToDate= dtpEndDate.Value.ToString("dd/MM/yyyy");
+            educationData.University = txtCollege.Text;
+            educationData.FromDate = dtpStartDate.Value;
+            educationData.ToDate = dtpEndDate.Value;
             educationData.PercentData = txtPercent.Text;
             educationData.Specification = txtSpec.Text;
 
