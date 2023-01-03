@@ -35,7 +35,7 @@ namespace ResumeBuilder
 
         private void FrmDataEntry_Load(object sender, EventArgs e)
         {
-            LoadCandidateData();
+            LoadCandidateData(1);
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -110,33 +110,29 @@ namespace ResumeBuilder
 
         private void dgvEducationalData_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(e.ColumnIndex==5)
-            if (MessageBox.Show("Confirm removing row?", "Easy Resume Builder", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes) {
 
-                    //dgvEducationalData.Controls.RemoveByKey("dtp" + dgvEducationalData.Rows[e.RowIndex].Tag + "-2");
-                    //dgvEducationalData.Controls.RemoveByKey("dtp" + dgvEducationalData.Rows[e.RowIndex].Tag + "-3");
-                    //dgvEducationalData.Rows.RemoveAt(e.RowIndex);
+            switch (e.ColumnIndex) {
 
-                    //foreach (DataGridViewRow row in dgvEducationalData.Rows)
-                    //{
-                    //   // if (row.Index == e.RowIndex) continue;
-                    //    int balancer = (row.Index >= e.RowIndex)?1:0;
-                    //    foreach (DataGridViewCell cell in row.Cells)
-                    //    {
-                    //        if (new int[] { 2, 3 }.Any(T => T == cell.ColumnIndex))
-                    //        {
-                    //            Rectangle oRectangle = dgvEducationalData.GetCellDisplayRectangle(cell.ColumnIndex, row.Index, true);
-                    //            DateTimePicker _control = (DateTimePicker)dgvEducationalData.Controls.Find("dtp" + row.Tag + "-" + cell.ColumnIndex.ToString(), false).First();
-                    //            if (_control == null) continue;
-                    //            _control.Size = new Size(oRectangle.Width - 2, oRectangle.Height - 10);
-                    //            _control.Location = new Point(oRectangle.X, oRectangle.Y);
-                    //        }
-                    //    }
-                    //}
+                case 6:
+                    FrmProjectDetails frm = new FrmProjectDetails();
+                    frm.StartPosition = FormStartPosition.CenterScreen;
+                    frm.DataEntryForm = this;
+                    frm.EditIndex = e.RowIndex;
+                    frm.projectDetails = this.ResumeDataWrapper.ProjectDetails[e.RowIndex];
+                    frm.SetupEditData();
+                    frm.ShowDialog();
 
-                    ResumeDataWrapper.EducationData.RemoveAt(e.RowIndex);
-                    dgvEducationalData.Rows.RemoveAt(e.RowIndex);
-                }
+                    break;
+                case 7:
+
+                    if (MessageBox.Show("Confirm removing row?", "Easy Resume Builder", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                       
+                        ResumeDataWrapper.EducationData.RemoveAt(e.RowIndex);
+                        dgvEducationalData.Rows.RemoveAt(e.RowIndex);
+                    }
+                    break;
+            }
         }
 
         private void btnAddExperienceDetails_Click(object sender, EventArgs e)
@@ -237,8 +233,8 @@ namespace ResumeBuilder
             frm.ShowDialog();
         }
 
-        private void LoadCandidateData() {
-            ResumeDataWrapper= _resumeDataService.LoadResumeData();            
+        private void LoadCandidateData(int CandidateID) {
+            ResumeDataWrapper= _resumeDataService.LoadResumeData(CandidateID);            
             if (ResumeDataWrapper != null && ResumeDataWrapper.resumeData!=null) {
                 txtName.Text = ResumeDataWrapper.resumeData.CandidateName??String.Empty;
                 txtAddress.Text = ResumeDataWrapper.resumeData.Address ?? String.Empty;
@@ -259,7 +255,6 @@ namespace ResumeBuilder
                         picCandidatePhoto.BackgroundImage = Image.FromStream(ms, true);
                     }
                 }
-
             }
 
             RefreshEducationDataGrid();
@@ -370,13 +365,7 @@ namespace ResumeBuilder
 
         private void dgvProjectDetails_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            FrmProjectDetails frm = new FrmProjectDetails();
-            frm.StartPosition = FormStartPosition.CenterScreen;
-            frm.DataEntryForm = this;
-            frm.EditIndex = e.RowIndex;
-            frm.projectDetails = this.ResumeDataWrapper.ProjectDetails[e.RowIndex];
-            frm.SetupEditData();
-            frm.ShowDialog();
+          
         }
 
         private void btnCloseForm_Click(object sender, EventArgs e)
@@ -396,10 +385,25 @@ namespace ResumeBuilder
 
         private void dgvProjectDetails_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == 6 && MessageBox.Show("Confirm removing row?", "Easy Resume Builder", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            switch (e.ColumnIndex)
             {
-                dgvProjectDetails.Rows.RemoveAt(e.RowIndex);
-                ResumeDataWrapper.ProjectDetails.RemoveAt(e.RowIndex);
+                case 6:
+                    FrmProjectDetails frm = new FrmProjectDetails();
+                    frm.StartPosition = FormStartPosition.CenterScreen;
+                    frm.DataEntryForm = this;
+                    frm.EditIndex = e.RowIndex;
+                    frm.projectDetails = this.ResumeDataWrapper.ProjectDetails[e.RowIndex];
+                    frm.SetupEditData();
+                    frm.ShowDialog();
+                    break;
+                case 7:
+
+                    if (MessageBox.Show("Confirm removing row?", "Easy Resume Builder", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        dgvProjectDetails.Rows.RemoveAt(e.RowIndex);
+                        ResumeDataWrapper.ProjectDetails.RemoveAt(e.RowIndex);
+                    }
+                    break;
             }
         }
     }

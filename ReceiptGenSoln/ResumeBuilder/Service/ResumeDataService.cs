@@ -60,10 +60,7 @@ namespace ResumeBuilder.Service
             }
             else
             {
-
                  _entityOperation.Update(input.resumeData,input.resumeData.Id);
-
-
                 candidateID = input.resumeData.Id;
                 _skillDetailsRepo.CustomQuery("delete from EducationData where CandidateID="+candidateID.ToString());
                 _skillDetailsRepo.CustomQuery("delete from ProjectData where CandidateID=" + candidateID.ToString());
@@ -101,7 +98,7 @@ namespace ResumeBuilder.Service
             return candidateID;
         }
 
-        public ResumeDataWrapper LoadResumeData()
+        public ResumeDataWrapper LoadResumeData(int CandidateID)
         {
             ResumeDataWrapper _wrapper = new ResumeDataWrapper() {
                 EducationData = new List<EducationData>(),
@@ -112,10 +109,10 @@ namespace ResumeBuilder.Service
             DtoResumeData resumeData= _entityOperation.FindById(1);
             if (resumeData != null) {
                 SkillDetails skillDetails = _skillDetailsRepo.FindById(resumeData.Id);
-                List<CompanyExperience> companyExperiennce = _companyExperienceRepo.GetList()?.Where(T=>T.CandidateID==1).ToList();
-                List<SkillDetails> skillDetail = _skillDetailsRepo.GetList()?.Where(T => T.CandidateID == 1).ToList();
-                List<EducationData> eduDetails = _educationData.GetList()?.Where(T => T.CandidateID == 1).ToList();
-                List<ProjectDetails> projectData = _projectDetails.GetList()?.Where(T => T.CandidateID == 1).ToList();
+                List<CompanyExperience> companyExperiennce = _companyExperienceRepo.GetList()?.Where(T=>T.CandidateID== CandidateID).ToList();
+                List<SkillDetails> skillDetail = _skillDetailsRepo.GetList()?.Where(T => T.CandidateID == CandidateID).ToList();
+                List<EducationData> eduDetails = _educationData.GetList()?.Where(T => T.CandidateID == CandidateID).ToList();
+                List<ProjectDetails> projectData = _projectDetails.GetList()?.Where(T => T.CandidateID == CandidateID).ToList();
                 // if (educationData!=null)
                 _wrapper.EducationData= eduDetails?? new List<EducationData>();
                 _wrapper.skillDetails = skillDetail ?? new List<SkillDetails>();

@@ -25,6 +25,7 @@ namespace ResumeBuilder
         ResumeDataWrapper _resumeDataWrapper;
         private DtoResumeTemplate TemplateFile;
         private DocX document;
+        public int CandidateID;
       
         public FrmResumePreview(DtoResumeTemplate template)
         {
@@ -42,7 +43,7 @@ namespace ResumeBuilder
             _viewer.Visible = true;
             _viewer.BringToFront();
             this.PreviewPanel.Controls.Add(_viewer);
-            _resumeDataWrapper = _resumeDataService.LoadResumeData();
+            _resumeDataWrapper = _resumeDataService.LoadResumeData(1);
             MemoryStream tempDoc;
             MemoryStream ms = _documentService.FillupTemplate(
                 Environment.CurrentDirectory + "//ResumeTemplates//" + TemplateFile.FileName, 

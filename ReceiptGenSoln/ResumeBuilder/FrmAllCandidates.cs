@@ -1,4 +1,5 @@
-﻿using ResumeBuilder.Service;
+﻿using ResumeBuilder.DTO;
+using ResumeBuilder.Service;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -40,7 +41,6 @@ namespace ResumeBuilder
                             return value == null ? string.Empty : value.ToString();
                         })
                         .ToArray());
-
             }
         }
 
@@ -49,5 +49,15 @@ namespace ResumeBuilder
             this.Close();
             this.Dispose();
         }
+
+        private void dgvCandidateDetails_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+         
+                if (e.ColumnIndex == 5)
+                    if (MessageBox.Show("Confirm removing row?", "Easy Resume Builder", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                    MessageBox.Show(dgvCandidateDetails.Rows[e.RowIndex].Cells[0].Value.ToString());
+            }
+        } 
     }
 }
