@@ -58,12 +58,14 @@ namespace ResumeBuilder
 
         private void btnExportPDF_Click(object sender, EventArgs e)
         {
-            if(saveFileDialog.ShowDialog()==DialogResult.OK)
+            saveFileDialog.Filter = "PDF File|*.pdf";
+            if (saveFileDialog.ShowDialog()==DialogResult.OK)
                     _viewer.Document.Save(saveFileDialog.FileName);
         }
 
         private void btnExportDocx_Click(object sender, EventArgs e)
         {
+            saveFileDialog.Filter = "DocX File|*.docx";
             if (saveFileDialog.ShowDialog() == DialogResult.OK)                
                 document.SaveAs(saveFileDialog.FileName);
         }

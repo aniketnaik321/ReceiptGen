@@ -76,3 +76,12 @@ D:\Projects\ReceiptGen\ReceiptGenSoln\POCProject\obj\Debug\POCProject.csproj.Cor
 D:\Projects\ReceiptGen\ReceiptGenSoln\POCProject\obj\Debug\POCProject.csproj.CopyComplete
 D:\Projects\ReceiptGen\ReceiptGenSoln\POCProject\obj\Debug\POCProject.exe
 D:\Projects\ReceiptGen\ReceiptGenSoln\POCProject\obj\Debug\POCProject.pdb
+D:\Projects\ReceiptGen\ReceiptGenSoln\POCProject\bin\Debug\Cloo.dll
+D:\Projects\ReceiptGen\ReceiptGenSoln\POCProject\bin\Debug\ClooN.dll
+D:\Projects\ReceiptGen\ReceiptGenSoln\POCProject\bin\Debug\DotnetNoise.dll
+D:\Projects\ReceiptGen\ReceiptGenSoln\POCProject\bin\Debug\LibNoise.dll
+D:\Projects\ReceiptGen\ReceiptGenSoln\POCProject\bin\Debug\RndXorshift.dll
+D:\Projects\ReceiptGen\ReceiptGenSoln\POCProject\bin\Debug\Cloo.xml
+D:\Projects\ReceiptGen\ReceiptGenSoln\POCProject\bin\Debug\Cloo.dll.config
+D:\Projects\ReceiptGen\ReceiptGenSoln\POCProject\bin\Debug\ClooN.xml
+D:\Projects\ReceiptGen\ReceiptGenSoln\POCProject\bin\Debug\LibNoise.xml
