@@ -1,17 +1,8 @@
 ﻿using PdfiumViewer;
 using ResumeBuilder.DTO;
-using ResumeBuilder.Infrastructure;
 using ResumeBuilder.Service;
-using Spire.Pdf.Conversion;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Xceed.Words.NET;
 
@@ -78,19 +69,16 @@ namespace ResumeBuilder
 
         private void btnCloseForm_Click(object sender, EventArgs e)
         {
-            FrmResumeTemplates _frm = new FrmResumeTemplates();
-            // if (!refreshChildForms(_frmDataEntry.Name)) { _frmDataEntry = null; return; }
+            FrmResumeTemplates _frm = new FrmResumeTemplates();            
             _frm.MdiParent = this.ParentForm;
             _frm.Icon = this.Icon;
             _frm.Width = this.ParentForm.ClientSize.Width - 97;
             _frm.Height = this.ParentForm.ClientSize.Height - 30;
             _frm.Left = 0;
             _frm.Top = 0;
-            _frm.WindowState = FormWindowState.Normal;
-            //_frmDataEntry.SetBounds(0, 0, this.ClientSize.Width-100, this.ClientSize.Height-60);
+            _frm.WindowState = FormWindowState.Normal;            
             _frm.StartPosition = FormStartPosition.Manual;
             _frm.Show();
-
 
             this.Close();
             try

@@ -2,15 +2,11 @@
 using ResumeBuilder.Service;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.Entity.Core.Common.CommandTrees.ExpressionBuilder;
 using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ResumeBuilder
@@ -35,7 +31,7 @@ namespace ResumeBuilder
 
         private void FrmDataEntry_Load(object sender, EventArgs e)
         {
-            LoadCandidateData(1);
+         //   LoadCandidateData(1);
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -55,33 +51,8 @@ namespace ResumeBuilder
             frm.DataEntryForm = this;
             frm.ShowDialog();
 
-            DataGridViewRow _rw = new DataGridViewRow();
-            //_rw.Tag=Guid.NewGuid().ToString();
-            //var  index = dgvEducationalData.Rows.Add(_rw);
-        }        
-
-     /*   private void dgvEducationalData_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
-        {
-            DataGridViewRow row = dgvEducationalData.Rows[e.RowIndex];
-            Console.WriteLine("Rows added");
-            if (e.RowIndex != -1)
-            {
-                foreach (DataGridViewCell cell in row.Cells)
-                    if (cell.ColumnIndex == 2 || cell.ColumnIndex == 3)
-                    {
-                       var dateTimePicker = new DateTimePicker();
-                        dateTimePicker.Font = new Font("Segoe UI", 9);
-                        dateTimePicker.Name="dtp"+ row.Tag + "-" + cell.ColumnIndex.ToString();
-                        dgvEducationalData.Controls.Add(dateTimePicker);
-                        dateTimePicker.Format = DateTimePickerFormat.Short;
-                        Rectangle oRectangle = dgvEducationalData.GetCellDisplayRectangle(cell.ColumnIndex, e.RowIndex, true);
-                        dateTimePicker.Size = new Size(oRectangle.Width - 2, oRectangle.Height - 10);
-                        dateTimePicker.Location = new Point(oRectangle.X, oRectangle.Y);
-                    }
-            }
-        }*/
-
-      
+            DataGridViewRow _rw = new DataGridViewRow();         
+        }
 
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -136,11 +107,7 @@ namespace ResumeBuilder
         }
 
         private void btnAddExperienceDetails_Click(object sender, EventArgs e)
-        {
-            //DataGridViewRow _rw = new DataGridViewRow();
-            //_rw.Tag = Guid.NewGuid().ToString();
-            //dgvExperienceDetails.Rows.Add(_rw);
-
+        {            
             FrmExperienceDetails frm = new FrmExperienceDetails();
             frm.StartPosition = FormStartPosition.CenterScreen;
             frm.DataEntryForm = this;
@@ -196,7 +163,8 @@ namespace ResumeBuilder
                 ResumeData.Id = ResumeDataWrapper.resumeData.Id;
             }
             ResumeDataWrapper.resumeData=ResumeData;
-           MessageBox.Show(_resumeDataService.UpdateResumeData(ResumeDataWrapper).ToString());
+            if(_resumeDataService.UpdateResumeData(ResumeDataWrapper)>0)
+                MessageBox.Show("Update successfull!","Resume Builder",MessageBoxButtons.OK,MessageBoxIcon.Information);
         }
 
         private void btnAddSkill_Click(object sender, EventArgs e)
@@ -233,7 +201,7 @@ namespace ResumeBuilder
             frm.ShowDialog();
         }
 
-        private void LoadCandidateData(int CandidateID) {
+        public void LoadCandidateData(int CandidateID) {
             ResumeDataWrapper= _resumeDataService.LoadResumeData(CandidateID);            
             if (ResumeDataWrapper != null && ResumeDataWrapper.resumeData!=null) {
                 txtName.Text = ResumeDataWrapper.resumeData.CandidateName??String.Empty;
@@ -256,7 +224,6 @@ namespace ResumeBuilder
                     }
                 }
             }
-
             RefreshEducationDataGrid();
             RefreshCompanyExperienceDataGrid();
             RefreshSkillDetailsDataGrid();

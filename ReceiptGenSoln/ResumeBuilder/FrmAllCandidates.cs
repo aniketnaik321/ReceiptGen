@@ -16,6 +16,8 @@ namespace ResumeBuilder
     {
 
         private ResumeDataService resumeDataService;
+        private string CandidateID;
+
         public FrmAllCandidates()
         {
             InitializeComponent();
@@ -27,10 +29,8 @@ namespace ResumeBuilder
             RefreshGrid();
         }
 
-        private void RefreshGrid() { 
-        
-        this.dgvCandidateDetails.Rows.Clear();        
-
+        private void RefreshGrid() {
+            this.dgvCandidateDetails.Rows.Clear();
             foreach (var tempEdudata in this.resumeDataService.GetCandidateList())
             {
                 this.dgvCandidateDetails.Rows.Add(tempEdudata.GetType()
@@ -51,12 +51,23 @@ namespace ResumeBuilder
         }
 
         private void dgvCandidateDetails_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-         
+        {         
                 if (e.ColumnIndex == 5)
-                    if (MessageBox.Show("Confirm removing row?", "Easy Resume Builder", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                    {
-                    MessageBox.Show(dgvCandidateDetails.Rows[e.RowIndex].Cells[0].Value.ToString());
+                    { 
+                    FrmDataEntry frm = new FrmDataEntry();
+                    frm.LoadCandidateData(Convert.ToInt32(dgvCandidateDetails.Rows[e.RowIndex].Cells[0].Value.ToString()));
+                    frm.MdiParent = this.ParentForm;
+                    frm.Icon = this.Icon;
+                    frm.Width = this.ParentForm.ClientSize.Width - 97;
+                    frm.Height = this.ParentForm.ClientSize.Height - 30;
+                    frm.Left = 0;
+                    frm.Top = 0;
+                    frm.WindowState = FormWindowState.Normal;
+                    frm.StartPosition = FormStartPosition.Manual;
+                    frm.Show();
+
+                this.Close();
+
             }
         } 
     }

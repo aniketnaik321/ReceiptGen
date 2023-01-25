@@ -106,7 +106,7 @@ namespace ResumeBuilder.Service
                 CompanyExperience=new List<CompanyExperience>(),
                 ProjectDetails=new List<ProjectDetails>()
             };
-            DtoResumeData resumeData= _entityOperation.FindById(1);
+            DtoResumeData resumeData= _entityOperation.FindById(CandidateID);
             if (resumeData != null) {
                 SkillDetails skillDetails = _skillDetailsRepo.FindById(resumeData.Id);
                 List<CompanyExperience> companyExperiennce = _companyExperienceRepo.GetList()?.Where(T=>T.CandidateID== CandidateID).ToList();
