@@ -28,17 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -55,28 +53,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.dgvEducationalData = new System.Windows.Forms.DataGridView();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.btnAddEducation = new System.Windows.Forms.Button();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.dgvExperienceDetails = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.dataGridViewButtonColumn1 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.btnAddExperienceDetails = new System.Windows.Forms.Button();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.dgvSkillData = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewButtonColumn2 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.btnAddSkill = new System.Windows.Forms.Button();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.dgvProjectDetails = new System.Windows.Forms.DataGridView();
@@ -106,6 +88,25 @@
             this.label9 = new System.Windows.Forms.Label();
             this.openFileDialogPicture = new System.Windows.Forms.OpenFileDialog();
             this.btnCloseForm = new System.Windows.Forms.Button();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewButtonColumn2 = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.Column10 = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Column13 = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.Column11 = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.Column12 = new System.Windows.Forms.DataGridViewLinkColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -290,7 +291,8 @@
             this.Column3,
             this.Column4,
             this.Column5,
-            this.Column1});
+            this.Column1,
+            this.Column12});
             this.dgvEducationalData.GridColor = System.Drawing.SystemColors.Highlight;
             this.dgvEducationalData.Location = new System.Drawing.Point(9, 70);
             this.dgvEducationalData.Name = "dgvEducationalData";
@@ -301,64 +303,6 @@
             this.dgvEducationalData.Size = new System.Drawing.Size(1348, 674);
             this.dgvEducationalData.TabIndex = 2;
             this.dgvEducationalData.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEducationalData_CellContentClick_1);
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Specification";
-            this.Column6.MinimumWidth = 6;
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "College/University";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(1);
-            this.Column3.DefaultCellStyle = dataGridViewCellStyle1;
-            this.Column3.HeaderText = "Start Date";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            // 
-            // Column4
-            // 
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(1);
-            this.Column4.DefaultCellStyle = dataGridViewCellStyle2;
-            this.Column4.HeaderText = "End Date";
-            this.Column4.MinimumWidth = 6;
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Percentage";
-            this.Column5.MinimumWidth = 6;
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            // 
-            // Column1
-            // 
-            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Red;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Silver;
-            this.Column1.DefaultCellStyle = dataGridViewCellStyle3;
-            this.Column1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Column1.HeaderText = "";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Text = "X";
-            this.Column1.UseColumnTextForButtonValue = true;
-            this.Column1.Width = 50;
             // 
             // btnAddEducation
             // 
@@ -404,7 +348,8 @@
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn5,
             this.Column7,
-            this.dataGridViewButtonColumn1});
+            this.Column13,
+            this.Column11});
             this.dgvExperienceDetails.GridColor = System.Drawing.SystemColors.Highlight;
             this.dgvExperienceDetails.Location = new System.Drawing.Point(8, 62);
             this.dgvExperienceDetails.Name = "dgvExperienceDetails";
@@ -416,61 +361,6 @@
             this.dgvExperienceDetails.TabIndex = 3;
             this.dgvExperienceDetails.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvExperienceDetails_CellContentClick);
             this.dgvExperienceDetails.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dgvExperienceDetails_RowsAdded);
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "Company";
-            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.HeaderText = "Start Date";
-            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(1);
-            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle4;
-            this.dataGridViewTextBoxColumn3.HeaderText = "End Date";
-            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.HeaderText = "Experience";
-            this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "Currently working here?";
-            this.Column7.MinimumWidth = 6;
-            this.Column7.Name = "Column7";
-            this.Column7.ReadOnly = true;
-            this.Column7.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column7.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // dataGridViewButtonColumn1
-            // 
-            this.dataGridViewButtonColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.dataGridViewButtonColumn1.DefaultCellStyle = dataGridViewCellStyle5;
-            this.dataGridViewButtonColumn1.HeaderText = "";
-            this.dataGridViewButtonColumn1.MinimumWidth = 6;
-            this.dataGridViewButtonColumn1.Name = "dataGridViewButtonColumn1";
-            this.dataGridViewButtonColumn1.ReadOnly = true;
-            this.dataGridViewButtonColumn1.Text = "X";
-            this.dataGridViewButtonColumn1.UseColumnTextForButtonValue = true;
-            this.dataGridViewButtonColumn1.Width = 50;
             // 
             // btnAddExperienceDetails
             // 
@@ -514,7 +404,8 @@
             this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn6,
             this.dataGridViewTextBoxColumn7,
-            this.dataGridViewButtonColumn2});
+            this.dataGridViewButtonColumn2,
+            this.Column10});
             this.dgvSkillData.GridColor = System.Drawing.SystemColors.Highlight;
             this.dgvSkillData.Location = new System.Drawing.Point(8, 64);
             this.dgvSkillData.Name = "dgvSkillData";
@@ -525,54 +416,6 @@
             this.dgvSkillData.Size = new System.Drawing.Size(1348, 680);
             this.dgvSkillData.TabIndex = 4;
             this.dgvSkillData.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSkillData_CellContentClick);
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.HeaderText = "Skill Name";
-            this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.dataGridViewTextBoxColumn6.HeaderText = "Skill Rating";
-            this.dataGridViewTextBoxColumn6.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5"});
-            this.dataGridViewTextBoxColumn6.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
-            this.dataGridViewTextBoxColumn6.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewTextBoxColumn6.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            dataGridViewCellStyle6.Padding = new System.Windows.Forms.Padding(1);
-            this.dataGridViewTextBoxColumn7.DefaultCellStyle = dataGridViewCellStyle6;
-            this.dataGridViewTextBoxColumn7.HeaderText = "Skill Experience";
-            this.dataGridViewTextBoxColumn7.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.ReadOnly = true;
-            // 
-            // dataGridViewButtonColumn2
-            // 
-            this.dataGridViewButtonColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.dataGridViewButtonColumn2.DefaultCellStyle = dataGridViewCellStyle7;
-            this.dataGridViewButtonColumn2.HeaderText = "";
-            this.dataGridViewButtonColumn2.MinimumWidth = 6;
-            this.dataGridViewButtonColumn2.Name = "dataGridViewButtonColumn2";
-            this.dataGridViewButtonColumn2.ReadOnly = true;
-            this.dataGridViewButtonColumn2.Text = "X";
-            this.dataGridViewButtonColumn2.UseColumnTextForButtonValue = true;
-            this.dataGridViewButtonColumn2.Width = 50;
             // 
             // btnAddSkill
             // 
@@ -666,8 +509,8 @@
             // 
             // dataGridViewTextBoxColumn10
             // 
-            dataGridViewCellStyle8.Padding = new System.Windows.Forms.Padding(1);
-            this.dataGridViewTextBoxColumn10.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle6.Padding = new System.Windows.Forms.Padding(1);
+            this.dataGridViewTextBoxColumn10.DefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridViewTextBoxColumn10.FillWeight = 57.63227F;
             this.dataGridViewTextBoxColumn10.HeaderText = "Start Date";
             this.dataGridViewTextBoxColumn10.MinimumWidth = 6;
@@ -676,8 +519,8 @@
             // 
             // dataGridViewTextBoxColumn11
             // 
-            dataGridViewCellStyle9.Padding = new System.Windows.Forms.Padding(1);
-            this.dataGridViewTextBoxColumn11.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle7.Padding = new System.Windows.Forms.Padding(1);
+            this.dataGridViewTextBoxColumn11.DefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridViewTextBoxColumn11.FillWeight = 57.63227F;
             this.dataGridViewTextBoxColumn11.HeaderText = "End Date";
             this.dataGridViewTextBoxColumn11.MinimumWidth = 6;
@@ -688,8 +531,8 @@
             // 
             this.Column8.ActiveLinkColor = System.Drawing.Color.Transparent;
             this.Column8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Column8.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Column8.DefaultCellStyle = dataGridViewCellStyle8;
             this.Column8.HeaderText = "";
             this.Column8.MinimumWidth = 6;
             this.Column8.Name = "Column8";
@@ -703,8 +546,8 @@
             // Column9
             // 
             this.Column9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Column9.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Column9.DefaultCellStyle = dataGridViewCellStyle9;
             this.Column9.HeaderText = "";
             this.Column9.MinimumWidth = 6;
             this.Column9.Name = "Column9";
@@ -911,6 +754,203 @@
             this.btnCloseForm.UseVisualStyleBackColor = false;
             this.btnCloseForm.Click += new System.EventHandler(this.btnCloseForm_Click);
             // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.FillWeight = 53.56126F;
+            this.dataGridViewTextBoxColumn4.HeaderText = "Skill Name";
+            this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.FillWeight = 53.56126F;
+            this.dataGridViewTextBoxColumn6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.dataGridViewTextBoxColumn6.HeaderText = "Skill Rating";
+            this.dataGridViewTextBoxColumn6.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"});
+            this.dataGridViewTextBoxColumn6.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            this.dataGridViewTextBoxColumn6.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn6.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(1);
+            this.dataGridViewTextBoxColumn7.DefaultCellStyle = dataGridViewCellStyle4;
+            this.dataGridViewTextBoxColumn7.FillWeight = 53.56126F;
+            this.dataGridViewTextBoxColumn7.HeaderText = "Skill Experience";
+            this.dataGridViewTextBoxColumn7.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            // 
+            // dataGridViewButtonColumn2
+            // 
+            this.dataGridViewButtonColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.dataGridViewButtonColumn2.DefaultCellStyle = dataGridViewCellStyle5;
+            this.dataGridViewButtonColumn2.HeaderText = "";
+            this.dataGridViewButtonColumn2.MinimumWidth = 6;
+            this.dataGridViewButtonColumn2.Name = "dataGridViewButtonColumn2";
+            this.dataGridViewButtonColumn2.ReadOnly = true;
+            this.dataGridViewButtonColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewButtonColumn2.Text = "edit";
+            this.dataGridViewButtonColumn2.ToolTipText = "edit";
+            this.dataGridViewButtonColumn2.UseColumnTextForLinkValue = true;
+            this.dataGridViewButtonColumn2.Width = 70;
+            // 
+            // Column10
+            // 
+            this.Column10.ActiveLinkColor = System.Drawing.Color.Transparent;
+            this.Column10.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Column10.FillWeight = 239.3162F;
+            this.Column10.HeaderText = "";
+            this.Column10.MinimumWidth = 6;
+            this.Column10.Name = "Column10";
+            this.Column10.ReadOnly = true;
+            this.Column10.Text = "delete";
+            this.Column10.ToolTipText = "delete";
+            this.Column10.UseColumnTextForLinkValue = true;
+            this.Column10.Width = 70;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "Company";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.HeaderText = "Start Date";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(1);
+            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridViewTextBoxColumn3.HeaderText = "End Date";
+            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.HeaderText = "Experience";
+            this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            // 
+            // Column7
+            // 
+            this.Column7.HeaderText = "Currently working here?";
+            this.Column7.MinimumWidth = 6;
+            this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
+            this.Column7.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column7.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // Column13
+            // 
+            this.Column13.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Column13.HeaderText = "";
+            this.Column13.MinimumWidth = 6;
+            this.Column13.Name = "Column13";
+            this.Column13.ReadOnly = true;
+            this.Column13.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column13.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Column13.Text = "edit";
+            this.Column13.UseColumnTextForLinkValue = true;
+            this.Column13.Width = 70;
+            // 
+            // Column11
+            // 
+            this.Column11.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Column11.HeaderText = "";
+            this.Column11.MinimumWidth = 6;
+            this.Column11.Name = "Column11";
+            this.Column11.ReadOnly = true;
+            this.Column11.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column11.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Column11.Text = "delete";
+            this.Column11.UseColumnTextForLinkValue = true;
+            this.Column11.Width = 70;
+            // 
+            // Column6
+            // 
+            this.Column6.FillWeight = 48.20512F;
+            this.Column6.HeaderText = "Specification";
+            this.Column6.MinimumWidth = 6;
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.FillWeight = 48.20512F;
+            this.Column2.HeaderText = "College/University";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(1);
+            this.Column3.DefaultCellStyle = dataGridViewCellStyle1;
+            this.Column3.FillWeight = 48.20512F;
+            this.Column3.HeaderText = "Start Date";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(1);
+            this.Column4.DefaultCellStyle = dataGridViewCellStyle2;
+            this.Column4.FillWeight = 48.20512F;
+            this.Column4.HeaderText = "End Date";
+            this.Column4.MinimumWidth = 6;
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            this.Column5.FillWeight = 48.20512F;
+            this.Column5.HeaderText = "Percentage";
+            this.Column5.MinimumWidth = 6;
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            // 
+            // Column1
+            // 
+            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Column1.HeaderText = "";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Text = "edit";
+            this.Column1.UseColumnTextForLinkValue = true;
+            this.Column1.Width = 70;
+            // 
+            // Column12
+            // 
+            this.Column12.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Column12.HeaderText = "";
+            this.Column12.MinimumWidth = 6;
+            this.Column12.Name = "Column12";
+            this.Column12.ReadOnly = true;
+            this.Column12.Text = "delete";
+            this.Column12.UseColumnTextForLinkValue = true;
+            this.Column12.Width = 70;
+            // 
             // FrmDataEntry
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
@@ -972,19 +1012,9 @@
         private System.Windows.Forms.Button btnProjectDetails;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.DataGridView dgvExperienceDetails;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Column7;
-        private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn1;
         private System.Windows.Forms.TextBox txtDeclarationText;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DataGridView dgvSkillData;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn2;
         private System.Windows.Forms.TextBox txtResumeTitle;
         private System.Windows.Forms.TextBox txtHobbies;
         private System.Windows.Forms.Label label11;
@@ -994,12 +1024,6 @@
         private System.Windows.Forms.TextBox txtResumeSummary;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgvEducationalData;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewButtonColumn Column1;
         private System.Windows.Forms.DataGridView dgvProjectDetails;
         private System.Windows.Forms.Button btnChoose;
         private System.Windows.Forms.Label label7;
@@ -1014,5 +1038,24 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
         private System.Windows.Forms.DataGridViewLinkColumn Column8;
         private System.Windows.Forms.DataGridViewLinkColumn Column9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewLinkColumn dataGridViewButtonColumn2;
+        private System.Windows.Forms.DataGridViewLinkColumn Column10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Column7;
+        private System.Windows.Forms.DataGridViewLinkColumn Column13;
+        private System.Windows.Forms.DataGridViewLinkColumn Column11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewLinkColumn Column1;
+        private System.Windows.Forms.DataGridViewLinkColumn Column12;
     }
 }

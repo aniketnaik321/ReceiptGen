@@ -28,20 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label9 = new System.Windows.Forms.Label();
             this.dgvCandidateDetails = new System.Windows.Forms.DataGridView();
             this.btnExportTOPDF = new System.Windows.Forms.Button();
             this.btnExportToDocX = new System.Windows.Forms.Button();
             this.btnCloseForm = new System.Windows.Forms.Button();
+            this.btnNew = new System.Windows.Forms.Button();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCandidateDetails)).BeginInit();
             this.SuspendLayout();
             // 
@@ -71,7 +74,8 @@
             this.Column3,
             this.Column4,
             this.Column2,
-            this.Column1});
+            this.Column1,
+            this.Column5});
             this.dgvCandidateDetails.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvCandidateDetails.GridColor = System.Drawing.SystemColors.Highlight;
             this.dgvCandidateDetails.Location = new System.Drawing.Point(0, 62);
@@ -93,7 +97,7 @@
             this.btnExportTOPDF.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExportTOPDF.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExportTOPDF.ForeColor = System.Drawing.Color.White;
-            this.btnExportTOPDF.Location = new System.Drawing.Point(630, 13);
+            this.btnExportTOPDF.Location = new System.Drawing.Point(412, 13);
             this.btnExportTOPDF.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnExportTOPDF.Name = "btnExportTOPDF";
             this.btnExportTOPDF.Size = new System.Drawing.Size(177, 36);
@@ -109,12 +113,12 @@
             this.btnExportToDocX.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExportToDocX.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExportToDocX.ForeColor = System.Drawing.Color.White;
-            this.btnExportToDocX.Location = new System.Drawing.Point(814, 13);
+            this.btnExportToDocX.Location = new System.Drawing.Point(596, 13);
             this.btnExportToDocX.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnExportToDocX.Name = "btnExportToDocX";
             this.btnExportToDocX.Size = new System.Drawing.Size(176, 36);
             this.btnExportToDocX.TabIndex = 72;
-            this.btnExportToDocX.Text = "&EXPORT AS DOCX";
+            this.btnExportToDocX.Text = "E&XPORT AS DOCX";
             this.btnExportToDocX.UseVisualStyleBackColor = false;
             // 
             // btnCloseForm
@@ -134,6 +138,23 @@
             this.btnCloseForm.UseVisualStyleBackColor = false;
             this.btnCloseForm.Click += new System.EventHandler(this.btnCloseForm_Click);
             // 
+            // btnNew
+            // 
+            this.btnNew.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnNew.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnNew.FlatAppearance.BorderSize = 0;
+            this.btnNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNew.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNew.ForeColor = System.Drawing.Color.White;
+            this.btnNew.Location = new System.Drawing.Point(855, 13);
+            this.btnNew.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnNew.Name = "btnNew";
+            this.btnNew.Size = new System.Drawing.Size(176, 36);
+            this.btnNew.TabIndex = 72;
+            this.btnNew.Text = "&NEW CANDIDATE";
+            this.btnNew.UseVisualStyleBackColor = false;
+            this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
+            // 
             // ID
             // 
             this.ID.HeaderText = "ID";
@@ -144,6 +165,8 @@
             // 
             // Column6
             // 
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Column6.DefaultCellStyle = dataGridViewCellStyle1;
             this.Column6.HeaderText = "Candidate Name";
             this.Column6.MinimumWidth = 6;
             this.Column6.Name = "Column6";
@@ -151,8 +174,8 @@
             // 
             // Column3
             // 
-            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(1);
-            this.Column3.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(1);
+            this.Column3.DefaultCellStyle = dataGridViewCellStyle2;
             this.Column3.HeaderText = "Contact No.";
             this.Column3.MinimumWidth = 6;
             this.Column3.Name = "Column3";
@@ -160,8 +183,8 @@
             // 
             // Column4
             // 
-            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(1);
-            this.Column4.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(1);
+            this.Column4.DefaultCellStyle = dataGridViewCellStyle3;
             this.Column4.HeaderText = "Address";
             this.Column4.MinimumWidth = 6;
             this.Column4.Name = "Column4";
@@ -177,13 +200,13 @@
             // Column1
             // 
             this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
-            this.Column1.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
+            this.Column1.DefaultCellStyle = dataGridViewCellStyle4;
             this.Column1.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.Column1.HeaderText = "";
             this.Column1.MinimumWidth = 6;
@@ -194,6 +217,17 @@
             this.Column1.UseColumnTextForButtonValue = true;
             this.Column1.Width = 50;
             // 
+            // Column5
+            // 
+            this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Column5.HeaderText = "";
+            this.Column5.MinimumWidth = 6;
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            this.Column5.Text = "resume";
+            this.Column5.UseColumnTextForButtonValue = true;
+            this.Column5.Width = 56;
+            // 
             // FrmAllCandidates
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
@@ -201,6 +235,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1125, 809);
             this.Controls.Add(this.btnCloseForm);
+            this.Controls.Add(this.btnNew);
             this.Controls.Add(this.btnExportToDocX);
             this.Controls.Add(this.btnExportTOPDF);
             this.Controls.Add(this.dgvCandidateDetails);
@@ -223,11 +258,13 @@
         private System.Windows.Forms.Button btnExportTOPDF;
         private System.Windows.Forms.Button btnExportToDocX;
         private System.Windows.Forms.Button btnCloseForm;
+        private System.Windows.Forms.Button btnNew;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewButtonColumn Column1;
+        private System.Windows.Forms.DataGridViewButtonColumn Column5;
     }
 }

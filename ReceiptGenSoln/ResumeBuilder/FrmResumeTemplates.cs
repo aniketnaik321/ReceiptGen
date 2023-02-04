@@ -1,14 +1,8 @@
 ﻿using ResumeBuilder.DTO;
 using ResumeBuilder.Service;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ResumeBuilder
@@ -17,6 +11,7 @@ namespace ResumeBuilder
     {
 
         private ResumeTemplateService _resumeTemplateService;
+        public int CandidateID {get;set;}
         public FrmResumeTemplates()
         {
             InitializeComponent();
@@ -39,10 +34,7 @@ namespace ResumeBuilder
                 }
                 pictureBox.SetButtonText(temp.TemplateName);
                 pictureBox.ButtonClick += PictureBox_ButtonClick;
-                // pictureBox.PreviewThumbnail=Image.FromStream()
-                //  pictureBox.TemplateName=
-                //pictureBox.Dock=DockStyle.Fill;
-                //   pictureBox.BackColor = Color.FromArgb(15, 59, 95);
+               
                 pictureBox.BackColor = Color.FromArgb(249,246,238);
                 templatePanel.Controls.Add(pictureBox);
             }
@@ -50,13 +42,10 @@ namespace ResumeBuilder
 
         private void PictureBox_ButtonClick(object sender, EventArgs e)
         {
-             MessageBox.Show(((DtoResumeTemplate)sender).TemplateName);
-
-            FrmResumePreview _frm = new FrmResumePreview(((DtoResumeTemplate)sender));           
+            FrmResumePreview _frm = new FrmResumePreview(((DtoResumeTemplate)sender),CandidateID);           
             _frm.MdiParent = this.ParentForm;
             _frm.StartPosition = FormStartPosition.Manual;
          
-            //_frm.WindowState = FormWindowState.Maximized;
             _frm.Icon = this.Icon;
             _frm.Width = this.ParentForm.ClientSize.Width - 97;
             _frm.Height = this.ParentForm.ClientSize.Height - 30;

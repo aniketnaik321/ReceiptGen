@@ -51,24 +51,60 @@ namespace ResumeBuilder
         }
 
         private void dgvCandidateDetails_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {         
-                if (e.ColumnIndex == 5)
-                    { 
-                    FrmDataEntry frm = new FrmDataEntry();
-                    frm.LoadCandidateData(Convert.ToInt32(dgvCandidateDetails.Rows[e.RowIndex].Cells[0].Value.ToString()));
-                    frm.MdiParent = this.ParentForm;
-                    frm.Icon = this.Icon;
-                    frm.Width = this.ParentForm.ClientSize.Width - 97;
-                    frm.Height = this.ParentForm.ClientSize.Height - 30;
-                    frm.Left = 0;
-                    frm.Top = 0;
-                    frm.WindowState = FormWindowState.Normal;
-                    frm.StartPosition = FormStartPosition.Manual;
-                    frm.Show();
+        {
 
-                this.Close();
-
+            switch (e.ColumnIndex) {
+                case 5:
+                    {
+                        FrmDataEntry frm = new FrmDataEntry();
+                        frm.LoadCandidateData(Convert.ToInt32(dgvCandidateDetails.Rows[e.RowIndex].Cells[0].Value.ToString()));
+                        frm.MdiParent = this.ParentForm;
+                        frm.IsNew = true;
+                        frm.Icon = this.Icon;
+                        frm.Width = this.ParentForm.ClientSize.Width - 97;
+                        frm.Height = this.ParentForm.ClientSize.Height - 30;
+                        frm.Left = 0;
+                        frm.Top = 0;
+                        frm.WindowState = FormWindowState.Normal;
+                        frm.StartPosition = FormStartPosition.Manual;
+                        frm.Show();
+                    }
+                    break;
+                case 6:
+                    {
+                        FrmResumeTemplates frm = new FrmResumeTemplates();                      
+                        frm.MdiParent = this.ParentForm;                        
+                        frm.Icon = this.Icon;
+                        frm.Width = this.ParentForm.ClientSize.Width - 97;
+                        frm.Height = this.ParentForm.ClientSize.Height - 30;
+                        frm.Left = 0;
+                        frm.Top = 0;
+                        frm.CandidateID = Convert.ToInt32(dgvCandidateDetails.Rows[e.RowIndex].Cells[0].Value.ToString());
+                        frm.WindowState = FormWindowState.Normal;
+                        frm.StartPosition = FormStartPosition.Manual;
+                        frm.Show();
+                    }
+                    break;
             }
-        } 
+              
+
+            
+        }
+
+        private void btnNew_Click(object sender, EventArgs e)
+        {
+            FrmDataEntry frm = new FrmDataEntry();
+           // frm.LoadCandidateData(Convert.ToInt32(dgvCandidateDetails.Rows[e.RowIndex].Cells[0].Value.ToString()));
+            frm.MdiParent = this.ParentForm;
+            frm.IsNew = true;
+            frm.Icon = this.Icon;
+            frm.Width = this.ParentForm.ClientSize.Width - 97;
+            frm.Height = this.ParentForm.ClientSize.Height - 30;
+            frm.Left = 0;
+            frm.Top = 0;
+            frm.WindowState = FormWindowState.Normal;
+            frm.StartPosition = FormStartPosition.Manual;
+            frm.Show();
+        }
     }
 }

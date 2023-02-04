@@ -29,10 +29,7 @@ namespace ResumeBuilder.Service
                 var attribute = GetAttribute<ColumnAttribute>(prop);
                 if (!String.IsNullOrEmpty(attribute?.Name)){
                     result.Add(attribute.Name);
-                }
-                //else{
-                //    result.Add(prop.Name);
-                //}
+                }                
             }
             return result;              
         }
@@ -49,7 +46,6 @@ namespace ResumeBuilder.Service
 
         public static string GetPropValue(object src, string propName)
         {
-
             if (src.GetType().GetProperty(propName).PropertyType.ToString() == "System.DateTime") {
                 return UtilityService.DataFormatInMonthAndYear(Convert.ToString(src.GetType().
                     GetProperty(propName).GetValue(src, null)));

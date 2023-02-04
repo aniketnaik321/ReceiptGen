@@ -16,9 +16,9 @@ namespace ResumeBuilder
         ResumeDataWrapper _resumeDataWrapper;
         private DtoResumeTemplate TemplateFile;
         private DocX document;
-        public int CandidateID;
+        public int CandidateID { get; set; }
       
-        public FrmResumePreview(DtoResumeTemplate template)
+        public FrmResumePreview(DtoResumeTemplate template,int CandidateID)
         {
             InitializeComponent();
             _viewer = new PdfViewer();
@@ -26,6 +26,7 @@ namespace ResumeBuilder
             _documentService = new DocumentService();
             _resumeDataService = new ResumeDataService();
             TemplateFile = template;
+            this.CandidateID = CandidateID;
         }
 
         private void FrmResumePreview_Load(object sender, EventArgs e)
@@ -34,7 +35,7 @@ namespace ResumeBuilder
             _viewer.Visible = true;
             _viewer.BringToFront();
             this.PreviewPanel.Controls.Add(_viewer);
-            _resumeDataWrapper = _resumeDataService.LoadResumeData(1);
+            _resumeDataWrapper = _resumeDataService.LoadResumeData(this.CandidateID);
             MemoryStream tempDoc;
             MemoryStream ms = _documentService.FillupTemplate(
                 Environment.CurrentDirectory + "//ResumeTemplates//" + TemplateFile.FileName, 
@@ -76,6 +77,7 @@ namespace ResumeBuilder
             _frm.Height = this.ParentForm.ClientSize.Height - 30;
             _frm.Left = 0;
             _frm.Top = 0;
+            _frm.CandidateID = this.CandidateID;
             _frm.WindowState = FormWindowState.Normal;            
             _frm.StartPosition = FormStartPosition.Manual;
             _frm.Show();

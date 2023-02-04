@@ -16,6 +16,7 @@ namespace ResumeBuilder
         private ResumeDataService _resumeDataService;
         public DtoResumeData ResumeData;
         private string CandidatePhoto;
+        public bool IsNew { get; set; } = false;
         public ResumeDataWrapper ResumeDataWrapper { get; set; }
 
         public FrmDataEntry()
@@ -31,7 +32,10 @@ namespace ResumeBuilder
 
         private void FrmDataEntry_Load(object sender, EventArgs e)
         {
-         //   LoadCandidateData(1);
+            if (!IsNew)
+            {
+                LoadCandidateData(1);
+            }          
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -372,6 +376,11 @@ namespace ResumeBuilder
                     }
                     break;
             }
+        }
+
+        private void btnNew_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
