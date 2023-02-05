@@ -15,17 +15,30 @@ namespace ResumeBuilder
     {
 
         public FrmDataEntry DataEntryForm { get; set; }
-        private SkillDetails skillDetails;
+        public SkillDetails skillData { get; set; }
+
+        public int EditIndex { get; set; } = -1;
         public FrmSkillDetails()
         {
-            InitializeComponent();   
-            skillDetails = new SkillDetails();
+            InitializeComponent();
+            skillData = new SkillDetails();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
             this.Dispose();
+        }
+
+        public void SetupEditData()
+        {
+            if (EditIndex >= 0)
+            {
+                txtSkillName.Text = skillData.SkillName;
+                ddlRating.SelectedIndex= ddlRating.Items.IndexOf(skillData.SkillRating);
+               ddlRating.Text=skillData.SkillRating.ToString();
+                txtSkillExperience.Text = skillData.SkillExperience;
+            }
         }
 
         private void FrmSkillDetails_Load(object sender, EventArgs e)
@@ -44,10 +57,17 @@ namespace ResumeBuilder
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            skillDetails.SkillName = txtSkillName.Text;
-            skillDetails.SkillRating =Convert.ToSingle(ddlRating.SelectedItem);
-            skillDetails.SkillExperience = txtSkillExperience.Text;
-            DataEntryForm.ResumeDataWrapper.skillDetails.Add(skillDetails);
+            skillData.SkillName = txtSkillName.Text;
+            skillData.SkillRating =Convert.ToSingle(ddlRating.SelectedItem);
+            skillData.SkillExperience = txtSkillExperience.Text;
+            if (EditIndex >= 0)
+            {
+                this.DataEntryForm.ResumeDataWrapper.skillDetails[EditIndex] = skillData;
+            }
+            else
+            {
+                DataEntryForm.ResumeDataWrapper.skillDetails.Add(skillData);
+            }
             DataEntryForm.RefreshSkillDetailsDataGrid();
             this.Close();
             this.Dispose();

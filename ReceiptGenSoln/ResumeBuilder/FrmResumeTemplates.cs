@@ -11,7 +11,7 @@ namespace ResumeBuilder
     {
 
         private ResumeTemplateService _resumeTemplateService;
-        public int CandidateID {get;set;}
+        public int CandidateID {get;set;}=1;
         public FrmResumeTemplates()
         {
             InitializeComponent();

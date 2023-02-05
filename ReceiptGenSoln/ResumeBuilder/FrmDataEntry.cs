@@ -141,12 +141,28 @@ namespace ResumeBuilder
 
         private void dgvExperienceDetails_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == 5)
-                if (MessageBox.Show("Confirm removing row?", "Easy Resume Builder", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                {
-                    ResumeDataWrapper.CompanyExperience.RemoveAt(e.RowIndex);                    
-                    dgvExperienceDetails.Rows.RemoveAt(e.RowIndex);
-                }
+            switch (e.ColumnIndex)
+            {
+                case 5:
+                    FrmExperienceDetails frm = new FrmExperienceDetails();
+                    frm.StartPosition = FormStartPosition.CenterScreen;
+                    frm.DataEntryForm = this;
+                    frm.EditIndex = e.RowIndex;
+                    frm.experienceData = this.ResumeDataWrapper.CompanyExperience[e.RowIndex];
+                    frm.SetupEditData();
+                    frm.ShowDialog();
+                    break;
+                case 6:
+
+                    if (MessageBox.Show("Confirm removing row?", "Easy Resume Builder", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        dgvProjectDetails.Rows.RemoveAt(e.RowIndex);
+                        ResumeDataWrapper.CompanyExperience.RemoveAt(e.RowIndex);
+                        RefreshCompanyExperienceDataGrid();
+                    }
+                    break;
+            }
+
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -189,12 +205,27 @@ namespace ResumeBuilder
 
         private void dgvSkillData_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == 3)
-                if (MessageBox.Show("Confirm removing row?", "Easy Resume Builder", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                {
-                    dgvSkillData.Rows.RemoveAt(e.RowIndex);
-                    ResumeDataWrapper.skillDetails.RemoveAt(e.RowIndex);
-                }
+            switch (e.ColumnIndex)
+            {
+                case 3:
+                    FrmSkillDetails frm = new FrmSkillDetails();
+                    frm.StartPosition = FormStartPosition.CenterScreen;
+                    frm.DataEntryForm = this;
+                    frm.EditIndex = e.RowIndex;
+                    frm.skillData = this.ResumeDataWrapper.skillDetails[e.RowIndex];
+                    frm.SetupEditData();
+                    frm.ShowDialog();
+                    break;
+                case 4:
+
+                    if (MessageBox.Show("Confirm removing row?", "Easy Resume Builder", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        dgvProjectDetails.Rows.RemoveAt(e.RowIndex);
+                        ResumeDataWrapper.skillDetails.RemoveAt(e.RowIndex);
+                        RefreshSkillDetailsDataGrid();
+                    }
+                    break;
+            }
         }
 
         private void btnProjectDetails_Click(object sender, EventArgs e)
@@ -347,11 +378,35 @@ namespace ResumeBuilder
 
         private void dgvEducationalData_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == 5 && MessageBox.Show("Confirm removing row?", "Easy Resume Builder", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                {
-                    dgvEducationalData.Rows.RemoveAt(e.RowIndex);
-                    ResumeDataWrapper.EducationData.RemoveAt(e.RowIndex);
-                }
+            //if (e.ColumnIndex == 5 && MessageBox.Show("Confirm removing row?", "Easy Resume Builder", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            //    {
+            //        dgvEducationalData.Rows.RemoveAt(e.RowIndex);
+            //        ResumeDataWrapper.EducationData.RemoveAt(e.RowIndex);
+            //    }
+
+
+            switch (e.ColumnIndex)
+            {
+                case 5:
+                    FrmEducationDetails frm = new FrmEducationDetails();
+                    frm.StartPosition = FormStartPosition.CenterScreen;
+                    frm.DataEntryForm = this;
+                    frm.EditIndex = e.RowIndex;
+                    frm.educationData = this.ResumeDataWrapper.EducationData[e.RowIndex];
+                    frm.SetupEditData();
+                    frm.ShowDialog();
+                    break;
+                case 6:
+
+                    if (MessageBox.Show("Confirm removing row?", "Easy Resume Builder", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        dgvProjectDetails.Rows.RemoveAt(e.RowIndex);
+                        ResumeDataWrapper.EducationData.RemoveAt(e.RowIndex);
+                        RefreshEducationDataGrid();
+                    }
+                    break;
+
+            }
         }
 
         private void dgvProjectDetails_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -373,6 +428,7 @@ namespace ResumeBuilder
                     {
                         dgvProjectDetails.Rows.RemoveAt(e.RowIndex);
                         ResumeDataWrapper.ProjectDetails.RemoveAt(e.RowIndex);
+                        RefreshProjectDetailsDataGrid();
                     }
                     break;
             }
